@@ -21,6 +21,11 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    isEditor: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
     favorites: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Post",
