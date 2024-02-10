@@ -31,6 +31,7 @@ const createPost = asyncHandler(async (req, res) => {
       imageUrl,
       category,
       tag,
+      content,
     });
 
     const createdPost = await post.save();
@@ -76,6 +77,30 @@ const deletePost = asyncHandler(async (req, res) => {
 
 const addToFavorites = asyncHandler(async (req, res) => {});
 
+const getAllTags = asyncHandler(async (req, res) => {
+  try {
+    const tag = await Post.distinct("tag");
+    res.status(200).json(tag);
+    // console.log(tag);
+  } catch (error) {
+    res.status(404).json({ message: "Not found" });
+    console.log("Error Tag", error);
+  }
+});
+const getCategories = asyncHandler(async (req, res) => {
+  try {
+    const category = await Post.distinct("category");
+    if (category) {
+      res.status(200).json(category);
+    }
+  } catch (error) {
+    res.status(404).json({ message: "Not found" });
+    console.log("Error category", error);
+  }
+});
+
+// const addToFavorites = asyncHandler(async (req, res) => {});
+
 module.exports = {
   createPost,
   getPost,
@@ -83,4 +108,6 @@ module.exports = {
   updatePost,
   deletePost,
   addToFavorites,
+  getAllTags,
+  getCategories,
 };

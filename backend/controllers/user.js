@@ -74,7 +74,6 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 });
 
-
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
@@ -91,7 +90,13 @@ const authUser = asyncHandler(async (req, res) => {
     res.status(401).json({ message: `Invalid data` });
   }
 });
-const logoutUser = asyncHandler(async (req, res) => {});
+const logoutUser = asyncHandler(async (req, res) => {
+  res.cookie("blog_info", "", {
+    httpOnly: true,
+    expires: new Date(0)
+  });
+  res.status(200).json({message: 'Logged out successfully'})
+});
 
 module.exports = {
   getAllUsers,
