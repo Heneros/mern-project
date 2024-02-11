@@ -30,10 +30,10 @@ function fileFilter(req, file, cb) {
 const upload = multer({ storage, fileFilter });
 const uploadSingleImage = upload.single("image");
 
-const uploadFunctionSingleImage = (req, res, err) => {
+function uploadFunctionSingleImage(req, res, next) {
   uploadSingleImage(req, res, function (err) {
     if (err) {
-      return res.status(400).send({ message: err.mesage });
+      return res.status(400).send({ message: err.message });
     }
 
     res.status(200).send({
@@ -41,6 +41,5 @@ const uploadFunctionSingleImage = (req, res, err) => {
       image: `/${req.file.path}/`,
     });
   });
-};
-
+}
 module.exports = uploadFunctionSingleImage;

@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema(
   {
-    // user: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   required: true,
-    //   ref: "User",
-    // },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
     title: {
       type: String,
       required: [true, "must provide title"],
@@ -26,6 +26,10 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: [true, "must provide category"],
     },
+    views: {
+      type: Number,
+      default: 0,
+    },
     createdAt: {
       type: Date,
       default: Date.now(),
@@ -36,6 +40,10 @@ const postSchema = new mongoose.Schema(
   }
 );
 
+postSchema.methods.incrementViews = async function () {
+  this.views += 1;
+  await this.save();
+};
 const Post = mongoose.model("Post", postSchema);
 
 module.exports = Post;

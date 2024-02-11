@@ -34,9 +34,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.get("/", (req, res) => {
-//   res.send("<h1>Hello World</h1>");
-// });
+
 
 app.use("/api/v1/posts", postsRoute);
 app.use("/api/v1/users", usersRoute);

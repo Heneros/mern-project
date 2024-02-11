@@ -14,6 +14,7 @@ const getPost = asyncHandler(async (req, res) => {
   if (!post) {
     res.status(404).json({ message: `Not found ${postId}` });
   }
+  await post.incrementViews();
   res.status(200).json(post);
 });
 
@@ -32,6 +33,7 @@ const createPost = asyncHandler(async (req, res) => {
       category,
       tag,
       content,
+      user: req.user._id,
     });
 
     const createdPost = await post.save();

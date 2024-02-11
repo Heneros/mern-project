@@ -8,10 +8,11 @@ const {
   getAllTags,
   getCategories,
 } = require("../controllers/posts");
+const protect = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.route("/").get(getAllPosts).post(createPost);
+router.route("/").get(getAllPosts).post(protect, createPost);
 router.get("/toptags", getAllTags);
 router.get("/topcategories", getCategories);
 
