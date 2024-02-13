@@ -13,7 +13,7 @@ const usersRoute = require("./routes/usersRoute");
 const uploadRoute = require("./routes/uploadRoute");
 
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-const uploadFunctionSingleImage = require("./controllers/file.js");
+
 
 require("./utils/oauth.js");
 
