@@ -9,7 +9,20 @@ const getAllUsers = asyncHandler(async (req, res) => {
 
 const getUser = asyncHandler(async (req, res) => {
   const user = await User.findById(req.params.id);
-  res.status(200).json(user);
+  if (user) {
+    res.status(200).json(user);
+  } else {
+    res.status(404).json({ message: "User don't exist" });
+  }
+});
+
+const getUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.params.id).select("-password");
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).json({ message: "No user been found" });
+  }
 });
 
 const createUser = asyncHandler(async (req, res) => {
@@ -21,6 +34,7 @@ const createUser = asyncHandler(async (req, res) => {
     password,
   });
   if (user) {
+    generateToken(res, user._id);
     res.status(201).json({
       id: user._id,
       username: user.username,
@@ -30,6 +44,28 @@ const createUser = asyncHandler(async (req, res) => {
     });
   } else {
     res.status(400).json({ message: "Invalid user data" });
+  }
+});
+
+const updateUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
+  if (user) {
+    user.username = req.body.username || user.username;
+    user.email = req.body.email || user.email;
+
+    if (req.body.password) {
+      user.password = req.body.password;
+    }
+
+    const updatedUser = await user.save();
+
+    res.json({
+      _id: updatedUser._id,
+      username: updatedUser.username,
+      email: updatedUser.email,
+    });
+  } else {
+    res.status(404).json({ message: "User not found" });
   }
 });
 
@@ -93,12 +129,13 @@ const authUser = asyncHandler(async (req, res) => {
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie("blog_info", "", {
     httpOnly: true,
-    expires: new Date(0)
+    expires: new Date(0),
   });
-  res.status(200).json({message: 'Logged out successfully'})
+  res.status(200).json({ message: "Logged out successfully" });
 });
 
 module.exports = {
+  getUserProfile,
   getAllUsers,
   getUser,
   createUser,
@@ -106,4 +143,5 @@ module.exports = {
   deleteUser,
   authUser,
   logoutUser,
+  updateUserProfile,
 };

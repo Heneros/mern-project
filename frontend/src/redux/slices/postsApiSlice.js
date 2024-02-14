@@ -1,7 +1,7 @@
 import { POSTS_URL } from "../../utils/constants";
-import { apiSlice } from "../store";
+import { apiSlice } from "./apiSlice";
 
-export const postsApiSlice = apiSlice.injectEndPoints({
+export const postsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getPosts: builder.query({
       query: () => ({
@@ -41,13 +41,29 @@ export const postsApiSlice = apiSlice.injectEndPoints({
       }),
       providesTags: ["Post"],
     }),
+    getTags: builder.query({
+      query: () => ({
+        url: `${POSTS_URL}/toptags`,
+      }),
+      keepUnusedDataFor: 5,
+      providesTags: ["Post"],
+    }),
+    getCategories: builder.query({
+      query: () => ({
+        url: `${POSTS_URL}/topcategories`,
+      }),
+      keepUnusedDataFor: 5,
+      providesTags: ["Post"],
+    }),
   }),
 });
 
 export const {
-  useGetPostQuery,
-  useGetPostDetailsQuery,
   useCreatePostMutation,
   useDeletePostMutation,
+  useGetPostDetailsQuery,
+  useGetPostsQuery,
   useUpdatePostMutation,
+  useGetCategoriesQuery,
+  useGetTagsQuery,
 } = postsApiSlice;

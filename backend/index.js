@@ -14,12 +14,16 @@ const uploadRoute = require("./routes/uploadRoute");
 
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
-
 require("./utils/oauth.js");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:7200",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
@@ -33,8 +37,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 app.use("/api/v1/posts", postsRoute);
 app.use("/api/v1/users", usersRoute);

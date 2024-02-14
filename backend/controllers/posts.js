@@ -91,9 +91,21 @@ const getAllTags = asyncHandler(async (req, res) => {
 });
 const getCategories = asyncHandler(async (req, res) => {
   try {
-    const category = await Post.distinct("category");
-    if (category) {
-      res.status(200).json(category);
+    // const category = await Post.distinct("category");
+    // const category = await Post.find({}).limit(3);
+
+    const categories = await Post.aggregate([
+      {
+        $group: {
+          _id: "$category",
+          imageUrl: { $first: "$imageUrl" },
+        },
+      },
+      { $limit: 3 },
+    ]);
+
+    if (categories) {
+      res.status(200).json(categories);
     }
   } catch (error) {
     res.status(404).json({ message: "Not found" });
