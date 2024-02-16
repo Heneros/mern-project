@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -37,11 +38,11 @@ export default function Header() {
         </div>
         <div class="row align-items-center py-2 px-lg-5">
           <div class="col-lg-4">
-            <a href="#!" class="navbar-brand d-none d-lg-block">
+            <Link to={`/`} class="navbar-brand d-none d-lg-block">
               <h1 class="m-0 display-5 text-uppercase">
                 <span class="text-primary">News</span>Room
               </h1>
-            </a>
+            </Link>
           </div>
           <div class="col-lg-8 text-center text-lg-right">
             <img class="img-fluid" src="img/ads-700x70.jpg" alt="" />

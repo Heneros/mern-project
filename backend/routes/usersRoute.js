@@ -9,12 +9,15 @@ const {
   logoutUser,
   getUserProfile,
   updateUserProfile,
+  getAllPublicUsers,
 } = require("../controllers/user");
-const protect = require("../middleware/authMiddleware");
+const { protect, admin } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.route("/").post(createUser).get(protect, getAllUsers);
+router.route("/").post(createUser).get(protect, admin, getAllUsers);
+router.route("/allusers").get(getAllPublicUsers);
+
 router.route("/auth").post(authUser);
 router
   .route("/:id")

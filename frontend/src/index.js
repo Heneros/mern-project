@@ -8,7 +8,10 @@ import "./styles/custom.css";
 
 import Layout from "./pages/Layout";
 import Homepage from "./pages/Homepage";
+import Registration from "./pages/Registration";
+
 import store from "./redux/store";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +22,14 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Homepage />,
+      },
+      {
+        path: "/registration",
+        element: <Registration />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

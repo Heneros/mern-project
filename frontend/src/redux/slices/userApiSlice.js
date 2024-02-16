@@ -19,7 +19,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
-    registration: builder.mutation({
+    register: builder.mutation({
       query: (data) => ({
         url: `${USERS_URL}`,
         method: "POST",
@@ -66,16 +66,23 @@ export const userApiSlice = apiSlice.injectEndpoints({
       credentials: "include",
       keepUnusedDataFor: 5,
     }),
+    getUsersPublic: builder.query({
+      query: () => ({
+        url: `${USERS_URL}/allusers`,
+      }),
+      providesTags: ["User"],
+      keepUnusedDataFor: 5,
+    }),
   }),
 });
 
 export const {
-  useRegistrationMutation,
+  useRegisterMutation,
   useDeleteUserMutation,
   useLoginMutation,
+  useProfileMutation,
+  useLogoutMutation,
   useGetUserDetailsQuery,
   useGetUsersQuery,
   useUpdateUserQuery,
-  useProfileMutation,
-  useLogoutMutation,
 } = userApiSlice;

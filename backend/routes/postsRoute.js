@@ -8,13 +8,15 @@ const {
   getAllTags,
   getCategories,
 } = require("../controllers/posts");
-const protect = require("../middleware/authMiddleware");
+const {protect} = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
 router.route("/").get(getAllPosts).post(protect, createPost);
 router.get("/toptags", getAllTags);
 router.get("/topcategories", getCategories);
+
+
 
 router.route("/:id").get(getPost).put(updatePost).delete(deletePost);
 

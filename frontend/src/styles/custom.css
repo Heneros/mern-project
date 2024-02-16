@@ -1,0 +1,37 @@
+.full-width-slide {
+    width: 100%; 
+  }
+
+  .carousel .col {
+    width: 100%;
+  }
+
+  .full-width-slide .col-md-4 .d-flex{
+    width: 100%;
+  }
+
+  .full-width-slide  .carousel-control-prev-icon, 
+  .full-width-slide .carousel-control-next-icon{
+
+  }
+
+  .full-width-slide.carousel-control-prev-icon,
+  .full-width-slide .carousel-control-next-icon{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dee2e6;
+    background: transparent;
+    border: 1px solid #dee2e6;
+    font-size: 16px;
+    transition: .3s;
+  }
+
+  
+  .carousel-control-next-icon{
+    content: "\f105";
+  }

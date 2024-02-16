@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
+import {
+  useGetCategoriesQuery,
+  useGetPostsQuery,
+} from "../../redux/slices/postsApiSlice";
 import { Image } from "react-bootstrap";
 
 import Message from "../Message";
@@ -9,24 +12,7 @@ import Loader from "../Loader";
 export default function CategoriesSideBlock() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
 
-  useEffect(() => {
-    if (postItems) {
-      //   const uniqueCategories = Array.from(
-      //     new Set(postItems.map((item) => item.category))
-      //   );
-      //   console.log(uniqueCategories);
-      // }
-      const uniqueCategories = Array.from(
-        new Set(postItems.map((item) => item.category))
-      );
-
-      const filteredPosts = postItems.filter((item) =>
-        uniqueCategories.includes(item.category)
-      );
-
-      console.log(filteredPosts);
-    }
-  }, [postItems]);
+  useEffect(() => {}, [postItems]);
 
   return (
     <>
@@ -37,7 +23,7 @@ export default function CategoriesSideBlock() {
       ) : (
         <>
           <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-            <h3 class="m-0">Categories</h3>
+            <h3 class="m-0">Latest Posts </h3>
             <Link
               class="text-secondary font-weight-medium text-decoration-none"
               to={"/blog"}
@@ -56,12 +42,9 @@ export default function CategoriesSideBlock() {
                 fluid
                 style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
-              <Link
-                className="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none"
-                to={`/blog/${post._id}`}
-              >
-                {post.category}
-              </Link>
+              <span className="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+                {post.title}
+              </span>
             </div>
           ))}
         </>

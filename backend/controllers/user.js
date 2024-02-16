@@ -2,6 +2,11 @@ const User = require("../models/Users");
 const asyncHandler = require("../middleware/asyncHandler");
 const generateToken = require("../utils/generateToken");
 
+const getAllPublicUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({}).select("-password -email -isAdmin");
+  res.status(200).json(users);
+});
+
 const getAllUsers = asyncHandler(async (req, res) => {
   const users = await User.find({});
   res.status(200).json(users);
@@ -48,11 +53,11 @@ const createUser = asyncHandler(async (req, res) => {
 });
 
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.user._id);
+  const user = await User.findById(req.params.id);
   if (user) {
     user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
-
+    user.isAdmin = Boolean(req.body.isAdmin);
     if (req.body.password) {
       user.password = req.body.password;
     }
@@ -63,6 +68,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       _id: updatedUser._id,
       username: updatedUser.username,
       email: updatedUser.email,
+      isAdmin: updateUser.isAdmin,
     });
   } else {
     res.status(404).json({ message: "User not found" });
@@ -144,4 +150,5 @@ module.exports = {
   authUser,
   logoutUser,
   updateUserProfile,
+  getAllPublicUsers,
 };
