@@ -7,14 +7,14 @@ import TopNewsCarousel from "../components/Homepage/TopNewsCarousel";
 
 export default function Homepage() {
   return (
-    <Container className="py-3">
+    <Container className="">
       <Container>
         <TopNewsCarousel />
         <Row>
-          <Col className="col-lg-8">
+          <Col lg="8" md="12">
             <MainNewsSlider />
           </Col>
-          <Col className="col-lg-4">
+          <Col lg="4" md="12">
             <CategoriesSideBlock />
           </Col>
         </Row>

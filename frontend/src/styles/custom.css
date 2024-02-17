@@ -10,10 +10,6 @@
     width: 100%;
   }
 
-  .full-width-slide  .carousel-control-prev-icon, 
-  .full-width-slide .carousel-control-next-icon{
-
-  }
 
   .full-width-slide.carousel-control-prev-icon,
   .full-width-slide .carousel-control-next-icon{
@@ -31,7 +27,8 @@
     transition: .3s;
   }
 
-  
-  .carousel-control-next-icon{
-    content: "\f105";
+.carousel-control-prev-icon,
+ .carousel-control-next-icon{
+    background-color: grey;
+    border: 1px solid #000;
   }
