@@ -9,16 +9,25 @@ import { useLoginMutation } from "../redux/slices/userApiSlice";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
+  
+
   const [login] = useLoginMutation();
+  
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       await login({ email, password }).unwrap();
+      setError("");
       navigate("/");
     } catch (err) {
       // console.log(err);
+      const { data: errorMessage } = err;
+      setError(errorMessage.message);
       console.log(err?.data?.message || err.error);
     }
   };
@@ -27,6 +36,7 @@ export default function Login() {
     <FormContainer>
       <h1>Login</h1>
       <Form onSubmit={submitHandler}>
+        {error && <p style={{ color: "red" }}>{error} </p>}
         <Form.Group className="my-2" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -53,7 +63,7 @@ export default function Login() {
       </Form>
       <Row className="py-3">
         <Col>
-          Already have an account? <Link to={"/login"}>Login</Link>
+          Dont have an account? <Link to={"/registration"}>Registration</Link>
         </Col>
       </Row>
     </FormContainer>

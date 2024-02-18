@@ -1,6 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "./Homepage/Search";
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Form,
+  FormControl,
+  Button,
+  NavDropdown,
+} from "react-bootstrap";
+import HeaderDate from "./HeaderDate";
+import TrendingCarousel from "./TrendingCarousel";
 
 export default function Header() {
   return (
@@ -13,29 +26,12 @@ export default function Header() {
                 class="bg-primary text-white text-center py-2"
                 style={{ width: "100px;" }}
               >
-                Tranding
+                Trending
               </div>
-              <div
-                class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3"
-                style={{ width: "calc(100% - 100px)", paddingLeft: "90px" }}
-              >
-                <div class="text-truncate">
-                  <a class="text-secondary" href="#!">
-                    Labore sit justo amet eos sed, et sanctus dolor diam eos
-                  </a>
-                </div>
-                <div class="text-truncate">
-                  <a class="text-secondary" href="#!">
-                    Gubergren elitr amet eirmod et lorem diam elitr, ut est erat
-                    Gubergren elitr amet eirmod et lorem diam elitr, ut est erat
-                  </a>
-                </div>
-              </div>
+              <TrendingCarousel />
             </div>
           </div>
-          <div class="col-md-4 text-right d-none d-md-block">
-            Monday, January 01, 2045
-          </div>
+          <HeaderDate />
         </div>
         <div class="row align-items-center py-2 px-lg-5">
           <div class="col-lg-4">
@@ -51,63 +47,34 @@ export default function Header() {
         </div>
       </div>
 
-      <div class="container-fluid p-0 mb-3">
-        <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
-          <a href="#!" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 display-5 text-uppercase">
-              <span class="text-primary">News</span>Room
+      <div className="container-fluid p-0 mb-3">
+        <Navbar bg="light" expand="lg" className="py-2 py-lg-0 px-lg-5">
+          <Navbar.Brand href="#" className="d-block d-lg-none">
+            <h1 className="m-0 display-5 text-uppercase">
+              <span className="text-primary">News</span>Room
             </h1>
-          </a>
-          <button
-            type="button"
-            class="navbar-toggler"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-between px-0 px-lg-3"
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarCollapse" />
+          <Navbar.Collapse
             id="navbarCollapse"
+            className="justify-content-between px-0 px-lg-3"
           >
-            <div class="navbar-nav mr-auto py-0">
-              <a href="index.html" class="nav-item nav-link active">
+            <Nav className="mr-auto py-0">
+              <Nav.Link href="#" className="active">
                 Home
-              </a>
-              <a href="category.html" class="nav-item nav-link">
-                Categories
-              </a>
-              <a href="single.html" class="nav-item nav-link">
-                Single News
-              </a>
-              <div class="nav-item dropdown">
-                <a
-                  href="#!"
-                  class="nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                >
-                  Dropdown
-                </a>
-                <div class="dropdown-menu rounded-0 m-0">
-                  <a href="#!" class="dropdown-item">
-                    Menu item 1
-                  </a>
-                  <a href="#!" class="dropdown-item">
-                    Menu item 2
-                  </a>
-                  <a href="#!" class="dropdown-item">
-                    Menu item 3
-                  </a>
-                </div>
-              </div>
-              <a href="contact.html" class="nav-item nav-link">
-                Contact
-              </a>
-            </div>
-
+              </Nav.Link>
+              <Nav.Link href="category.html">Categories</Nav.Link>
+              <Nav.Link href="single.html">Single News</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#">Menu item 1</NavDropdown.Item>
+                <NavDropdown.Item href="#">Menu item 2</NavDropdown.Item>
+                <NavDropdown.Item href="#">Menu item 3</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href="contact.html">Contact</Nav.Link>
+            </Nav>
             <Search />
-          </div>
-        </nav>
+          </Navbar.Collapse>
+        </Navbar>
       </div>
     </>
   );

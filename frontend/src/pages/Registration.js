@@ -10,7 +10,8 @@ export default function Registration() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,12 +23,20 @@ export default function Registration() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    try {
-     register({ username, email, password }).unwrap();
-      navigate("/");
-    } catch (err) {
-      // console.log(err);
-      console.log(err?.data?.message || err.error);
+    if (password !== confirmPassword) {
+      alert("Password don't match");
+    } else {
+      try {
+        await register({ username, email, password }).unwrap();
+        // const result = await register({ username, email, password });
+
+        navigate("/");
+      } catch (err) {
+        const { data: errorMessage } = err;
+        setError(errorMessage.message);
+        // console.log(err);
+        console.log(err?.data?.message || err.error);
+      }
     }
   };
 
@@ -35,6 +44,7 @@ export default function Registration() {
     <FormContainer>
       <h1>Register</h1>
       <Form onSubmit={submitHandler}>
+        {error && <p style={{ color: "red" }}>{error} </p>}
         <Form.Group className="my-2" controlId="username">
           <Form.Label>Username</Form.Label>
           <Form.Control
@@ -62,6 +72,15 @@ export default function Registration() {
             placeholder="Enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group className="my-2" controlId="Confirmpassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirm password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 

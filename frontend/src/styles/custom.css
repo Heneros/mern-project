@@ -2,7 +2,7 @@
     width: 100%; 
   }
 
-  .carousel .col {
+  .full-width-slide .carousel .col {
     width: 100%;
   }
 
@@ -31,4 +31,31 @@
  .carousel-control-next-icon{
     background-color: grey;
     border: 1px solid #000;
+  }
+
+
+  .tranding-carousel .swiper-slide{
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tranding-carousel .swiper-button-next {
+    position: absolute;
+  left: 38px;
+  }
+
+  .tranding-carousel .swiper-button-next,
+  .tranding-carousel .swiper-button-prev{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    font-size: 16px;
+  }
+
+  .tranding-carousel  .swiper-button-prev::after, 
+     .tranding-carousel .swiper-button-next::after{
+    font-size: 16px;
   }
