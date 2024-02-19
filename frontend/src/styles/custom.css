@@ -59,3 +59,19 @@
      .tranding-carousel .swiper-button-next::after{
     font-size: 16px;
   }
+
+
+
+
+
+
+
+  .login {
+    height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .google{
+    background-color: #df4930;
+  }

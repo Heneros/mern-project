@@ -1,23 +1,42 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
+import Google from "../styles/img/google.png";
 import FormContainer from "../components/FormContainer";
-import { useLoginMutation } from "../redux/slices/userApiSlice";
+import {
+  // useAuthGoogleMutation,
+  // useAuthGoogleQuery,
+  useLoginMutation,
+} from "../redux/slices/userApiSlice";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  
+  // const [authGoogle] = useAuthGoogleMutation();
+
+  // const google = (e) => {
+  //   e.preventDefault();
+  //   // console.log(123);
+  //   try {
+  //     dispatch(authGoogle());
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const google = () => {
+    window.location.href = "http://localhost:3000/auth/google";
+  };
 
   const [login] = useLoginMutation();
-  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -61,6 +80,13 @@ export default function Login() {
           Submit
         </Button>
       </Form>
+      <Row className="py-3">
+        <Col>
+          <Button className="loginButton google" onClick={google}>
+            <img src={Google} alt="google icon" className="icon" />
+          </Button>
+        </Col>
+      </Row>
       <Row className="py-3">
         <Col>
           Dont have an account? <Link to={"/registration"}>Registration</Link>

@@ -18,18 +18,17 @@ passport.use(
         if (user) {
           return done(null, user);
         } else {
-          const email = profile.emails[0].value || "";
-          const randomHex = () =>
-            [...Array(12)].map(() =>
-              Math.floor(Math.random() * 16)
-                .toString(16)
-                .join("")
-            );
-
+          const email = profile?.emails[0].value;
+          const randomHex = () => {
+            return [...Array(12)]
+              .map(() => Math.floor(Math.random() * 16).toString(16))
+              .join("");
+          };
           const newUser = new User({
             username: profile.displayName,
             email: email,
             password: randomHex(),
+            googleId: profile.id,
             isEditor: false,
             isAdmin: false,
           });
@@ -46,7 +45,6 @@ passport.use(
     }
   )
 );
-
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);

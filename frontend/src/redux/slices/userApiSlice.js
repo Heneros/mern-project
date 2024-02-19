@@ -73,6 +73,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
       providesTags: ["User"],
       keepUnusedDataFor: 5,
     }),
+    authGoogle: builder.mutation({
+      query: () => ({
+        url: `/auth/google`,
+        method: "GET",
+      }),
+      providesTags: ["User"],
+      keepUnusedDataFor: 5,
+    }),
   }),
 });
 
@@ -85,4 +93,5 @@ export const {
   useGetUserDetailsQuery,
   useGetUsersQuery,
   useUpdateUserQuery,
+  useAuthGoogleMutation,
 } = userApiSlice;

@@ -18,9 +18,13 @@ require("./utils/oauth.js");
 
 const app = express();
 
+// app.enable("trust proxy");
+// app.set("trust proxy", 1);
+
 app.use(
   cors({
     origin: "http://localhost:7200",
+    methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
 );
@@ -32,7 +36,7 @@ app.use(
   session({
     secret: process.env.PASSPORT_SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   })
 );
 app.use(passport.initialize());
@@ -50,7 +54,7 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:3005", //change latter
+    successRedirect: "http://localhost:7200/my-account", //change latter
     failureRedirect: "/auth/google/failure",
   })
 );

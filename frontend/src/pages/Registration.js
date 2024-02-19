@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
+import Google from "../styles/img/google.png";
 import FormContainer from "./../components/FormContainer";
 import { useRegisterMutation } from "../redux/slices/userApiSlice";
 
@@ -20,6 +21,9 @@ export default function Registration() {
   const redirect = sp.get("redirect") || "/";
 
   const [register] = useRegisterMutation();
+  const google = () => {
+    window.location.href = "http://localhost:3000/auth/google";
+  };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -88,6 +92,13 @@ export default function Registration() {
           Submit
         </Button>
       </Form>
+      <Row className="py-3">
+        <Col>
+          <Button className="loginButton google" onClick={google}>
+            <img src={Google} alt="google icon" className="icon" />
+          </Button>
+        </Col>
+      </Row>
       <Row className="py-3">
         <Col>
           Already have an account? <Link to={"/login"}>Login</Link>
