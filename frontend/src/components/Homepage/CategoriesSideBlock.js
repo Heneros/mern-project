@@ -12,7 +12,15 @@ import Loader from "../Loader";
 export default function CategoriesSideBlock() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
 
-  useEffect(() => {}, [postItems]);
+  const uniqueCategories = new Set();
+
+  const uniquePostItems = postItems?.filter((item) => {
+    if (!uniqueCategories.has(item.category)) {
+      uniqueCategories.add(item.category);
+      return true;
+    }
+    return false;
+  });
 
   return (
     <>
@@ -23,7 +31,7 @@ export default function CategoriesSideBlock() {
       ) : (
         <>
           <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-            <h3 class="m-0">Latest Posts </h3>
+            <h3 class="m-0">All Categories </h3>
             <Link
               class="text-secondary font-weight-medium text-decoration-none"
               to={"/blog"}
@@ -31,7 +39,7 @@ export default function CategoriesSideBlock() {
               View All
             </Link>
           </div>
-          {postItems.slice(0, 4).map((post, index) => (
+          {uniquePostItems.slice(0, 4).map((post, index) => (
             <div
               className="position-relative overflow-hidden mb-3"
               style={{ height: "80px" }}
@@ -43,7 +51,7 @@ export default function CategoriesSideBlock() {
                 style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
               <span className="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
-                {post.title}
+                {post.category}
               </span>
             </div>
           ))}

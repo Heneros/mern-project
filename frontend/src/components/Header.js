@@ -49,11 +49,11 @@ export default function Header() {
 
       <div className="container-fluid p-0 mb-3">
         <Navbar bg="light" expand="lg" className="py-2 py-lg-0 px-lg-5">
-          <Navbar.Brand href="#" className="d-block d-lg-none">
+          <Link to={`/`} className="d-block d-lg-none">
             <h1 className="m-0 display-5 text-uppercase">
               <span className="text-primary">News</span>Room
             </h1>
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="navbarCollapse" />
           <Navbar.Collapse
             id="navbarCollapse"

@@ -75,3 +75,78 @@
   .google{
     background-color: #df4930;
   }
+
+
+
+
+
+  .slider-featured   .swiper-button-prev::after,   
+  .slider-featured .swiper-button-next::after{
+    font-size: 12px;
+  }
+  .slider-featured   .swiper-button-prev:hover,  
+  .slider-featured .swiper-button-next:hover {
+    color: #ffffff;
+    background: #ED1C24;
+    border-color: #ED1C24;
+  }
+  .slider-featured .swiper-button-next, 
+  .slider-featured  .swiper-button-prev{
+  width: 30px;
+  height: 30px;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #dee2e6;
+  font-size: 16px;
+  transition: .3s;
+  }
+
+
+
+
+
+  .business-arrows{
+    position: relative;
+  }
+  .business-arrows .swiper-buttons{
+    top: 0;
+    right: 0;
+    left: auto;
+    position: absolute;
+    width: 100%;
+    max-width: 30%;
+    height: 20px;
+  }
+  .business-arrows .swiper-button-next, 
+  .business-arrows .swiper-button-prev{
+    width: 30px;
+  height: 30px;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 1px solid #dee2e6;
+  transition: .3s;
+  }
+  .business-arrows .swiper-button-prev::after,   
+  .business-arrows  .swiper-button-next::after{
+    font-size: 12px;
+  }
+  .business-arrows  .swiper-button-prev:hover,  
+  .business-arrows  .swiper-button-next:hover {
+    color: #ffffff;
+    background: #ED1C24;
+    border-color: #ED1C24;
+  }
+
+  @media(max-width: 600px){
+    .business-arrows .swiper-buttons{
+      max-width: 45%;
+    }
+  }

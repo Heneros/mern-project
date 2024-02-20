@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { Form, Dropdown } from "react-bootstrap";
+import { Form, Dropdown, InputGroup, Button } from "react-bootstrap";
 
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 export default function SearchBar() {
@@ -14,12 +16,19 @@ export default function SearchBar() {
   return (
     <Form>
       <Form.Group controlId="postSearch">
-        <Form.Control
-          type="text"
-          placeholder="Search posts..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+        <InputGroup>
+          <Form.Control
+            type="text"
+            placeholder="Search posts..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <div class="input-group-append">
+            <button class="input-group-text text-secondary">
+              <FontAwesomeIcon icon={faSearch} />
+            </button>
+          </div>
+        </InputGroup>
       </Form.Group>
       <Dropdown.Menu
         style={{ left: "auto" }}
