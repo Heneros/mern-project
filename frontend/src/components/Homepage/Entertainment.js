@@ -14,11 +14,11 @@ import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Message from "../Message";
 import Loader from "../Loader";
 
-export default function Business() {
+export default function Entertainment() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
 
   const businessItems = postItems?.filter((item) => {
-    return item.category === "Business";
+    return item.category === "Entertainment";
   });
 
   return (
@@ -30,7 +30,7 @@ export default function Business() {
       ) : (
         <>
           <div class="bg-light py-2 px-4 mb-3 business-arrows">
-            <h3 class="m-0">Business</h3>
+            <h3 class="m-0">Entertainment</h3>
             <div class="swiper-buttons">
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
