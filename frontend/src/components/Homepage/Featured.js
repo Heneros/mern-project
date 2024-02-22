@@ -54,8 +54,7 @@ export default function Featured() {
             delay: 3332500,
             disableOnInteraction: false,
           }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+
         >
           {postItems.map((item, index) => (
             <SwiperSlide>

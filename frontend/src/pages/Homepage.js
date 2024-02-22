@@ -10,6 +10,7 @@ import Business from "../components/Homepage/Business";
 import Entertainment from "../components/Homepage/Entertainment";
 import Sports from "../components/Homepage/Sports";
 import Popular from "../components/Homepage/Popular";
+import SidebarTags from "../components/Homepage/SidebarTags";
 
 export default function Homepage() {
   return (
@@ -46,7 +47,9 @@ export default function Homepage() {
         <Col lg="8">
           <Popular />
         </Col>
-        <Col lg="4">5555</Col>
+        <Col lg="4">
+          <SidebarTags />
+        </Col>
       </Row>
     </Container>
   );
