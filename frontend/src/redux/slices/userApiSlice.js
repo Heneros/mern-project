@@ -70,8 +70,6 @@ export const userApiSlice = apiSlice.injectEndpoints({
       query: () => ({
         url: `${USERS_URL}/allusers`,
       }),
-      providesTags: ["User"],
-      keepUnusedDataFor: 5,
     }),
     authGoogle: builder.mutation({
       query: () => ({
@@ -92,6 +90,7 @@ export const {
   useLogoutMutation,
   useGetUserDetailsQuery,
   useGetUsersQuery,
+  useGetUsersPublicQuery,
   useUpdateUserQuery,
   useAuthGoogleMutation,
 } = userApiSlice;

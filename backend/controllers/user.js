@@ -3,7 +3,7 @@ const asyncHandler = require("../middleware/asyncHandler");
 const generateToken = require("../utils/generateToken");
 
 const getAllPublicUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({}).select("-password -email -isAdmin");
+  const users = await User.find({}).select("-password -email -isAdmin -userId");
   res.status(200).json(users);
 });
 
@@ -121,22 +121,29 @@ const authUser = asyncHandler(async (req, res) => {
   const user = await User.findOne({ email });
   if (user && (await user.matchPassword(password))) {
     generateToken(res, user._id);
+    user.isLoggedIn = true;
+    await user.save();
     res.json({
       _id: user._id,
       name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
       isEditor: user.isEditor,
+      isLoggedIn: true,
     });
   } else {
     res.status(401).json({ message: `Invalid data` });
   }
 });
+
+
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie("blog_info", "", {
     httpOnly: true,
     expires: new Date(0),
   });
+  // user.isLoggedIn = false;
+  await user.save();
   res.status(200).json({ message: "Logged out successfully" });
 });
 

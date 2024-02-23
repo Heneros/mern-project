@@ -25,6 +25,6 @@ router
   .delete(deleteUser)
   .put(updateUserProfile);
 router.route("/logout").post(logoutUser);
-router.route("/profile").get(protect, getUserProfile).put(updateUser);
+router.route("/profile").get(protect, getUserProfile).put(protect, updateUser);
 
 module.exports = router;
