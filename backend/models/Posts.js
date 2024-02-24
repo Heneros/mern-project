@@ -25,6 +25,12 @@ const postSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "must provide category"],
+      validate: {
+        validator: function (value) {
+          return value.split(",").length === 1;
+        },
+        message: "Category must contain only one value",
+      },
     },
     views: {
       type: Number,

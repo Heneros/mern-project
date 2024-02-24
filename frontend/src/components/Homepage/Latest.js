@@ -6,11 +6,14 @@ import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Message from "../Message";
 import Loader from "../Loader";
 
-export default function Popular() {
+export default function Latest() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
 
-  //From most popular to less post
-  const sortedPosts = postItems?.slice().sort((a, b) => b.views - a.views);
+  const sortedPosts = postItems?.toSorted(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+
+  ///createdAt: "2024-02-15T13:55:15.836Z"
   return (
     <>
       {isLoading ? (
@@ -22,7 +25,7 @@ export default function Popular() {
           <Row className="mb-3">
             <Col className="col-12">
               <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Popular</h3>
+                <h3 class="m-0">Recent</h3>
                 <Link
                   class="text-secondary font-weight-medium text-decoration-none"
                   to={"/blog"}

@@ -13,7 +13,7 @@ export default function SidebarSocial() {
   return (
     <div class="pb-3">
       <div class="bg-light py-2 px-4 mb-3">
-        <h3 class="m-0">Statics</h3>
+        <h3 class="m-0">Statistics</h3>
       </div>
       <div class="d-flex mb-3">
         <span

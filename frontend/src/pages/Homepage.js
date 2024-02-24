@@ -1,8 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-
-
 import MainNewsSlider from "../components/Homepage/MainNewsSlider";
 import CategoriesSideBlock from "../components/Homepage/CategoriesSideBlock";
 import TopNewsCarousel from "../components/Homepage/TopNewsCarousel";
@@ -13,6 +11,8 @@ import Entertainment from "../components/Homepage/Entertainment";
 import Sports from "../components/Homepage/Sports";
 import Popular from "../components/Homepage/Popular";
 import SidebarSocial from "../components/Homepage/SidebarSocial";
+import Newsletter from "../components/Homepage/Newsletter";
+import Latest from "../components/Homepage/Latest";
 
 export default function Homepage() {
   return (
@@ -51,6 +51,12 @@ export default function Homepage() {
         </Col>
         <Col lg="4">
           <SidebarSocial />
+          <Newsletter />
+        </Col>
+      </Row>
+      <Row>
+        <Col lg="8">
+          <Latest />
         </Col>
       </Row>
     </Container>
