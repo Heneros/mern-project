@@ -74,7 +74,7 @@ export default function Latest() {
                             </div>
                             <Link
                               class={index >= 2 ? "h6 m-0" : "h4"}
-                              to={`/blog/${item._id}`}
+                              to={`/news/${item._id}`}
                             >
                               {item.title}
                             </Link>

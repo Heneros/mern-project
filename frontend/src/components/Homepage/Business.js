@@ -70,7 +70,7 @@ export default function Business() {
                   />
                   <div class="overlay position-relative bg-light">
                     <div class="mb-2" style={{ fontSize: "13px" }}>
-                      <Link to={`/blog/${item._id}`}>{item.category}</Link>
+                      <Link to={`/news/${item._id}`}>{item.category}</Link>
                       <span class="px-1">/</span>
 
                       <span>
@@ -78,7 +78,7 @@ export default function Business() {
                         {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                       </span>
                     </div>
-                    <Link to={`/blog/${item._id}`} class="h4 m-0">
+                    <Link to={`/news/${item._id}`} class="h4 m-0">
                       {item.title}
                     </Link>
                   </div>

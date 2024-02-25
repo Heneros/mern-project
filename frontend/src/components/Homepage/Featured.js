@@ -54,7 +54,6 @@ export default function Featured() {
             delay: 3332500,
             disableOnInteraction: false,
           }}
-
         >
           {postItems.map((item, index) => (
             <SwiperSlide>
@@ -70,15 +69,15 @@ export default function Featured() {
                 />
                 <div class="overlay">
                   <div class="mb-1" style={{ fontSize: "13px" }}>
-                    <Link class="text-white" to={`/blog/${item._id}`}>
+                    <Link class="text-white" to={`/news/${item._id}`}>
                       {item.category}
                     </Link>
                     <span class="px-1 text-white">/</span>
-                    <Link class="text-white" to={`/blog/${item._id}`}>
+                    <Link class="text-white" to={`/news/${item._id}`}>
                       {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                     </Link>
                   </div>
-                  <Link class="text-white" to={`/blog/${item._id}`}>
+                  <Link class="text-white" to={`/news/${item._id}`}>
                     {item.title}
                   </Link>
                 </div>

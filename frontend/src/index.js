@@ -17,6 +17,8 @@ import Registration from "./pages/Registration";
 
 import store from "./redux/store";
 import Login from "./pages/Login";
+import News from "./pages/News";
+import SinglePost from "./pages/SinglePost";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "news/:id",
+        element: <SinglePost />,
       },
     ],
   },

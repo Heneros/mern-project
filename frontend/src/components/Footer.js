@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import FooterSocial from "./Footer/FooterSocial";
 import FooterCategories from "./Footer/FooterCategories";
+import FooterTags from "./Footer/FooterTags";
+import FooterLinksPages from "./Footer/FooterLinksPages";
 
 export default function Footer() {
   return (
@@ -24,27 +26,17 @@ export default function Footer() {
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-bold mb-4">Categories</h4>
-         
-              <FooterCategories />
-   
+            <FooterCategories />
           </div>
-
           <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-bold mb-4">Tags</h4>
-            <div class="d-flex flex-wrap m-n1">
-              {/* Map iteration tags*/}
-              <Link to="" class="btn btn-sm btn-outline-secondary m-1">
-                Politics
-              </Link>
-            </div>
+            <FooterTags />
           </div>
           <div class="col-lg-3 col-md-6 mb-5">
             <h4 class="font-weight-bold mb-4">Quick Links</h4>
             <div class="d-flex flex-column justify-content-start">
               {/* Pages all */}
-              <Link class="text-secondary mb-2" to={"/"}>
-                <i class="fa fa-angle-right text-dark mr-2"></i>About
-              </Link>
+              <FooterLinksPages />
             </div>
           </div>
         </div>

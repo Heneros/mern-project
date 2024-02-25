@@ -36,7 +36,7 @@ export default function SearchBar() {
       >
         {filteredPosts ? (
           filteredPosts?.map((post) => (
-            <Dropdown.Item href={`/blog/${post._id}`}>
+            <Dropdown.Item href={`/news/${post._id}`}>
               {post.title}
             </Dropdown.Item>
           ))
