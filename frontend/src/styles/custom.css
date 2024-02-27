@@ -56,8 +56,9 @@
   }
 
   .tranding-carousel  .swiper-button-prev::after, 
-     .tranding-carousel .swiper-button-next::after{
+  .tranding-carousel .swiper-button-next::after{
     font-size: 16px;
+    color: #000;
   }
 
 
@@ -109,10 +110,10 @@
 
 
 
-  .business-arrows{
+  .slider-arrows{
     position: relative;
   }
-  .business-arrows .swiper-buttons{
+  .slider-arrows .swiper-buttons{
     top: 0;
     right: 0;
     left: auto;
@@ -121,8 +122,8 @@
     max-width: 30%;
     height: 20px;
   }
-  .business-arrows .swiper-button-next, 
-  .business-arrows .swiper-button-prev{
+  .slider-arrows .swiper-button-next, 
+  .slider-arrows .swiper-button-prev{
     width: 30px;
   height: 30px;
   margin: 0 30px;
@@ -134,12 +135,13 @@
   border: 1px solid #dee2e6;
   transition: .3s;
   }
-  .business-arrows .swiper-button-prev::after,   
-  .business-arrows  .swiper-button-next::after{
+  .slider-arrows .swiper-button-prev::after,   
+  .slider-arrows  .swiper-button-next::after{
     font-size: 12px;
+    color: #000;
   }
-  .business-arrows  .swiper-button-prev:hover,  
-  .business-arrows  .swiper-button-next:hover {
+  .slider-arrows  .swiper-button-prev:hover,  
+  .slider-arrows  .swiper-button-next:hover {
     color: #ffffff;
     background: #ED1C24;
     border-color: #ED1C24;
@@ -147,12 +149,12 @@
 
 
   @media(max-width: 1200px){
-    .business-arrows .swiper-buttons{
+    .slider-arrows .swiper-buttons{
       max-width: 45%;
     }
   }
   @media(max-width: 430px){
-    .business-arrows .swiper-buttons{
+    .slider-arrows .swiper-buttons{
       max-width: 50%;
     }
   }
@@ -172,6 +174,17 @@
   }
 }
 
-/* Custom popular post */
-
-
+@media(min-width: 991px){
+  .item-trending img{
+  width: 100%;
+  max-width: 100px;
+  }
+  
+}
+@media(max-width: 991px){
+  .item-trending img{
+  width: 100%;
+  max-width: 250px;
+  }
+  
+}

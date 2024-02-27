@@ -29,7 +29,7 @@ export default function Technology() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="bg-light py-2 px-4 mb-3 business-arrows">
+          <div class="bg-light py-2 px-4 mb-3 tech-arrows slider-arrows">
             <h3 class="m-0">Technology</h3>
             <div class="swiper-buttons">
               <div class="swiper-button-next"></div>
@@ -51,8 +51,8 @@ export default function Technology() {
               },
             }}
             navigation={{
-              nextEl: ".business-arrows .swiper-button-next",
-              prevEl: ".business-arrows .swiper-button-prev",
+              nextEl: ".tech-arrows  .swiper-button-next",
+              prevEl: ".tech-arrows  .swiper-button-prev",
             }}
             autoplay={{
               delay: 3332500,

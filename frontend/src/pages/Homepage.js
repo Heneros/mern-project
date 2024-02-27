@@ -13,6 +13,7 @@ import Popular from "../components/Homepage/Popular";
 import SidebarSocial from "../components/Homepage/SidebarSocial";
 import Newsletter from "../components/Homepage/Newsletter";
 import Latest from "../components/Homepage/Latest";
+import Trending from "../components/Homepage/Trending";
 
 export default function Homepage() {
   return (
@@ -57,6 +58,9 @@ export default function Homepage() {
       <Row>
         <Col lg="8">
           <Latest />
+        </Col>
+        <Col lg="4">
+          <Trending />
         </Col>
       </Row>
     </Container>

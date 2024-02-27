@@ -45,11 +45,19 @@ export default function Footer() {
         <p class="m-0 text-center">
           &copy;{" "}
           <Link class="font-weight-bold" to="#">
-            Your Site Name
+            News site
           </Link>
           . All Rights Reserved. Designed by{" "}
           <Link class="font-weight-bold" to="https://htmlcodex.com">
             HTML Codex
+          </Link>{" "}
+          Code:
+          <Link
+            class="font-weight-bold"
+            target="_blank"
+            to="https://github.com/heneros"
+          >
+            Heneros
           </Link>
         </p>
       </div>

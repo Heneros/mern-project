@@ -29,7 +29,7 @@ export default function Business() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="bg-light py-2 px-4 mb-3 business-arrows">
+          <div class="bg-light py-2 px-4 mb-3  slider-arrows business-arrows">
             <h3 class="m-0">Business</h3>
             <div class="swiper-buttons">
               <div class="swiper-button-next"></div>

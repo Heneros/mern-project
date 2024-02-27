@@ -29,7 +29,7 @@ export default function Entertainment() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="bg-light py-2 px-4 mb-3 business-arrows">
+          <div class="bg-light py-2 px-4 mb-3 slider-arrows entertainment-arrows">
             <h3 class="m-0">Entertainment</h3>
             <div class="swiper-buttons">
               <div class="swiper-button-next"></div>
@@ -51,8 +51,8 @@ export default function Entertainment() {
               },
             }}
             navigation={{
-              nextEl: ".business-arrows .swiper-button-next",
-              prevEl: ".business-arrows .swiper-button-prev",
+              nextEl: ".entertainment-arrows .swiper-button-next",
+              prevEl: ".entertainment-arrows .swiper-button-prev",
             }}
             autoplay={{
               delay: 3332500,
