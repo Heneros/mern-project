@@ -16,10 +16,10 @@ export default function FooterTags() {
 
   console.log(uniqueTagsArray);
   return (
-    <div class="d-flex flex-wrap m-n1">
+    <div className="d-flex flex-wrap m-n1">
       {uniqueTagsArray.map((item) => (
         <>
-          <Link to="" class="btn btn-sm btn-outline-secondary m-1">
+          <Link to="" className="btn btn-sm btn-outline-secondary m-1">
             {item}
           </Link>
         </>

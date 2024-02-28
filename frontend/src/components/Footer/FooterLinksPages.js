@@ -10,15 +10,15 @@ export default function FooterLinksPages() {
 
   return (
     <>
-      <Link class="text-secondary mb-2" to={"/"}>
+      <Link className="text-secondary mb-2" to={"/"}>
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         Homepage
       </Link>
-      <Link class="text-secondary mb-2" to={"/"}>
+      <Link className="text-secondary mb-2" to={"/"}>
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         About
       </Link>
-      <Link class="text-secondary mb-2" to={"/"}>
+      <Link className="text-secondary mb-2" to={"/"}>
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         Blog
       </Link>

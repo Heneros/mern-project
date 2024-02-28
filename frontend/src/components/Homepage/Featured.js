@@ -19,10 +19,10 @@ export default function Featured() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
   return (
     <>
-      <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-        <h3 class="m-0">Featured</h3>
+      <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+        <h3 className="m-0">Featured</h3>
         <Link
-          class="text-secondary font-weight-medium text-decoration-none"
+          className="text-secondary font-weight-medium text-decoration-none"
           to={`/`}
         >
           View All
@@ -58,26 +58,26 @@ export default function Featured() {
           {postItems.map((item, index) => (
             <SwiperSlide>
               <div
-                class="position-relative overflow-hidden"
+                className="position-relative overflow-hidden"
                 style={{ height: "300px" }}
               >
                 <img
-                  class="img-fluid w-100 h-100"
+                  className="img-fluid w-100 h-100"
                   src={item.imageUrl}
                   alt="Imge slider"
                   style={{ objectFit: "cover" }}
                 />
-                <div class="overlay">
-                  <div class="mb-1" style={{ fontSize: "13px" }}>
-                    <Link class="text-white" to={`/news/${item._id}`}>
+                <div className="overlay">
+                  <div className="mb-1" style={{ fontSize: "13px" }}>
+                    <Link className="text-white" to={`/news/${item._id}`}>
                       {item.category}
                     </Link>
-                    <span class="px-1 text-white">/</span>
-                    <Link class="text-white" to={`/news/${item._id}`}>
+                    <span className="px-1 text-white">/</span>
+                    <Link className="text-white" to={`/news/${item._id}`}>
                       {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                     </Link>
                   </div>
-                  <Link class="text-white" to={`/news/${item._id}`}>
+                  <Link className="text-white" to={`/news/${item._id}`}>
                     {item.title}
                   </Link>
                 </div>

@@ -34,11 +34,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
+    name: "blog_info",
     secret: process.env.PASSPORT_SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: false,
+    cookie: { secure: process.env.NODE_ENV !== "development" },
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -54,7 +57,7 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:7200/my-account", //change latter
+    successRedirect: "http://localhost:7200/profile", //change latter
     failureRedirect: "/auth/google/failure",
   })
 );

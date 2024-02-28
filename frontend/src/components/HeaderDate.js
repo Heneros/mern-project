@@ -22,7 +22,7 @@ export default function HeaderDate() {
   const hours = currentDate.getHours();
 
   return (
-    <div class="col-md-4 text-right d-none d-md-block">
+    <div className="col-md-4 text-right d-none d-md-block">
       {hours}:{minutes}:{seconds} {day}, {monthDate}, {year}
     </div>
   );

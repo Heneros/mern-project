@@ -24,12 +24,12 @@ export default function FooterCategories() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="d-flex flex-wrap m-n1">
+          <div className="d-flex flex-wrap m-n1">
             {uniquePostItems.map((item) => (
               <>
-                <a href="" class="btn btn-sm btn-outline-secondary m-1">
+                <span className="btn btn-sm btn-outline-secondary m-1">
                   {item.category}
-                </a>
+                </span>
               </>
             ))}
           </div>

@@ -19,6 +19,7 @@ import store from "./redux/store";
 import Login from "./pages/Login";
 import News from "./pages/News";
 import SinglePost from "./pages/SinglePost";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
       {
         path: "/news",

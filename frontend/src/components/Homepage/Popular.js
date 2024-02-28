@@ -21,10 +21,10 @@ export default function Popular() {
         <>
           <Row className="mb-3">
             <Col className="col-12">
-              <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 class="m-0">Popular</h3>
+              <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+                <h3 className="m-0">Popular</h3>
                 <Link
-                  class="text-secondary font-weight-medium text-decoration-none"
+                  className="text-secondary font-weight-medium text-decoration-none"
                   to={"/blog"}
                 >
                   View All
@@ -36,12 +36,12 @@ export default function Popular() {
                     <>
                       <div className="col-md-6">
                         <div
-                          class={
+                          className={
                             index < 2 ? "position-relative mb-3" : "d-flex mb-3"
                           }
                         >
                           <img
-                            class={index < 2 ? "img-fluid w-100" : ""}
+                            className={index < 2 ? "img-fluid w-100" : ""}
                             alt="preview post "
                             src={item.imageUrl}
                             style={
@@ -57,11 +57,11 @@ export default function Popular() {
                                   }
                             }
                           />
-                          <div class="overlay position-relative bg-light">
-                            <div class="mb-2" style={{ fontSize: "14px" }}>
+                          <div className="overlay position-relative bg-light">
+                            <div className="mb-2" style={{ fontSize: "14px" }}>
                               <Link to={"/"}>{item.category}</Link>
 
-                              <span class="px-1">/</span>
+                              <span className="px-1">/</span>
                               <span>
                                 {format(
                                   new Date(item.createdAt),
@@ -70,7 +70,7 @@ export default function Popular() {
                               </span>
                             </div>
                             <Link
-                              class={index >= 2 ? "h6 m-0" : "h4"}
+                              className={index >= 2 ? "h6 m-0" : "h4"}
                               to={`/news/${item._id}`}
                             >
                               {item.title}
@@ -78,7 +78,7 @@ export default function Popular() {
                             {index >= 2 ? (
                               <></>
                             ) : (
-                              <p class="m-0">
+                              <p className="m-0">
                                 {item.content
                                   ? item.content.substring(0, 15)
                                   : ""}

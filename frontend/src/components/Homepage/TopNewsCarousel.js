@@ -53,7 +53,7 @@ export default function TopNewsCarousel() {
           {postItems.slice(0, 5).map((post, index) => {
             const slideIndex = Math.floor(index / slidesPerView);
             return (
-              <Carousel.Item className="full-width-slide">
+              <Carousel.Item className="full-width-slide" key={index}>
                 <Row
                   className="d-flex align-items-center "
                   style={{ height: "250px" }}
@@ -61,8 +61,8 @@ export default function TopNewsCarousel() {
                   {postItems
                     .slice(index, index + slidesPerView)
                     .map((subPost, subIndex) => (
-                      <Col md="4" sm="12">
-                        <div className="d-flex" key={subIndex + 2}>
+                      <Col md="4" sm="12" key={subIndex}>
+                        <div className="d-flex">
                           <Image
                             src={subPost.imageUrl}
                             style={{

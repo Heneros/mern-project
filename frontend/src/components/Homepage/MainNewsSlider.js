@@ -15,7 +15,6 @@ export default function MainNewsSlider() {
     setPosts(data);
   }, []);
 
-
   return (
     <>
       <Carousel
@@ -35,17 +34,17 @@ export default function MainNewsSlider() {
                   className="d-block w-100 h-100"
                   style={{ objectFit: "cover" }}
                 />
-                <div class="overlay">
-                  <div class="mb-1">
-                    <a class="text-white" href="#!">
+                <div className="overlay">
+                  <div className="mb-1">
+                    <a className="text-white" href="#!">
                       {post.title}
                     </a>
-                    <span class="px-2 text-white">/</span>
-                    <a class="text-white" href="#!">
+                    <span className="px-2 text-white">/</span>
+                    <a className="text-white" href="#!">
                       Exist
                     </a>
                   </div>
-                  <a class="h2 m-0 text-white font-weight-bold" href="#!">
+                  <a className="h2 m-0 text-white font-weight-bold" href="#!">
                     {post.content}
                   </a>
                 </div>
@@ -54,17 +53,17 @@ export default function MainNewsSlider() {
           : posts.map((post, index) => (
               <Carousel.Item key={index} style={{ height: "400px" }}>
                 <Image src={post.imageUrl} style={{ objectFit: "contain" }} />
-                <div class="overlay">
-                  <div class="mb-1">
-                    <a class="text-white" href="#!">
+                <div className="overlay">
+                  <div className="mb-1">
+                    <a className="text-white" href="#!">
                       {post.title}
                     </a>
-                    <span class="px-2 text-white">/</span>
-                    <a class="text-white" href="#!">
+                    <span className="px-2 text-white">/</span>
+                    <a className="text-white" href="#!">
                       January 01, 2045
                     </a>
                   </div>
-                  <a class="h2 m-0 text-white font-weight-bold" href="#!">
+                  <a className="h2 m-0 text-white font-weight-bold" href="#!">
                     {post.content}
                   </a>
                 </div>

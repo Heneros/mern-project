@@ -50,10 +50,13 @@ passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(async function (id, done) {
+passport.deserializeUser(async function (request, id, done) {
   try {
     const user = await User.findById(id);
+    // generateToken(request.res, newUser._id);
     done(null, user);
+    // console.log("done", user);
+    // console.log(done)
   } catch (error) {
     done(error, null);
   }

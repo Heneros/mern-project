@@ -23,7 +23,6 @@ import Loader from "./Loader";
 
 export default function TrendingCarousel() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
-
   return (
     <>
       {isLoading ? (
@@ -44,9 +43,9 @@ export default function TrendingCarousel() {
           }}
         >
           {postItems.map((item, index) => (
-            <SwiperSlide>
-              <div class="text-truncate" key={index}>
-                <Link class="text-secondary" to={`/news/${item._id}`}>
+            <SwiperSlide key={index + item._id}>
+              <div className="text-truncate">
+                <Link className="text-secondary" to={`/news/${item._id}`}>
                   {item.title}
                 </Link>
               </div>

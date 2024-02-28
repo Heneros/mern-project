@@ -30,10 +30,10 @@ export default function CategoriesSideBlock() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-            <h3 class="m-0">All Categories </h3>
+          <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+            <h3 className="m-0">All Categories </h3>
             <Link
-              class="text-secondary font-weight-medium text-decoration-none"
+              className="text-secondary font-weight-medium text-decoration-none"
               to={"/blog"}
             >
               View All

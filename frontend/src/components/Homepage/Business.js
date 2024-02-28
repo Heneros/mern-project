@@ -29,11 +29,11 @@ export default function Business() {
         <Message>{error?.data?.message || error.error}</Message>
       ) : (
         <>
-          <div class="bg-light py-2 px-4 mb-3  slider-arrows business-arrows">
-            <h3 class="m-0">Business</h3>
-            <div class="swiper-buttons">
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
+          <div className="bg-light py-2 px-4 mb-3  slider-arrows business-arrows">
+            <h3 className="m-0">Business</h3>
+            <div className="swiper-buttons">
+              <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev"></div>
             </div>
           </div>
           <Swiper
@@ -61,24 +61,24 @@ export default function Business() {
           >
             {businessItems.map((item, index) => (
               <SwiperSlide>
-                <div class="position-relative">
+                <div className="position-relative">
                   <img
-                    class="img-fluid w-100"
+                    className="img-fluid w-100"
                     src={item.imageUrl}
                     alt="Imge slider"
                     style={{ objectFit: "cover" }}
                   />
-                  <div class="overlay position-relative bg-light">
-                    <div class="mb-2" style={{ fontSize: "13px" }}>
+                  <div className="overlay position-relative bg-light">
+                    <div className="mb-2" style={{ fontSize: "13px" }}>
                       <Link to={`/news/${item._id}`}>{item.category}</Link>
-                      <span class="px-1">/</span>
+                      <span className="px-1">/</span>
 
                       <span>
                         {" "}
                         {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                       </span>
                     </div>
-                    <Link to={`/news/${item._id}`} class="h4 m-0">
+                    <Link to={`/news/${item._id}`} className="h4 m-0">
                       {item.title}
                     </Link>
                   </div>

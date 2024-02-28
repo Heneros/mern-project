@@ -17,20 +17,20 @@ export default function Trending() {
 
   return (
     <>
-      <div class="pb-3">
-        <div class="bg-light py-2 px-4 mb-3">
-          <h3 class="m-0">Trending</h3>
+      <div className="pb-3">
+        <div className="bg-light py-2 px-4 mb-3">
+          <h3 className="m-0">Trending</h3>
         </div>
 
         {isLoading && <p>Loading posts...</p>}
         {error && <p>Error fetching posts: {error.message}</p>}
         {randomPosts.length > 0 && (
           <div className="row">
-            {randomPosts.map((post) => (
+            {randomPosts.map((post, index) => (
               <div
                 className=" d-flex mb-3 item-trending"
                 style={{ width: "100%" }}
-                key={post.id}
+                key={index}
               >
                 <img
                   src={post.imageUrl}
@@ -41,7 +41,7 @@ export default function Trending() {
                   }}
                 />
                 <div
-                  className="w-100  d-flex flex-column justify-content-center bg-light px-3"
+                  className="w-100 d-flex flex-column justify-content-center bg-light px-3"
                   style={{ height: "100px" }}
                 >
                   <div className="mb-1" style={{ fontSize: "13px" }}>
@@ -60,12 +60,12 @@ export default function Trending() {
           </div>
         )}
       </div>
-      <div class="pb-3">
-        <div class="bg-light py-2 px-4 mb-3">
-          <h3 class="m-0">Tags</h3>
+      <div className="pb-3">
+        <div className="bg-light py-2 px-4 mb-3">
+          <h3 className="m-0">Tags</h3>
         </div>
-        <div class="d-flex flex-wrap m-n1">
-          <Link to="" class="btn btn-sm btn-outline-secondary m-1">
+        <div className="d-flex flex-wrap m-n1">
+          <Link to="" className="btn btn-sm btn-outline-secondary m-1">
             Politics
           </Link>
         </div>

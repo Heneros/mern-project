@@ -23,8 +23,8 @@ export default function SearchBar() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <div class="input-group-append">
-            <button class="input-group-text text-secondary">
+          <div className="input-group-append">
+            <button className="input-group-text text-secondary">
               <FontAwesomeIcon icon={faSearch} />
             </button>
           </div>
@@ -35,8 +35,8 @@ export default function SearchBar() {
         show={searchQuery.length > 0 && filteredPosts.length > 0}
       >
         {filteredPosts ? (
-          filteredPosts?.map((post) => (
-            <Dropdown.Item href={`/news/${post._id}`}>
+          filteredPosts?.map((post, index) => (
+            <Dropdown.Item href={`/news/${post._id}`} key={index}>
               {post.title}
             </Dropdown.Item>
           ))

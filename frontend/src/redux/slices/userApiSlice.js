@@ -43,9 +43,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getUserDetails: builder.query({
-      query: (id) => ({
-        url: `${USERS_URL}/${id}`,
-        credentials: "include",
+      query: (userId) => ({
+        url: `${USERS_URL}/${userId}`,
       }),
       keepUnusedDataFor: 5,
     }),
@@ -71,14 +70,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/allusers`,
       }),
     }),
-    authGoogle: builder.mutation({
-      query: () => ({
-        url: `/auth/google`,
-        method: "GET",
-      }),
-      providesTags: ["User"],
-      keepUnusedDataFor: 5,
-    }),
+    // authGoogle: builder.mutation({
+    //   query: () => ({
+    //     url: `/auth/google`,
+    //     method: "GET",
+    //   }),
+    //   providesTags: ["User"],
+    //   keepUnusedDataFor: 5,
+    // }),
   }),
 });
 
@@ -92,5 +91,5 @@ export const {
   useGetUsersQuery,
   useGetUsersPublicQuery,
   useUpdateUserQuery,
-  useAuthGoogleMutation,
+  // useAuthGoogleMutation,
 } = userApiSlice;

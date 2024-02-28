@@ -22,11 +22,11 @@ const getUser = asyncHandler(async (req, res) => {
 });
 
 const getUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id).select("-password");
+  const user = await User.findById(req.user._id).select("-password");
   if (user) {
     res.json(user);
   } else {
-    res.status(404).json({ message: "No user been found" });
+    res.status(404).json({ message: "No user been found 123" });
   }
 });
 
@@ -136,14 +136,13 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie("blog_info", "", {
     httpOnly: true,
     expires: new Date(0),
   });
   // user.isLoggedIn = false;
-  await user.save();
+  // await user.save();
   res.status(200).json({ message: "Logged out successfully" });
 });
 
