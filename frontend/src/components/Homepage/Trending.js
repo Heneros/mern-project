@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
+import Message from "../Message";
+import Loader from "../Loader";
 
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
@@ -15,13 +17,22 @@ export default function Trending() {
     }
   }, [postItems]);
 
+  const uniqueTags = new Set();
+
+  postItems?.forEach((item) => {
+    item.tag.forEach((tag) => {
+      uniqueTags.add(tag);
+    });
+  });
+  const uniqueTagsArray = Array.from(uniqueTags);
+  // console.log(postItems);
+  // console.log(uniquePostItems);
   return (
     <>
       <div className="pb-3">
         <div className="bg-light py-2 px-4 mb-3">
           <h3 className="m-0">Trending</h3>
         </div>
-
         {isLoading && <p>Loading posts...</p>}
         {error && <p>Error fetching posts: {error.message}</p>}
         {randomPosts.length > 0 && (
@@ -45,13 +56,15 @@ export default function Trending() {
                   style={{ height: "100px" }}
                 >
                   <div className="mb-1" style={{ fontSize: "13px" }}>
-                    <Link to={`/blog/${post._id}`}>{post.category}</Link>
+                    <Link to={`/category/${post.category.toLowerCase()}`}>
+                      {post.category}
+                    </Link>
                     <span className="px-1">/</span>
                     <span>
                       {format(new Date(post.createdAt), "MMMM dd, yyyy")}
                     </span>
                   </div>
-                  <Link className="h6 m-0" to={`/blog/${post._id}`}>
+                  <Link className="h6 m-0" to={`/news/${post._id}`}>
                     {post.title}
                   </Link>
                 </div>
@@ -65,9 +78,15 @@ export default function Trending() {
           <h3 className="m-0">Tags</h3>
         </div>
         <div className="d-flex flex-wrap m-n1">
-          <Link to="" className="btn btn-sm btn-outline-secondary m-1">
-            Politics
-          </Link>
+          {uniqueTagsArray?.map((item, index) => (
+            <Link
+              to={`/tag/${item.toLowerCase()}`}
+              className="btn btn-sm btn-outline-secondary m-1"
+              key={index}
+            >
+              {item}
+            </Link>
+          ))}
         </div>
       </div>
     </>

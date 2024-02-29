@@ -1,9 +1,20 @@
-import React from "react";
-import { useGetUserDetailsQuery } from "../redux/slices/userApiSlice";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  useGetProfileQuery,
+  useGetUserDetailsQuery,
+} from "../redux/slices/userApiSlice";
 
 export default function Profile() {
-  const { data, isLoading, error } = useGetUserDetailsQuery();
+  const { data: dataProfile, error, isLoading } = useGetProfileQuery();
+  console.log(dataProfile);
   console.log(error);
-  console.log(data);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!dataProfile && !isLoading) {
+      navigate("/login");
+    }
+  });
   return <div>Profile</div>;
 }

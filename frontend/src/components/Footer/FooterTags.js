@@ -14,15 +14,17 @@ export default function FooterTags() {
   });
   const uniqueTagsArray = Array.from(uniqueTags);
 
-  console.log(uniqueTagsArray);
+  // console.log(uniqueTagsArray);
   return (
     <div className="d-flex flex-wrap m-n1">
-      {uniqueTagsArray.map((item) => (
-        <>
-          <Link to="" className="btn btn-sm btn-outline-secondary m-1">
-            {item}
-          </Link>
-        </>
+      {uniqueTagsArray.map((item, index) => (
+        <Link
+          to={`/tag/${item.toLowerCase()}`}
+          className="btn btn-sm btn-outline-secondary m-1"
+          key={index}
+        >
+          {item}
+        </Link>
       ))}
     </div>
   );

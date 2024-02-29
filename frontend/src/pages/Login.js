@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import Google from "../styles/img/google.png";
 import FormContainer from "../components/FormContainer";
 import {
+  useGetProfileQuery,
   // useAuthGoogleMutation,
   // useAuthGoogleQuery,
   useLoginMutation,
@@ -16,8 +17,10 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const { data: dataProfile, errorProfile, isLoading } = useGetProfileQuery();
 
   // const [authGoogle] = useAuthGoogleMutation();
 
@@ -34,6 +37,12 @@ export default function Login() {
   const google = () => {
     window.location.href = "http://localhost:3000/auth/google";
   };
+
+  useEffect(() => {
+    if (dataProfile) {
+      navigate("/");
+    }
+  });
 
   const [login] = useLoginMutation();
 

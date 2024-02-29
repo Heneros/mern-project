@@ -25,12 +25,14 @@ export default function FooterCategories() {
       ) : (
         <>
           <div className="d-flex flex-wrap m-n1">
-            {uniquePostItems.map((item) => (
-              <>
-                <span className="btn btn-sm btn-outline-secondary m-1">
-                  {item.category}
-                </span>
-              </>
+            {uniquePostItems.map((item, index) => (
+              <Link
+                to={`/category/${item.category.toLowerCase()}`}
+                className="btn btn-sm btn-outline-secondary m-1"
+                key={index}
+              >
+                {item.category}
+              </Link>
             ))}
           </div>
         </>

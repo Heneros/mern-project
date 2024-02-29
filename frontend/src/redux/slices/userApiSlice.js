@@ -27,6 +27,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+    getProfile: builder.query({
+      query: () => ({
+        url: `${USERS_URL}/profile`,
+        providesTags: ["User"],
+        credentials: "include",
+        keepUnusedDataFor: 5,
+      }),
+    }),
     profile: builder.mutation({
       query: (data) => ({
         url: `${USERS_URL}/profile`,
@@ -35,6 +43,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+
     deleteUser: builder.mutation({
       query: (userId) => ({
         url: `${USERS_URL}/${userId}`,
@@ -45,6 +54,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
     getUserDetails: builder.query({
       query: (userId) => ({
         url: `${USERS_URL}/${userId}`,
+        credentials: "include",
       }),
       keepUnusedDataFor: 5,
     }),
@@ -91,5 +101,6 @@ export const {
   useGetUsersQuery,
   useGetUsersPublicQuery,
   useUpdateUserQuery,
+  useGetProfileQuery,
   // useAuthGoogleMutation,
 } = userApiSlice;

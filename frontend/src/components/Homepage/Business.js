@@ -60,7 +60,7 @@ export default function Business() {
             }}
           >
             {businessItems.map((item, index) => (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <div className="position-relative">
                   <img
                     className="img-fluid w-100"
@@ -70,11 +70,11 @@ export default function Business() {
                   />
                   <div className="overlay position-relative bg-light">
                     <div className="mb-2" style={{ fontSize: "13px" }}>
-                      <Link to={`/news/${item._id}`}>{item.category}</Link>
+                      <Link to={`/category/${item.category.toLowerCase()}`}>
+                        {item.category}
+                      </Link>
                       <span className="px-1">/</span>
-
                       <span>
-                        {" "}
                         {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                       </span>
                     </div>

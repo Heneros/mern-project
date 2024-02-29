@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { Form, Button, Col, Row } from "react-bootstrap";
 
 import Google from "../styles/img/google.png";
 import FormContainer from "./../components/FormContainer";
-import { useRegisterMutation } from "../redux/slices/userApiSlice";
+import {
+  useGetProfileQuery,
+  useRegisterMutation,
+} from "../redux/slices/userApiSlice";
 
 export default function Registration() {
   const [username, setUsername] = useState("");
@@ -14,7 +17,15 @@ export default function Registration() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
+  const { data: dataProfile, errorProfile, isLoading } = useGetProfileQuery();
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (dataProfile) {
+      navigate("/");
+    }
+  }, []);
 
   const { search } = useLocation();
   const sp = new URLSearchParams(search);

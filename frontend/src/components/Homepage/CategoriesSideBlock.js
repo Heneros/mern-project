@@ -34,7 +34,7 @@ export default function CategoriesSideBlock() {
             <h3 className="m-0">All Categories </h3>
             <Link
               className="text-secondary font-weight-medium text-decoration-none"
-              to={"/blog"}
+              to={"/news"}
             >
               View All
             </Link>
@@ -50,9 +50,12 @@ export default function CategoriesSideBlock() {
                 fluid
                 style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
-              <span className="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none">
+              <Link
+                to={`/category/${post.category.toLowerCase()}`}
+                className="overlay align-items-center justify-content-center h4 m-0 text-white text-decoration-none"
+              >
                 {post.category}
-              </span>
+              </Link>
             </div>
           ))}
         </>

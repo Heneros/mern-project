@@ -56,7 +56,7 @@ export default function Featured() {
           }}
         >
           {postItems.map((item, index) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div
                 className="position-relative overflow-hidden"
                 style={{ height: "300px" }}
@@ -69,7 +69,7 @@ export default function Featured() {
                 />
                 <div className="overlay">
                   <div className="mb-1" style={{ fontSize: "13px" }}>
-                    <Link className="text-white" to={`/news/${item._id}`}>
+                    <Link className="text-white" to={`/category/${item._id}`}>
                       {item.category}
                     </Link>
                     <span className="px-1 text-white">/</span>

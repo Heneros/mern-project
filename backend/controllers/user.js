@@ -26,7 +26,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     res.json(user);
   } else {
-    res.status(404).json({ message: "No user been found 123" });
+    res.status(404).json({ message: "Profile not found" });
   }
 });
 

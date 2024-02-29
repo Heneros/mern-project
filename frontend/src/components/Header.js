@@ -14,8 +14,12 @@ import {
 } from "react-bootstrap";
 import HeaderDate from "./HeaderDate";
 import TrendingCarousel from "./TrendingCarousel";
+import { useGetProfileQuery } from "../redux/slices/userApiSlice";
 
 export default function Header() {
+  const { data: dataProfile, error } = useGetProfileQuery();
+
+  console.log(dataProfile);
   return (
     <>
       <div className="container-fluid">
@@ -63,8 +67,15 @@ export default function Header() {
               <Nav.Link href="#" className="active">
                 Home
               </Nav.Link>
-              <Nav.Link href="category.html">Categories</Nav.Link>
-              <Nav.Link href="single.html">Single News</Nav.Link>
+              <Nav.Link href="">News</Nav.Link>
+              {error ? (
+                <Nav.Link href={`/login`}>Login</Nav.Link>
+              ) : (
+                <>
+                  <Nav.Link href={`/profile`}>Profile</Nav.Link>
+                </>
+              )}
+
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#">Menu item 1</NavDropdown.Item>
                 <NavDropdown.Item href="#">Menu item 2</NavDropdown.Item>

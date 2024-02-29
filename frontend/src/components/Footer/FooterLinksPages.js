@@ -18,9 +18,13 @@ export default function FooterLinksPages() {
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         About
       </Link>
-      <Link className="text-secondary mb-2" to={"/"}>
+      <Link className="text-secondary mb-2" to={"/blog"}>
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         Blog
+      </Link>
+      <Link className="text-secondary mb-2" to={"/all-authors"}>
+        <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
+        All Authors
       </Link>
     </>
   );

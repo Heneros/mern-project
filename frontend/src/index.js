@@ -3,10 +3,10 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { fas } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
-// import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/style.css";
 import "./styles/custom.css";
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-// library.add(fas, fab);
+library.add(fas, fab);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
