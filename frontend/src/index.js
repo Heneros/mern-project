@@ -20,6 +20,8 @@ import Login from "./pages/Login";
 import News from "./pages/News";
 import SinglePost from "./pages/SinglePost";
 import Profile from "./pages/Profile";
+import Category from "./pages/Category";
+import Tag from "./pages/Tag";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ const router = createBrowserRouter([
       {
         path: "news/:id",
         element: <SinglePost />,
+      },
+      {
+        path: "category/:id",
+        element: <Category />,
+      },
+      {
+        path: "tag/:id",
+        element: <Tag />,
       },
     ],
   },

@@ -1,17 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Search from "./Homepage/Search";
-import {
-  Navbar,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-  Form,
-  FormControl,
-  Button,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import HeaderDate from "./HeaderDate";
 import TrendingCarousel from "./TrendingCarousel";
 import { useGetProfileQuery } from "../redux/slices/userApiSlice";
@@ -19,7 +9,6 @@ import { useGetProfileQuery } from "../redux/slices/userApiSlice";
 export default function Header() {
   const { data: dataProfile, error } = useGetProfileQuery();
 
-  console.log(dataProfile);
   return (
     <>
       <div className="container-fluid">
@@ -67,7 +56,7 @@ export default function Header() {
               <Nav.Link href="#" className="active">
                 Home
               </Nav.Link>
-              <Nav.Link href="">News</Nav.Link>
+              <Nav.Link href="/news">News</Nav.Link>
               {error ? (
                 <Nav.Link href={`/login`}>Login</Nav.Link>
               ) : (

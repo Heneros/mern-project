@@ -13,7 +13,7 @@ export default function Latest() {
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
 
-  ///createdAt: "2024-02-15T13:55:15.836Z"
+
   return (
     <>
       {isLoading ? (
@@ -61,7 +61,11 @@ export default function Latest() {
                         />
                         <div className="overlay position-relative bg-light">
                           <div className="mb-2" style={{ fontSize: "14px" }}>
-                            <Link to={"/category/"}>{item.category}</Link>
+                            <Link
+                              to={`/category/${item.category.toLowerCase()}`}
+                            >
+                              {item.category}
+                            </Link>
                             <span className="px-1">/</span>
                             <span>
                               {format(

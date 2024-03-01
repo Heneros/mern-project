@@ -179,7 +179,6 @@
   width: 100%;
   max-width: 100px
   }
-  
 }
 @media(max-width: 991px){
   .item-trending img{
@@ -187,4 +186,8 @@
   max-width: 250px;
   }
   
+}
+
+.breadcrumb-item.active{
+  text-transform: capitalize;
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Message from "../Message";
 import Loader from "../Loader";
+import Title from "../Title";
 
 export default function Popular() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
@@ -21,15 +22,7 @@ export default function Popular() {
         <>
           <Row className="mb-3">
             <Col className="col-12">
-              <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-                <h3 className="m-0">Popular</h3>
-                <Link
-                  className="text-secondary font-weight-medium text-decoration-none"
-                  to={"/news"}
-                >
-                  View All
-                </Link>
-              </div>
+              <Title name={"News"} />
               <div className="col-lg-12">
                 <div className="row">
                   {sortedPosts.map((item, index) => (

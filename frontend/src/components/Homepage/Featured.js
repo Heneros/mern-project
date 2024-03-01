@@ -14,20 +14,22 @@ import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Loader from "../Loader";
 import Message from "../Message";
 import { Link } from "react-router-dom";
+import Title from "../Title";
 
 export default function Featured() {
   const { data: postItems, isLoading, error } = useGetPostsQuery();
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
+      {/* <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
         <h3 className="m-0">Featured</h3>
         <Link
           className="text-secondary font-weight-medium text-decoration-none"
-          to={`/`}
+          to={`/news`}
         >
           View All
         </Link>
-      </div>
+      </div> */}
+      <Title name={"News"} />
       {isLoading ? (
         <Loader />
       ) : error ? (
