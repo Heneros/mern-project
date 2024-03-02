@@ -1,14 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Search from "./Homepage/Search";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import HeaderDate from "./HeaderDate";
 import TrendingCarousel from "./TrendingCarousel";
-import { useGetProfileQuery } from "../redux/slices/userApiSlice";
+import {
+  useGetProfileQuery,
+  useLogoutMutation,
+} from "../redux/slices/userApiSlice";
 
 export default function Header() {
   const { data: dataProfile, error } = useGetProfileQuery();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   if (error) {
+  //     setIsLoggedIn(true);
+  //     // window.location.reload();
+  //   } else {
+  //     setIsLoggedIn(false);
+  //     // window.location.reload();
+  //   }
+  // }, [dataProfile]);
+
+  const [logout] = useLogoutMutation();
+
+  const logoutHandler = async () => {
+    try {
+      await logout().unwrap();
+      navigate("/");
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className="container-fluid">
@@ -57,13 +83,6 @@ export default function Header() {
                 Home
               </Nav.Link>
               <Nav.Link href="/news">News</Nav.Link>
-              {error ? (
-                <Nav.Link href={`/login`}>Login</Nav.Link>
-              ) : (
-                <>
-                  <Nav.Link href={`/profile`}>Profile</Nav.Link>
-                </>
-              )}
 
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#">Menu item 1</NavDropdown.Item>
@@ -71,6 +90,16 @@ export default function Header() {
                 <NavDropdown.Item href="#">Menu item 3</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="contact.html">Contact</Nav.Link>
+              {error ? (
+                <>
+                  <Nav.Link href={`/login`}>Login</Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link href={`/profile`}>Profile</Nav.Link>
+                  <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
+                </>
+              )}
             </Nav>
             <Search />
           </Navbar.Collapse>

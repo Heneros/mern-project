@@ -34,8 +34,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    name: "blog_info",
-    secret: process.env.PASSPORT_SESSION_SECRET,
+    name: "google_auth",
+    // secret: process.env.PASSPORT_SESSION_SECRET,
+    secret:    process.env.JWT_SECRET,
+
     resave: true,
     saveUninitialized: false,
     cookie: { secure: process.env.NODE_ENV !== "development" },
