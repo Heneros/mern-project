@@ -5,6 +5,7 @@ const cors = require("cors");
 const passport = require("passport");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const jwt = require("jsonwebtoken");
 
 const connectDB = require("./db/db");
 
@@ -34,11 +35,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   session({
-    name: "google_auth",
+    // name: "blog_info",
     // secret: process.env.PASSPORT_SESSION_SECRET,
-    secret:    process.env.JWT_SECRET,
+    secret: process.env.JWT_SECRET,
 
-    resave: true,
+    resave: false,
     saveUninitialized: false,
     cookie: { secure: process.env.NODE_ENV !== "development" },
   })
@@ -56,12 +57,35 @@ app.get(
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
+// app.get(
+//   "/auth/google/callback",
+
+//   passport.authenticate("google", {
+//     successRedirect: "http://localhost:7200/profile", //change latter
+//     failureRedirect: "/auth/google/failure",
+//   })
+// );
+
+
+
 app.get(
   "/auth/google/callback",
-  passport.authenticate("google", {
-    successRedirect: "http://localhost:7200/profile", //change latter
-    failureRedirect: "/auth/google/failure",
-  })
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  (req, res) => {
+    const user = req.user;
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+      expiresIn: "30d",
+    });
+
+    res.cookie("blog_info", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== "development",
+      sameSite: "Lax",
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+    });
+
+    res.redirect("http://localhost:7200/profile");
+  }
 );
 
 app.get("/auth/google/failure", (req, res) => {
