@@ -18,8 +18,7 @@ const protect = asyncHandler(async (req, res, next) => {
         req.user = await User.findById(decoded.id); ///auth google
       }
       //
-
-      console.log("req.user", req.user);
+      // console.log("req.user", req.user);
       next();
     } catch (error) {
       console.error(error);

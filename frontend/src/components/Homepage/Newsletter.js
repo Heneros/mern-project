@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ImageNewsLetter from "../../styles/img/news-500x280-4.jpg";
+import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
 
 export default function Newsletter() {
+  const { data, error } = useGetProfileQuery();
+
   return (
     <>
       <div className="pb-3">
@@ -14,13 +17,23 @@ export default function Newsletter() {
             Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero
             kasd
           </p>
+
           <div className="input-group" style={{ width: "100%" }}>
             <div className="input-group-append mx-auto">
-              <Link to={"/registration"}>
-                <button className="btn btn-primary">Sign Up</button>
-              </Link>
+              {error ? (
+                <Link to={"/registration"}>
+                  <button className="btn btn-primary">Sign Up</button>
+                </Link>
+              ) : (
+                <>
+                  <Link to={"/news"}>
+                    <button className="btn btn-primary">Read News</button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
+
           <small>Sit eirmod nonumy kasd eirmod</small>
         </div>
       </div>

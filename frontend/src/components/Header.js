@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Search from "./Homepage/Search";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import HeaderDate from "./HeaderDate";
@@ -10,19 +10,12 @@ import {
 } from "../redux/slices/userApiSlice";
 
 export default function Header() {
-  const { data: dataProfile, error } = useGetProfileQuery();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
+  const { data, error } = useGetProfileQuery();
 
-  // useEffect(() => {
-  //   if (error) {
-  //     setIsLoggedIn(true);
-  //     // window.location.reload();
-  //   } else {
-  //     setIsLoggedIn(false);
-  //     // window.location.reload();
-  //   }
-  // }, [dataProfile]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isCurrentPath = (path) => location.pathname === path;
 
   const [logout] = useLogoutMutation();
 
@@ -61,7 +54,6 @@ export default function Header() {
             </Link>
           </div>
           <div className="col-lg-8 text-center text-lg-right">
-            {/* <img className="img-fluid" src="img/ads-700x70.jpg" alt="" /> */}
           </div>
         </div>
       </div>
@@ -79,10 +71,15 @@ export default function Header() {
             className="justify-content-between px-0 px-lg-3"
           >
             <Nav className="mr-auto py-0">
-              <Nav.Link href="#" className="active">
+              <Nav.Link href="/" className={isCurrentPath("/") ? "active" : ""}>
                 Home
               </Nav.Link>
-              <Nav.Link href="/news">News</Nav.Link>
+              <Nav.Link
+                href="/news"
+                className={isCurrentPath("/news") ? "active" : ""}
+              >
+                News
+              </Nav.Link>
 
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#">Menu item 1</NavDropdown.Item>
@@ -92,11 +89,21 @@ export default function Header() {
               <Nav.Link href="contact.html">Contact</Nav.Link>
               {error ? (
                 <>
-                  <Nav.Link href={`/login`}>Login</Nav.Link>
+                  <Nav.Link
+                    className={isCurrentPath("/login") ? "active" : ""}
+                    href={`/login`}
+                  >
+                    Login
+                  </Nav.Link>
                 </>
               ) : (
                 <>
-                  <Nav.Link href={`/profile`}>Profile</Nav.Link>
+                  <Nav.Link
+                    className={isCurrentPath("/profile") ? "active" : ""}
+                    href={`/profile`}
+                  >
+                    Profile
+                  </Nav.Link>
                   <Nav.Link onClick={logoutHandler}>Logout</Nav.Link>
                 </>
               )}

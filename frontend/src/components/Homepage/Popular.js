@@ -52,7 +52,9 @@ export default function Popular() {
                         />
                         <div className="overlay position-relative bg-light">
                           <div className="mb-2" style={{ fontSize: "14px" }}>
-                            <Link to={`/category/${item.category}`}>
+                            <Link
+                              to={`/category/${item.category.toLowerCase()}`}
+                            >
                               {item.category}
                             </Link>
 

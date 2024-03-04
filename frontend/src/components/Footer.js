@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 import FooterSocial from "./Footer/FooterSocial";
 import FooterCategories from "./Footer/FooterCategories";
@@ -8,8 +10,10 @@ import FooterTags from "./Footer/FooterTags";
 import FooterLinksPages from "./Footer/FooterLinksPages";
 
 export default function Footer() {
+
   return (
     <>
+
       <div className="container-fluid bg-light pt-5 px-sm-3 px-md-5">
         <div className="row">
           <div className="col-lg-3 col-md-6 mb-5">

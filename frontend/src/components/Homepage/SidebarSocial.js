@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { useGetUsersPublicQuery } from "../../redux/slices/userApiSlice";
 import Message from "../Message";
@@ -8,7 +7,6 @@ import Loader from "../Loader";
 export default function SidebarSocial() {
   const { data: itemsUsers, isLoading, error } = useGetUsersPublicQuery();
 
-  const loggedUsers = itemsUsers?.filter((item) => item.isLoggedIn === true);
   // console.log("Items:", loggedUsers?.length);
   return (
     <div className="pb-3">
