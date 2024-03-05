@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -15,9 +15,14 @@ import Message from "../Message";
 import Loader from "../Loader";
 
 export default function Business() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const {
+    data,
+    isLoading,
+    error,
+  } = useGetPostsQuery({ pageNumber });
 
-  const businessItems = postItems?.filter((item) => {
+  const businessItems = data?.posts?.filter((item) => {
     return item.category === "Business";
   });
 

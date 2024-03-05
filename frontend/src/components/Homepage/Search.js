@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 
 import { Form, Dropdown, InputGroup, Button } from "react-bootstrap";
 
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 export default function SearchBar() {
-  const { data: postsItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredPosts = postsItems?.filter((post) =>
+  const filteredPosts = data?.posts?.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 

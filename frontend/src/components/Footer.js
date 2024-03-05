@@ -10,10 +10,37 @@ import FooterTags from "./Footer/FooterTags";
 import FooterLinksPages from "./Footer/FooterLinksPages";
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTop({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
-
+      {isVisible && (
+        <button onClick={scrollToTop} className="btn btn-dark back-to-top">
+          <FontAwesomeIcon icon={faAngleUp} className="m-auto" />
+        </button>
+      )}
       <div className="container-fluid bg-light pt-5 px-sm-3 px-md-5">
         <div className="row">
           <div className="col-lg-3 col-md-6 mb-5">

@@ -16,6 +16,7 @@ import Latest from "../components/Homepage/Latest";
 import Trending from "../components/Homepage/Trending";
 
 export default function Homepage() {
+ 
   return (
     <Container>
       <TopNewsCarousel />

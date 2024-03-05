@@ -3,8 +3,23 @@ const asyncHandler = require("../middleware/asyncHandler");
 
 ///GET
 const getAllPosts = asyncHandler(async (req, res) => {
-  const posts = await Post.find({});
-  res.status(200).json(posts);
+  const pageSize = process.env.PAGINATION_LIMIT;
+  const page = Number(req.query.pageNumber) || 1;
+  const keyword = req.query.keyword
+    ? {
+        title: {
+          $regex: req.query.keyword,
+          $options: "i",
+        },
+      }
+    : {};
+
+  const count = await Post.countDocuments({ ...keyword });
+  const posts = await Post.find({ ...keyword })
+    .limit(pageSize)
+    .skip(pageSize * (page - 1));
+
+  res.status(200).json({ posts });
 });
 
 const getPost = asyncHandler(async (req, res) => {
@@ -15,7 +30,7 @@ const getPost = asyncHandler(async (req, res) => {
     res.status(404).json({ message: `Not found ${postId}` });
   }
   await post.incrementViews();
-  res.status(200).json(post);
+  res.status(200).json({ post, page, pages: Math.ceil(count / pageSize) });
 });
 
 const createPost = asyncHandler(async (req, res) => {

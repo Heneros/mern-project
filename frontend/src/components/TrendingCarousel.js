@@ -9,7 +9,7 @@ import {
   Autoplay,
 } from "swiper/modules";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -22,7 +22,8 @@ import Message from "./Message";
 import Loader from "./Loader";
 
 export default function TrendingCarousel() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
   return (
     <>
       {isLoading ? (
@@ -42,7 +43,7 @@ export default function TrendingCarousel() {
             disableOnInteraction: false,
           }}
         >
-          {postItems.map((item, index) => (
+          {data?.posts.map((item, index) => (
             <SwiperSlide key={index + item._id}>
               <div className="text-truncate">
                 <Link className="text-secondary" to={`/news/${item._id}`}>

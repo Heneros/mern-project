@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import Message from "./Message";
@@ -11,14 +11,15 @@ import Title from "./Title";
 import Post from "./Post";
 
 export default function AllPostsCategory() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const location = useLocation();
   const pathname = location.pathname;
   const parts = pathname.split("/");
   const lastPart = parts[parts.length - 1];
 
-  const categoryPost = postItems?.filter((item) => {
+  const categoryPost = data?.posts?.filter((item) => {
     return item.category.toLowerCase() === lastPart;
   });
 

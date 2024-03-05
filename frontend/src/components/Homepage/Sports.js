@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Navigation,
@@ -15,9 +15,10 @@ import Message from "../Message";
 import Loader from "../Loader";
 
 export default function Sports() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
-  const businessItems = postItems?.filter((item) => {
+  const businessItems = data?.posts?.filter((item) => {
     return item.category === "Sports";
   });
 
@@ -70,11 +71,11 @@ export default function Sports() {
                   />
                   <div className="overlay position-relative bg-light">
                     <div className="mb-2" style={{ fontSize: "13px" }}>
-                      <Link to={`/category/${item.category.toLowerCase()}`}>{item.category}</Link>
+                      <Link to={`/category/${item.category.toLowerCase()}`}>
+                        {item.category}
+                      </Link>
                       <span className="px-1">/</span>
-
                       <span>
-                        {" "}
                         {format(new Date(item.createdAt), "MMMM dd, yyyy")}
                       </span>
                     </div>

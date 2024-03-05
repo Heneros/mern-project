@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Loader from "../Loader";
 import Message from "../Message";
 
 export default function FooterCategories() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const uniqueCategories = new Set();
 
-  const uniquePostItems = postItems?.filter((item) => {
+  const uniquePostItems = data?.posts?.filter((item) => {
     if (!uniqueCategories.has(item.category)) {
       uniqueCategories.add(item.category);
       return true;

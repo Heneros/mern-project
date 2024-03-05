@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Image } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 import data from "../../data/data.json";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
 export default function MainNewsSlider() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const [posts, setPosts] = useState([]);
 
-  // console.log(postItems);
 
   useEffect(() => {
     setPosts(data);
@@ -26,8 +27,8 @@ export default function MainNewsSlider() {
         interval={null}
         className="mb-4"
       >
-        {postItems
-          ? postItems.slice(0, 3).map((post, index) => (
+        {data
+          ? data.posts.slice(0, 3).map((post, index) => (
               <Carousel.Item key={index} style={{ height: "435px" }}>
                 <Image
                   src={post.imageUrl}
@@ -50,7 +51,7 @@ export default function MainNewsSlider() {
                 </div>
               </Carousel.Item>
             ))
-          : posts.map((post, index) => (
+          : posts?.map((post, index) => (
               <Carousel.Item key={index} style={{ height: "400px" }}>
                 <Image src={post.imageUrl} style={{ objectFit: "contain" }} />
                 <div className="overlay">

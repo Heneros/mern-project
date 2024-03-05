@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-
+import { Link, useParams } from "react-router-dom";
 import { Carousel, Image, Row, Col } from "react-bootstrap";
 
 import Loader from "./../Loader";
 import Message from "./../Message";
-
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
-import { Link } from "react-router-dom";
+
 export default function TopNewsCarousel() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const {
+    data,
+    isLoading,
+    error,
+  } = useGetPostsQuery({ pageNumber });
 
   // const slidesPerView = 3;
 
@@ -50,7 +54,7 @@ export default function TopNewsCarousel() {
           indicators={false}
           interval={null}
         >
-          {postItems.slice(0, 5).map((post, index) => {
+          {data?.posts.slice(0, 5).map((post, index) => {
             const slideIndex = Math.floor(index / slidesPerView);
             return (
               <Carousel.Item className="full-width-slide" key={index}>
@@ -58,7 +62,7 @@ export default function TopNewsCarousel() {
                   className="d-flex align-items-center "
                   style={{ height: "250px" }}
                 >
-                  {postItems
+                  {data?.posts
                     .slice(index, index + slidesPerView)
                     .map((subPost, subIndex) => (
                       <Col md="4" sm="12" key={subIndex}>

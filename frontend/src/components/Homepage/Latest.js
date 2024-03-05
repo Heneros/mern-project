@@ -1,18 +1,18 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Message from "../Message";
 import Loader from "../Loader";
 
 export default function Latest() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
-  const sortedPosts = postItems?.toSorted(
+  const sortedPosts = data?.posts?.toSorted(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
-
 
   return (
     <>

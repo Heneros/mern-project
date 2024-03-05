@@ -1,17 +1,18 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Message from "../Message";
 import Loader from "../Loader";
 import Title from "../Title";
 
 export default function Popular() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   //From most popular to less post
-  const sortedPosts = postItems?.slice().sort((a, b) => b.views - a.views);
+  const sortedPosts = data?.posts?.slice().sort((a, b) => b.views - a.views);
   return (
     <>
       {isLoading ? (

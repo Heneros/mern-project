@@ -22,7 +22,7 @@ export default function SidebarSocial() {
             {isLoading ? (
               <Loader />
             ) : error ? (
-              <Message>{error?.data?.message || error.error}</Message>
+              <Message>{error?.data?.message || error?.err}</Message>
             ) : (
               <>{itemsUsers.length} Users registered</>
             )}

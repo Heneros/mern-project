@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import Message from "./Message";
 import Loader from "./Loader";
@@ -10,7 +10,8 @@ import Title from "./Title";
 import Post from "./Post";
 
 export default function AllPostsTag() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const location = useLocation();
   const pathname = location.pathname;
@@ -21,11 +22,10 @@ export default function AllPostsTag() {
   //     return item?.tag?.value.toLowerCase() === lastPart;
   //   });
 
-  const categoryPost = postItems?.filter((item) => {
+  const categoryPost = data?.posts?.filter((item) => {
     const tags = item.tag.map((tag) => tag.toLowerCase());
     return tags.includes(lastPart.toLowerCase());
   });
-
 
   //   console.log(matchedTags);
   return (

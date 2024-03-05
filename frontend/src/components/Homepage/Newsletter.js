@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ImageNewsLetter from "../../styles/img/news-500x280-4.jpg";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
 

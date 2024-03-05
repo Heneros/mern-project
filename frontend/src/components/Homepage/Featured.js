@@ -13,11 +13,16 @@ import {
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 import Loader from "../Loader";
 import Message from "../Message";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Title from "../Title";
 
 export default function Featured() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const {
+    data,
+    isLoading,
+    error,
+  } = useGetPostsQuery({ pageNumber });
   return (
     <>
       {/* <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
@@ -57,7 +62,7 @@ export default function Featured() {
             disableOnInteraction: false,
           }}
         >
-          {postItems.map((item, index) => (
+          {data?.posts.map((item, index) => (
             <SwiperSlide key={index}>
               <div
                 className="position-relative overflow-hidden"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
 import Message from "../Message";
 import Loader from "../Loader";
@@ -7,25 +7,26 @@ import Loader from "../Loader";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
 export default function Trending() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
   const [randomPosts, setRandomPosts] = useState([]);
 
   useEffect(() => {
-    if (postItems && postItems.length > 0) {
-      const shuffledPosts = [...postItems].sort(() => Math.random() - 0.5);
+    if (data?.posts && data?.posts.length > 0) {
+      const shuffledPosts = [...data?.posts].sort(() => Math.random() - 0.5);
       setRandomPosts(shuffledPosts.slice(0, 4));
     }
-  }, [postItems]);
+  }, [data?.posts]);
 
   const uniqueTags = new Set();
 
-  postItems?.forEach((item) => {
+  data?.posts?.forEach((item) => {
     item.tag.forEach((tag) => {
       uniqueTags.add(tag);
     });
   });
   const uniqueTagsArray = Array.from(uniqueTags);
-  // console.log(postItems);
+  // console.log(data?.posts);
   // console.log(uniquePostItems);
   return (
     <>

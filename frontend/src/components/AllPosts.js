@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import Message from "./Message";
 import Loader from "./Loader";
@@ -11,8 +11,10 @@ import Title from "./Title";
 import Post from "./Post";
 
 export default function AllPosts() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
+  console.log(data);
   const location = useLocation();
   const pathname = location.pathname;
   const parts = pathname.split("/");
@@ -29,7 +31,7 @@ export default function AllPosts() {
           <Message>{error?.data?.message || error.error}</Message>
         ) : (
           <>
-            <Post postItems={postItems} />
+            <Post postItems={data?.posts} />
           </>
         )}
       </Row>

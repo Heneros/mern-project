@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
 export default function FooterTags() {
-  const { data: postItems, isLoading, error } = useGetPostsQuery();
+  const { pageNumber } = useParams();
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const uniqueTags = new Set();
 
-  postItems?.forEach((item) => {
+  data?.posts?.forEach((item) => {
     item.tag.forEach((tag) => {
       uniqueTags.add(tag);
     });
