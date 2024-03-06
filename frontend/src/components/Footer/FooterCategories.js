@@ -22,7 +22,7 @@ export default function FooterCategories() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message>{error?.data?.message || error.error}</Message>
+        <Message>{error?.message}</Message>
       ) : (
         <>
           <div className="d-flex flex-wrap m-n1">

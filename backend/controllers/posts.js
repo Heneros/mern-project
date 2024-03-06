@@ -18,8 +18,10 @@ const getAllPosts = asyncHandler(async (req, res) => {
   const posts = await Post.find({ ...keyword })
     .limit(pageSize)
     .skip(pageSize * (page - 1));
-
-  res.status(200).json({ posts });
+  if (!posts) {
+    res.status(200).json({ message: "Not found" });
+  }
+  res.status(200).json({ posts, page, pages: Math.ceil(count / pageSize) });
 });
 
 const getPost = asyncHandler(async (req, res) => {

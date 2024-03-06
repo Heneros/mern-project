@@ -39,7 +39,7 @@ export default function TrendingCarousel() {
           slidesPerView={1}
           navigation
           autoplay={{
-            delay: 3332500,
+            delay: 2500,
             disableOnInteraction: false,
           }}
         >

@@ -11,6 +11,8 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import "./styles/style.css";
 import "./styles/custom.css";
 
+import PrivateRoute from "./components/PrivateRoute";
+
 import Layout from "./pages/Layout";
 import Homepage from "./pages/Homepage";
 import Registration from "./pages/Registration";
@@ -22,21 +24,30 @@ import SinglePost from "./pages/SinglePost";
 import Profile from "./pages/Profile";
 import Category from "./pages/Category";
 import Tag from "./pages/Tag";
+import AdminPostsList from "./pages/admin/AdminPostsList";
+
+import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <>
+        <ScrollToTopOnPageChange />
+        <Layout />
+      </>
+    ),
+
     children: [
       {
         index: true,
         path: "/",
         element: <Homepage />,
       },
-      // {
-      //   path: "/page/:pageNumber",
-      //   element: <Homepage />,
-      // },
+      {
+        path: "/page/:pageNumber",
+        element: <Homepage />,
+      },
       {
         path: "/registration",
         element: <Registration />,
@@ -64,6 +75,15 @@ const router = createBrowserRouter([
       {
         path: "tag/:id",
         element: <Tag />,
+      },
+      {
+        element: <PrivateRoute />,
+        children: [
+          {
+            path: "/admin/posts-list",
+            element: <AdminPostsList />,
+          },
+        ],
       },
     ],
   },

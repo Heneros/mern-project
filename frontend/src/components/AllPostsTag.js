@@ -14,10 +14,13 @@ export default function AllPostsTag() {
   const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const location = useLocation();
-  const pathname = location.pathname;
+
+  const pathname = decodeURIComponent(location.pathname);
   const parts = pathname.split("/");
+
   const lastPart = parts[parts.length - 1];
 
+  console.log(pathname);
   //   const categoryPost = postItems?.filter((item) => {
   //     return item?.tag?.value.toLowerCase() === lastPart;
   //   });
@@ -36,7 +39,7 @@ export default function AllPostsTag() {
         {isLoading ? (
           <Loader />
         ) : error ? (
-          <Message>{error?.data?.message || error.error}</Message>
+          <Message>{error?.message}</Message>
         ) : (
           <>
             <Post postItems={categoryPost} />

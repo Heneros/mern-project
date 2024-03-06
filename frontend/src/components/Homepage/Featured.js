@@ -18,22 +18,9 @@ import Title from "../Title";
 
 export default function Featured() {
   const { pageNumber } = useParams();
-  const {
-    data,
-    isLoading,
-    error,
-  } = useGetPostsQuery({ pageNumber });
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
   return (
     <>
-      {/* <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">
-        <h3 className="m-0">Featured</h3>
-        <Link
-          className="text-secondary font-weight-medium text-decoration-none"
-          to={`/news`}
-        >
-          View All
-        </Link>
-      </div> */}
       <Title name={"News"} />
       {isLoading ? (
         <Loader />
@@ -58,7 +45,7 @@ export default function Featured() {
           }}
           navigation
           autoplay={{
-            delay: 3332500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
         >
@@ -76,7 +63,10 @@ export default function Featured() {
                 />
                 <div className="overlay">
                   <div className="mb-1" style={{ fontSize: "13px" }}>
-                    <Link className="text-white" to={`/category/${item._id}`}>
+                    <Link
+                      className="text-white"
+                      to={`/category/${item.category.toLowerCase()}`}
+                    >
                       {item.category}
                     </Link>
                     <span className="px-1 text-white">/</span>

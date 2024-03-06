@@ -28,7 +28,7 @@ export default function AllPosts() {
         {isLoading ? (
           <Loader />
         ) : error ? (
-          <Message>{error?.data?.message || error.error}</Message>
+          <Message>{error?.message}</Message>
         ) : (
           <>
             <Post postItems={data?.posts} />

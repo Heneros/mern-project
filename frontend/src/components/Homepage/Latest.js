@@ -19,7 +19,7 @@ export default function Latest() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message>{error?.data?.message || error.error}</Message>
+        <Message>{error?.message}</Message>
       ) : (
         <>
           <Row className="mb-3">

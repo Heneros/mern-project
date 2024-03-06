@@ -8,11 +8,7 @@ import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
 export default function TopNewsCarousel() {
   const { pageNumber } = useParams();
-  const {
-    data,
-    isLoading,
-    error,
-  } = useGetPostsQuery({ pageNumber });
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   // const slidesPerView = 3;
 
@@ -57,7 +53,11 @@ export default function TopNewsCarousel() {
           {data?.posts.slice(0, 5).map((post, index) => {
             const slideIndex = Math.floor(index / slidesPerView);
             return (
-              <Carousel.Item className="full-width-slide" key={index}>
+              <Carousel.Item
+                className="full-width-slide"
+                key={index}
+                
+              >
                 <Row
                   className="d-flex align-items-center "
                   style={{ height: "250px" }}
@@ -65,8 +65,8 @@ export default function TopNewsCarousel() {
                   {data?.posts
                     .slice(index, index + slidesPerView)
                     .map((subPost, subIndex) => (
-                      <Col md="4" sm="12" key={subIndex}>
-                        <div className="d-flex">
+                      <Col md="4" sm="12" key={subIndex} >
+                        <div className="d-flex" >
                           <Image
                             src={subPost.imageUrl}
                             style={{

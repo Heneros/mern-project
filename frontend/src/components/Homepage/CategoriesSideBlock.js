@@ -29,7 +29,7 @@ export default function CategoriesSideBlock() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message>{error?.data?.message || error.error}</Message>
+        <Message>{error?.message}</Message>
       ) : (
         <>
           <div className="d-flex align-items-center justify-content-between bg-light py-2 px-4 mb-3">

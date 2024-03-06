@@ -11,9 +11,9 @@ export default function Breadcrumbs() {
   // console.log(lastPart);
 
   return (
-    <div>
+    <>
       <div className="container-fluid">
-        <div className="container">
+
           <nav className="breadcrumb bg-transparent m-0 p-0">
             <Link className="breadcrumb-item" to={`/`}>
               Home
@@ -30,7 +30,7 @@ export default function Breadcrumbs() {
             )}
           </nav>
         </div>
-      </div>
-    </div>
+
+    </>
   );
 }

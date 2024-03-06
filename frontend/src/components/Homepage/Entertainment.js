@@ -27,7 +27,7 @@ export default function Entertainment() {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message>{error?.data?.message || error.error}</Message>
+        <Message>{error?.message}</Message>
       ) : (
         <>
           <div className="bg-light py-2 px-4 mb-3 slider-arrows entertainment-arrows">
@@ -56,7 +56,7 @@ export default function Entertainment() {
               prevEl: ".entertainment-arrows .swiper-button-prev",
             }}
             autoplay={{
-              delay: 3332500,
+              delay: 1500,
               disableOnInteraction: false,
             }}
           >

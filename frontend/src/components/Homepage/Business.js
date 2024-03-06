@@ -16,22 +16,18 @@ import Loader from "../Loader";
 
 export default function Business() {
   const { pageNumber } = useParams();
-  const {
-    data,
-    isLoading,
-    error,
-  } = useGetPostsQuery({ pageNumber });
+  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const businessItems = data?.posts?.filter((item) => {
     return item.category === "Business";
   });
-
+  // console.log(error.message);
   return (
     <>
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message>{error?.data?.message || error.error}</Message>
+        <Message>{error?.message}</Message>
       ) : (
         <>
           <div className="bg-light py-2 px-4 mb-3  slider-arrows business-arrows">
@@ -60,7 +56,7 @@ export default function Business() {
               prevEl: ".business-arrows .swiper-button-prev",
             }}
             autoplay={{
-              delay: 3332500,
+              delay: 1500,
               disableOnInteraction: false,
             }}
           >

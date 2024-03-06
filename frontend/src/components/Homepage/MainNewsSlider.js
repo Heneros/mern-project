@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Carousel, Image } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { format } from "date-fns";
 
 import data from "../../data/data.json";
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
@@ -10,7 +11,6 @@ export default function MainNewsSlider() {
   const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
   const [posts, setPosts] = useState([]);
-
 
   useEffect(() => {
     setPosts(data);
@@ -24,12 +24,15 @@ export default function MainNewsSlider() {
         prevLabel=""
         nextLabel=""
         indicators={false}
-        interval={null}
         className="mb-4"
       >
         {data
           ? data.posts.slice(0, 3).map((post, index) => (
-              <Carousel.Item key={index} style={{ height: "435px" }}>
+              <Carousel.Item
+                key={index}
+                style={{ height: "435px" }}
+                interval={1800}
+              >
                 <Image
                   src={post.imageUrl}
                   className="d-block w-100 h-100"
@@ -42,7 +45,7 @@ export default function MainNewsSlider() {
                     </a>
                     <span className="px-2 text-white">/</span>
                     <a className="text-white" href="#!">
-                      Exist
+                      {format(new Date(post.createdAt), "MMMM dd, yyyy")}
                     </a>
                   </div>
                   <a className="h2 m-0 text-white font-weight-bold" href="#!">
