@@ -1,21 +1,47 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Nav, Col, Row } from "react-bootstrap";
+import { Nav, Col, Row, Form, Button } from "react-bootstrap";
 
-import { useGetProfileQuery } from "../redux/slices/userApiSlice";
+import Loader from "../components/Loader";
+import {
+  useGetProfileQuery,
+  useProfileMutation,
+} from "../redux/slices/userApiSlice";
 import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function Profile() {
   const { data: dataProfile, error, isLoading } = useGetProfileQuery();
-  console.log(dataProfile?.isAdmin);
-  console.log(error);
-  const navigate = useNavigate();
+  // console.log(dataProfile?.isAdmin);
+  // console.log(error);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [updateUser, { isLoading: loadingUpdateProfile }] =
+    useProfileMutation();
+
+  console.log(dataProfile);
+
+  const navigate = useNavigate();
   useEffect(() => {
     if (!dataProfile && !isLoading) {
       navigate("/login");
+    } else {
+      setUsername(dataProfile?.username);
+      setEmail(dataProfile?.email);
     }
-  });
+  }, [dataProfile]);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords dont match");
+    } else {
+      try {
+      } catch (error) {}
+    }
+  };
   return (
     <>
       <Breadcrumbs />
@@ -33,22 +59,54 @@ export default function Profile() {
         ) : (
           <></>
         )}
-
         <Col md={9}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-          laboriosam iusto, earum temporibus nisi reprehenderit voluptatibus
-          similique voluptas veniam obcaecati et laborum voluptatem error
-          possimus ullam expedita quasi unde id dolor deleniti repellat saepe.
-          Molestiae aspernatur, quo vero expedita voluptates recusandae
-          veritatis quis itaque vel nesciunt odio libero. Quos et eaque
-          assumenda ullam sint dolorem corporis voluptatum reiciendis enim ipsa.
-          Ipsa alias adipisci nam natus vero? Deleniti aperiam quaerat quae quo
-          tenetur! Cum, incidunt, qui nobis neque veritatis alias dolore itaque
-          atque ab non, voluptas quas earum quaerat vitae debitis et nostrum
-          officia! Eaque aliquam magnam neque vel asperiores rerum fugiat facere
-          explicabo! Cupiditate impedit, temporibus illo quas neque est sequi
-          molestias cumque maxime perferendis nulla ut, earum maiores soluta,
-          assumenda facere.
+          <h2>User Profile</h2>
+          <Form onSubmit={submitHandler}>
+            <Form.Group className="my-2" controlId="username">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group className="my-2" controlId="email">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group className="my-2" controlId="confirmPassword">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group className="my-2" controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Button type="submit" variant="primary">
+              Update
+            </Button>
+            {loadingUpdateProfile && <Loader />}
+          </Form>
         </Col>
       </Row>
     </>
