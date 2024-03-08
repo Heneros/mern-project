@@ -25,6 +25,8 @@ import Profile from "./pages/Profile";
 import Category from "./pages/Category";
 import Tag from "./pages/Tag";
 import AdminPostsList from "./pages/admin/AdminPostsList";
+import UsersList from "./pages/admin/UsersList";
+import CreatePost from "./pages/admin/CreatePost";
 
 import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
 
@@ -37,7 +39,6 @@ const router = createBrowserRouter([
         <Layout />
       </>
     ),
-
     children: [
       {
         index: true,
@@ -82,6 +83,14 @@ const router = createBrowserRouter([
           {
             path: "/admin/posts-list",
             element: <AdminPostsList />,
+          },
+          {
+            path: "/admin/users-list",
+            element: <UsersList />,
+          },
+          {
+            path: "/admin/create-post",
+            element: <CreatePost />,
           },
         ],
       },

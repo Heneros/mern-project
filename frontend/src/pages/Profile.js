@@ -72,7 +72,7 @@ export default function Profile() {
           <>
             <Col md={3}>
               <Nav className="flex-column">
-                <Nav.Link href="/admin/userslist">Users List</Nav.Link>
+                <Nav.Link href="/admin/users-list">Users List</Nav.Link>
                 <Nav.Link href="/admin/posts-list">Posts List</Nav.Link>
                 <Nav.Link href="/admin/create-post">Create Post</Nav.Link>
               </Nav>
