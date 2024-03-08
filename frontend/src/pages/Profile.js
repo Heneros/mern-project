@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { Nav, Col, Row, Form, Button } from "react-bootstrap";
 
 import Loader from "../components/Loader";
+import Message from "../components/Message";
+
 import {
   useGetProfileQuery,
-  useProfileMutation,
+  useUpdateProfileMutation,
 } from "../redux/slices/userApiSlice";
 import Breadcrumbs from "../components/Breadcrumbs";
 
@@ -18,10 +20,10 @@ export default function Profile() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [updateUser, { isLoading: loadingUpdateProfile }] =
-    useProfileMutation();
-
-  console.log(dataProfile);
+  const [updateProfile, { isLoading: loadingUpdateProfile }] =
+    useUpdateProfileMutation();
+  // const idUser = dataProfile?._id;
+  console.log(dataProfile?._id);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function Profile() {
       setUsername(dataProfile?.username);
       setEmail(dataProfile?.email);
     }
-  }, [dataProfile]);
+  }, [dataProfile, navigate, isLoading]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -39,9 +41,29 @@ export default function Profile() {
       alert("Passwords dont match");
     } else {
       try {
-      } catch (error) {}
+        await updateProfile({
+          _id: dataProfile?._id,
+          username,
+          email,
+          password,
+        }).unwrap();
+        console.log("Success success updated");
+      } catch (error) {
+        console.log(error?.message || error);
+      }
     }
   };
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <Message>{error?.message}</Message>;
+  }
+  if (loadingUpdateProfile) {
+    return loadingUpdateProfile && <Loader />;
+  }
+
   return (
     <>
       <Breadcrumbs />
@@ -57,7 +79,7 @@ export default function Profile() {
             </Col>
           </>
         ) : (
-          <></>
+          <>not admin</>
         )}
         <Col md={9}>
           <h2>User Profile</h2>
@@ -105,7 +127,6 @@ export default function Profile() {
             <Button type="submit" variant="primary">
               Update
             </Button>
-            {loadingUpdateProfile && <Loader />}
           </Form>
         </Col>
       </Row>

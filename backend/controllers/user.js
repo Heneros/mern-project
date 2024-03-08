@@ -53,11 +53,10 @@ const createUser = asyncHandler(async (req, res) => {
 });
 
 const updateUserProfile = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id);
+  const user = await User.findById(req.user._id);
   if (user) {
     user.username = req.body.username || user.username;
     user.email = req.body.email || user.email;
-    user.isAdmin = Boolean(req.body.isAdmin);
     if (req.body.password) {
       user.password = req.body.password;
     }
@@ -68,7 +67,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
       _id: updatedUser._id,
       username: updatedUser.username,
       email: updatedUser.email,
-      isAdmin: updateUser.isAdmin,
+      isAdmin: updatedUser.isAdmin,
     });
   } else {
     res.status(404).json({ message: "User not found" });

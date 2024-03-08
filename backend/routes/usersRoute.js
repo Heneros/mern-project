@@ -19,12 +19,11 @@ router.route("/").post(createUser).get(protect, admin, getAllUsers);
 router.route("/allusers").get(getAllPublicUsers);
 
 router.route("/auth").post(authUser);
-router.route("/profile").get(protect, getUserProfile).put(protect, updateUser);
 router
-  .route("/:id")
-  .get(protect, getUser)
-  .delete(deleteUser)
-  .put(updateUserProfile);
+  .route("/profile")
+  .get(protect, getUserProfile)
+  .put(protect, updateUserProfile);
+router.route("/:id").get(protect, getUser).delete(deleteUser).put(updateUser);
 router.route("/logout").post(logoutUser);
 
 module.exports = router;
