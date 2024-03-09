@@ -10,6 +10,7 @@ import {
   useUpdateProfileMutation,
 } from "../redux/slices/userApiSlice";
 import Breadcrumbs from "../components/Breadcrumbs";
+import NavMenu from "../components/Profile/NavMenu";
 
 export default function Profile() {
   const { data: dataProfile, error, isLoading } = useGetProfileQuery();
@@ -68,19 +69,7 @@ export default function Profile() {
     <>
       <Breadcrumbs />
       <Row className="my-5">
-        {dataProfile?.isAdmin ? (
-          <>
-            <Col md={3}>
-              <Nav className="flex-column">
-                <Nav.Link href="/admin/users-list">Users List</Nav.Link>
-                <Nav.Link href="/admin/posts-list">Posts List</Nav.Link>
-                <Nav.Link href="/admin/create-post">Create Post</Nav.Link>
-              </Nav>
-            </Col>
-          </>
-        ) : (
-          <>not admin</>
-        )}
+        <NavMenu dataProfile={dataProfile} />
         <Col md={9}>
           <h2>User Profile</h2>
           <Form onSubmit={submitHandler}>

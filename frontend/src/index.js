@@ -29,6 +29,7 @@ import UsersList from "./pages/admin/UsersList";
 import CreatePost from "./pages/admin/CreatePost";
 
 import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
+import Favorites from "./pages/Favorites";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "tag/:id",
         element: <Tag />,
+      },
+      {
+        path: "profile/favorites",
+        element: <Favorites />,
       },
       {
         element: <PrivateRoute />,

@@ -258,3 +258,16 @@
 .text-light:hover {
   color: #f8f9fa; 
 }
+
+
+.profile-menu a {
+  color: #000;
+}
+
+.breadcrumb-item{
+text-transform: capitalize;
+}
+
+.profile-menu .active {
+  color: red;
+}

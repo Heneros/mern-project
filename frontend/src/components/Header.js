@@ -10,7 +10,7 @@ import {
 } from "../redux/slices/userApiSlice";
 
 export default function Header() {
-  const { data, error } = useGetProfileQuery();
+  const { error } = useGetProfileQuery();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -53,8 +53,7 @@ export default function Header() {
               </h1>
             </Link>
           </div>
-          <div className="col-lg-8 text-center text-lg-right">
-          </div>
+          <div className="col-lg-8 text-center text-lg-right"></div>
         </div>
       </div>
 
