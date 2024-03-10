@@ -38,7 +38,6 @@ const getPost = asyncHandler(async (req, res) => {
 const createPost = asyncHandler(async (req, res) => {
   try {
     const { title, imageUrl, content, category, tag } = req.body;
-
     if (!title && !imageUrl && !category) {
       res.status(400).json({ message: "Empty fields" });
       return;

@@ -26,7 +26,7 @@ export default function UsersList() {
       }
     }
   };
-  console.log(users);
+
   return (
     <>
       <Breadcrumbs />
