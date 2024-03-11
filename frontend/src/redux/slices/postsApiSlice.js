@@ -42,6 +42,14 @@ export const postsApiSlice = apiSlice.injectEndpoints({
       }),
       providesTags: ["Post"],
     }),
+    uploadPostImage: builder.mutation({
+      query: (data) => ({
+        url: `/api/upload`,
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }),
+    }),
     getTags: builder.query({
       query: () => ({
         url: `${POSTS_URL}/toptags`,
@@ -49,6 +57,7 @@ export const postsApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
       providesTags: ["Post"],
     }),
+
     getCategories: builder.query({
       query: () => ({
         url: `${POSTS_URL}/topcategories`,
@@ -67,4 +76,5 @@ export const {
   useUpdatePostMutation,
   useGetCategoriesQuery,
   useGetTagsQuery,
+  useUploadPostImageMutation,
 } = postsApiSlice;
