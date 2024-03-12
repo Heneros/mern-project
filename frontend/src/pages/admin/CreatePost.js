@@ -9,45 +9,76 @@ import {
   useUploadPostImageMutation,
 } from "../../redux/slices/postsApiSlice";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
 
 export default function CreatePost() {
-  // const { id } = useParams();
+  const {
+    data: dataProfile,
+    errorProfile,
+    isLoading: loadingProfile,
+  } = useGetProfileQuery();
+  // console.log(dataProfile);
+
   const [createPost, { isLoading: loadingCreate }, error] =
     useCreatePostMutation();
 
-  const [uploadProductImage, { isLoading: loadingUpload }] =
+  const [uploadPostImage, { isLoading: loadingUpload }] =
     useUploadPostImageMutation();
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [tag, setTag] = useState([]);
+  const [tag, setTag] = useState("");
   const [category, setCategory] = useState("");
 
   const inputFileRef = useRef(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    // const formData = new FormData();
+    // formData.append("image", e.target.files[0]);
+
+    if (loadingCreate && loadingProfile) {
+      console.log("Loading");
+      return;
+    }
+
+    if (!title && !dataProfile && !category) {
+      console.error("Please provide title and category");
+      return;
+    }
+
     try {
-      await createPost({ title, content, imageUrl, tag, category }).unwrap();
+      const { _id: userId } = dataProfile;
+      await createPost({
+        user: userId,
+        title,
+        content,
+        tag,
+        category,
+      }).unwrap();
+      // await uploadPostImage(formData).unwrap();
       setTitle("");
       setContent("");
-      setImageUrl("");
+      // setImageUrl("");
+      setTag("");
       setCategory("");
     } catch (error) {
       console.log(error?.message || error);
     }
   };
 
-  const handleChangeFile = async (event) => {
-    try {
-      const formData = new FormData();
-      const file = event.target.files[0];
-      formData.append("image", file);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const uploadFileHandler = async (event) => {
+  //   const formData = new FormData();
+  //   const file = event.target.files[0];
+  //   formData.append("image", file);
+  //   try {
+  //     const res = await uploadPostImage(formData).unwrap();
+  //     setImageUrl(res.image);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const onClickRemoveImage = () => {
     setImageUrl("");
@@ -60,7 +91,7 @@ export default function CreatePost() {
   return (
     <>
       <Breadcrumbs />
-      <h1>Create Product</h1>
+      <h1>Create Post</h1>
       {loadingCreate ? (
         <Loader />
       ) : error ? (
@@ -98,26 +129,11 @@ export default function CreatePost() {
           </Form.Group>
           <Form.Group controlId="image">
             <Form.Label>Image</Form.Label>
-            <Button
-              variant="primary"
-              onClick={() => inputFileRef.current.click()}
-            >
-              Load Image
-            </Button>
-            <input
+            <Form.Control
               type="file"
-              ref={inputFileRef}
-              onChange={handleChangeFile}
-              hidden
-            />
-            {imageUrl && (
-              <>
-                <Button variant="danger" onClick={onClickRemoveImage}>
-                  Remove
-                </Button>
-                <img src={imageUrl} alt="test" />
-              </>
-            )}
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            ></Form.Control>
           </Form.Group>
           <SimpleMDE value={content} onChange={onChange} />
 

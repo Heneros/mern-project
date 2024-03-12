@@ -14,7 +14,7 @@ export default function AllPosts() {
   const { pageNumber } = useParams();
   const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
 
-  console.log(data);
+
   const location = useLocation();
   const pathname = location.pathname;
   const parts = pathname.split("/");

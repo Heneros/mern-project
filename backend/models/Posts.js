@@ -14,10 +14,10 @@ const postSchema = new mongoose.Schema(
     content: {
       type: String,
     },
-    imageUrl: {
-      type: String,
-      required: [true, "must insert image"],
-    },
+    // imageUrl: {
+    //   type: String,
+    //   required: [true, "must insert image"],
+    // },
     tag: {
       type: Array,
       required: true,
