@@ -38,15 +38,17 @@ const getPost = asyncHandler(async (req, res) => {
 
 const createPost = asyncHandler(async (req, res) => {
   try {
-    const { title, content, category, tag, user } = req.body;
+    const { title, content, category, tag, imageUrl, user } = req.body;
+
     const post = await Post.create({
       title,
       content,
       tag,
       category,
+      imageUrl,
       user,
     });
-    console.log({ post });
+
     if (post) {
       res.status(201).json({
         id: post._id,
@@ -54,6 +56,7 @@ const createPost = asyncHandler(async (req, res) => {
         content: post.content,
         category: post.category,
         tag: post.tag,
+        imageUrl: post.imageUrl,
         user: post.user,
       });
     }

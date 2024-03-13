@@ -50,7 +50,7 @@ app.use(passport.session());
 
 app.use("/api/v1/posts", postsRoute);
 app.use("/api/v1/users", usersRoute);
-app.use("/api/uploads", uploadRoute);
+app.use("/api/upload", uploadRoute);
 
 app.get(
   "/auth/google",

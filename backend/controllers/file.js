@@ -28,7 +28,7 @@ function fileFilter(req, file, cb) {
 }
 
 const upload = multer({ storage, fileFilter });
-const uploadSingleImage = upload.single("image");
+const uploadSingleImage = upload.single("imageUrl");
 
 function uploadFunctionSingleImage(req, res, next) {
   uploadSingleImage(req, res, function (err) {

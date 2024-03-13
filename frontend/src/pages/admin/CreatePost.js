@@ -31,12 +31,10 @@ export default function CreatePost() {
   const [tag, setTag] = useState("");
   const [category, setCategory] = useState("");
 
-  const inputFileRef = useRef(null);
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // const formData = new FormData();
-    // formData.append("image", e.target.files[0]);
 
     if (loadingCreate && loadingProfile) {
       console.log("Loading");
@@ -49,18 +47,27 @@ export default function CreatePost() {
     }
 
     try {
+      if (!selectedFile) {
+        console.warn("No file selected");
+        return;
+      }
+      const formData = new FormData();
+      formData.append("imageUrl", selectedFile);
+      // console.log(formData);
       const { _id: userId } = dataProfile;
       await createPost({
         user: userId,
         title,
         content,
         tag,
+        imageUrl,
         category,
       }).unwrap();
-      // await uploadPostImage(formData).unwrap();
+      await uploadPostImage(formData).unwrap();
+      setImageUrl("");
       setTitle("");
       setContent("");
-      // setImageUrl("");
+      setImageUrl("");
       setTag("");
       setCategory("");
     } catch (error) {
@@ -68,25 +75,16 @@ export default function CreatePost() {
     }
   };
 
-  // const uploadFileHandler = async (event) => {
-  //   const formData = new FormData();
-  //   const file = event.target.files[0];
-  //   formData.append("image", file);
-  //   try {
-  //     const res = await uploadPostImage(formData).unwrap();
-  //     setImageUrl(res.image);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  const onClickRemoveImage = () => {
-    setImageUrl("");
-  };
-
   const onChange = useCallback((value) => {
     setContent(value);
   }, []);
+
+  const uploadFileHandler = (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    const fileName = file ? file.name : "";
+    setImageUrl(fileName);
+  };
   // console.log({ error });
   return (
     <>
@@ -127,14 +125,22 @@ export default function CreatePost() {
               onChange={(e) => setTag(e.target.value)}
             ></Form.Control>
           </Form.Group>
+
           <Form.Group controlId="image">
             <Form.Label>Image</Form.Label>
             <Form.Control
-              type="file"
-              value={imageUrl}
+              type="text"
+              placeholder="Enter image url"
+              value={selectedFile ? selectedFile.name : ""}
               onChange={(e) => setImageUrl(e.target.value)}
             ></Form.Control>
+            <Form.Control
+              label="Choose File"
+              onChange={uploadFileHandler}
+              type="file"
+            ></Form.Control>
           </Form.Group>
+
           <SimpleMDE value={content} onChange={onChange} />
 
           <Button type="submit" variant="primary">
