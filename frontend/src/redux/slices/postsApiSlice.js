@@ -58,7 +58,6 @@ export const postsApiSlice = apiSlice.injectEndpoints({
       keepUnusedDataFor: 5,
       providesTags: ["Post"],
     }),
-
     getCategories: builder.query({
       query: () => ({
         url: `${POSTS_URL}/topcategories`,

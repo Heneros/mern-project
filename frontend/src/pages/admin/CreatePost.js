@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Row, Col } from "react-bootstrap";
 import SimpleMDE from "react-simplemde-editor";
 
 import Message from "../../components/Message";
@@ -10,6 +10,7 @@ import {
 } from "../../redux/slices/postsApiSlice";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
+import NavMenu from "../../components/Profile/NavMenu";
 
 export default function CreatePost() {
   const {
@@ -90,64 +91,69 @@ export default function CreatePost() {
     <>
       <Breadcrumbs />
       <h1>Create Post</h1>
-      {loadingCreate ? (
-        <Loader />
-      ) : error ? (
-        <Message variant="danger"> {error?.message} </Message>
-      ) : (
-        <Form onSubmit={submitHandler}>
-          <Form.Group controlId="title">
-            <Form.Label>Title</Form.Label>
-            <Form.Control
-              type="title"
-              placeholder="Enter title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+      <Row className="my-5">
+        <NavMenu dataProfile={dataProfile} />
+        <Col md={9}>
+          {loadingCreate ? (
+            <Loader />
+          ) : error ? (
+            <Message variant="danger"> {error?.message} </Message>
+          ) : (
+            <Form onSubmit={submitHandler}>
+              <Form.Group controlId="title">
+                <Form.Label>Title</Form.Label>
+                <Form.Control
+                  type="title"
+                  placeholder="Enter title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-          <Form.Group controlId="category">
-            <Form.Label>Category</Form.Label>
-            <Form.Control
-              type="category"
-              placeholder="Enter category"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+              <Form.Group controlId="category">
+                <Form.Label>Category</Form.Label>
+                <Form.Control
+                  type="category"
+                  placeholder="Enter category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-          <Form.Group controlId="tag">
-            <Form.Label>Tag</Form.Label>
-            <Form.Control
-              type="tag"
-              placeholder="Enter tag"
-              value={tag}
-              onChange={(e) => setTag(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
+              <Form.Group controlId="tag">
+                <Form.Label>Tag</Form.Label>
+                <Form.Control
+                  type="tag"
+                  placeholder="Enter tag"
+                  value={tag}
+                  onChange={(e) => setTag(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
 
-          <Form.Group controlId="image">
-            <Form.Label>Image</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter image url"
-              value={selectedFile ? selectedFile.name : ""}
-              onChange={(e) => setImageUrl(e.target.value)}
-            ></Form.Control>
-            <Form.Control
-              label="Choose File"
-              onChange={uploadFileHandler}
-              type="file"
-            ></Form.Control>
-          </Form.Group>
+              <Form.Group controlId="image">
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter image url"
+                  value={selectedFile ? selectedFile.name : ""}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                ></Form.Control>
+                <Form.Control
+                  label="Choose File"
+                  onChange={uploadFileHandler}
+                  type="file"
+                ></Form.Control>
+              </Form.Group>
 
-          <SimpleMDE value={content} onChange={onChange} />
+              <SimpleMDE value={content} onChange={onChange} />
 
-          <Button type="submit" variant="primary">
-            Create
-          </Button>
-        </Form>
-      )}
+              <Button type="submit" variant="primary">
+                Create
+              </Button>
+            </Form>
+          )}
+        </Col>
+      </Row>
     </>
   );
 }

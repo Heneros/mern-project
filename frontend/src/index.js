@@ -31,6 +31,7 @@ import CreatePost from "./pages/admin/CreatePost";
 import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
 import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
+import AdminPostEdit from "./pages/admin/AdminPostEdit";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
           {
             path: "/admin/create-post",
             element: <CreatePost />,
+          },
+          {
+            path: "/admin/post/:id/edit",
+            element: <AdminPostEdit />,
           },
           {
             path: "/admin/user/:id/edit",

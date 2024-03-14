@@ -4,7 +4,6 @@ import { Nav, Col, Row, Form, Button } from "react-bootstrap";
 
 export default function NavMenu({ dataProfile }) {
   const location = useLocation();
- 
 
   const isCurrentPath = (path) => location.pathname === path;
   return (
@@ -17,17 +16,26 @@ export default function NavMenu({ dataProfile }) {
                 className={isCurrentPath("/profile") ? "active" : ""}
                 href="/profile"
               >
-                My profile{" "}
+                My profile
               </Nav.Link>
               <Nav.Link
-       
                 className={isCurrentPath("/admin/users-list") ? "active" : ""}
                 href="/admin/users-list"
               >
                 Users List
               </Nav.Link>
-              <Nav.Link href="/admin/posts-list">Posts List</Nav.Link>
-              <Nav.Link href="/admin/create-post">Create Post</Nav.Link>
+              <Nav.Link
+                className={isCurrentPath("/admin/posts-list") ? "active" : ""}
+                href="/admin/posts-list"
+              >
+                Posts List
+              </Nav.Link>
+              <Nav.Link
+                className={isCurrentPath("/admin/create-post") ? "active" : ""}
+                href="/admin/create-post"
+              >
+                Create Post
+              </Nav.Link>
             </Nav>
           </Col>
         </>
