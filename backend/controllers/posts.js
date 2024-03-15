@@ -26,14 +26,16 @@ const getAllPosts = asyncHandler(async (req, res) => {
 });
 
 const getPost = asyncHandler(async (req, res) => {
-  // res.status(201).json({ message: "getPost" });
-  const { id: postId } = req.params;
-  const post = await Post.findOne({ _id: postId });
-  if (!post) {
+  // const post = await Post.findById(req.params.id);
+  const postId = req.params.id;
+  const post = await Post.findById(req.params.id);
+  if (post) {
+    await post.incrementViews();
+    res.status(200).json(post);
+  } else {
     res.status(404).json({ message: `Not found ${postId}` });
+    return;
   }
-  await post.incrementViews();
-  res.status(200).json({ post, page, pages: Math.ceil(count / pageSize) });
 });
 
 const createPost = asyncHandler(async (req, res) => {
