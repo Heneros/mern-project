@@ -271,3 +271,7 @@ text-transform: capitalize;
 .profile-menu .active {
   color: red;
 }
+
+.img-form{
+  max-width: 450px;
+}

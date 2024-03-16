@@ -27,7 +27,7 @@ export default function AdminPostEdit() {
   const [category, setCategory] = useState("");
   const [tag, setTag] = useState("");
   const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const {
     data: post,
@@ -36,18 +36,23 @@ export default function AdminPostEdit() {
     err,
   } = useGetPostDetailsQuery({ postId });
 
+  console.log(post);
   if (isLoading) {
-    console.log("Loading");
+    // console.log("Loading");
   }
 
   if (!err) {
-    console.log("Working");
+    // console.log("Working");
   }
   const [updatePost, { isLoading: loadingPost }] = useUpdatePostMutation();
   const [uploadPostImage, { isLoading: loadingImgUpload }] =
     useUploadPostImageMutation();
 
   const navigate = useNavigate();
+
+  if (loadingPost && loadingPost) {
+    console.log("Loading");
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -60,8 +65,9 @@ export default function AdminPostEdit() {
         imageUrl,
         content,
       }).unwrap();
+
       refetch();
-      console.log("Success");
+      // alert("Success");
     } catch (err) {
       console.log(err?.message);
     }
@@ -76,6 +82,24 @@ export default function AdminPostEdit() {
       setContent(post.content);
     }
   }, [post]);
+
+  const uploadFileHandler = async (e) => {
+    // setSelectedFile(file);
+    // const fileName = file ? e.target.files[0] : "";
+    // setImageUrl(fileName);
+       const formData = new FormData();
+    formData.append("imageUrl", e.target.files[0]);
+
+    if (!selectedFile) {
+      console.warn("No file selected");
+      return;
+    }
+    const file = e.target.files[0];
+    setSelectedFile(file);
+
+    await uploadPostImage(formData).unwrap();
+    setImageUrl(`/uploads/${imageUrl}`);
+  };
 
   return (
     <>
@@ -97,6 +121,61 @@ export default function AdminPostEdit() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 ></Form.Control>
+              </Form.Group>
+              <Form.Group controlId="category">
+                <Form.Label>Category</Form.Label>
+                <Form.Control
+                  type="category"
+                  placeholder="Enter Category"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group controlId="tag">
+                <Form.Label>Tag</Form.Label>
+                <Form.Control
+                  type="tag"
+                  placeholder="Enter Tag"
+                  value={tag}
+                  onChange={(e) => setTag(e.target.value)}
+                ></Form.Control>
+              </Form.Group>
+              <Form.Group controlId="content">
+                <Form.Label>Content</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  value={content}
+                  placeholder="Enter Content"
+                  onChange={(e) => setContent(e.target.value)}
+                  rows={3}
+                />
+              </Form.Group>
+              <Form.Group controlId="image">
+                <Form.Label>Image</Form.Label>
+                {imageUrl ? (
+                  <img
+                    className="img-form 123"
+                    src={`/uploads/${imageUrl}`}
+                    alt={title}
+                  />
+                ) : (
+                  <>
+                    <img
+                      className="img-form 333"
+                      onChange={(e) => setImageUrl(e.target.value)}
+                      src={
+                        selectedFile ? URL.createObjectURL(selectedFile) : ""
+                      }
+                      alt={title}
+                    />
+                  </>
+                )}
+                <Form.Control
+                  label="Choose File"
+                  type="file"
+                  onChange={uploadFileHandler}
+                ></Form.Control>
+                {loadingImgUpload && <Loader />}
               </Form.Group>
               <Button
                 type="submit"
