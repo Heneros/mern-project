@@ -36,16 +36,16 @@ function uploadFunctionSingleImage(req, res, next) {
     if (err) {
       return res.status(400).send({ message: err.message });
     }
-    if (req.file && req.file.path) {
-      res.status(200).send({
-        message: "Image uploaded successfully",
-        image: `/${req.file.path}`,
-      });
-    } else {
-      res.status(400).send({
-        message: "Error upload image",
-      });
-    }
+    // if (req.file && req.file.path) {
+    res.status(200).send({
+      message: "Image uploaded successfully",
+      image: `/${req.file.path}`,
+    });
+    // } else {
+    //   res.status(400).send({
+    //     message: "Error upload image",
+    //   });
+    // }
   });
 }
 module.exports = uploadFunctionSingleImage;

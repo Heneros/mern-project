@@ -8,16 +8,18 @@ const {
   getAllTags,
   getCategories,
 } = require("../controllers/posts");
-const {protect} = require("../middleware/authMiddleware");
+const { protect, admin } = require("../middleware/authMiddleware");
 
 const router = express.Router();
 
-router.route("/").get(getAllPosts).post(protect, createPost);
+router.route("/").get(getAllPosts).post(protect, admin, createPost);
 router.get("/toptags", getAllTags);
 router.get("/topcategories", getCategories);
 
-
-
-router.route("/:id").get(getPost).put(updatePost).delete(deletePost);
+router
+  .route("/:id")
+  .get(protect, admin, getPost)
+  .put(protect, admin, updatePost)
+  .delete(protect, admin, deletePost);
 
 module.exports = router;

@@ -97,6 +97,10 @@ const updatePost = asyncHandler(async (req, res) => {
   const post = await Post.findById(req.params.id);
 
   if (post) {
+    // if (imageUrl) {
+    //   post.imageUrl = imageUrl;
+    // }
+
     post.title = title;
     post.content = content;
     post.imageUrl = imageUrl;

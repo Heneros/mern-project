@@ -36,24 +36,17 @@ export default function AdminPostEdit() {
     err,
   } = useGetPostDetailsQuery({ postId });
 
-  console.log(post);
-  if (isLoading) {
-    // console.log("Loading");
-  }
-
-  if (!err) {
-    // console.log("Working");
-  }
   const [updatePost, { isLoading: loadingPost }] = useUpdatePostMutation();
   const [uploadPostImage, { isLoading: loadingImgUpload }] =
     useUploadPostImageMutation();
 
   const navigate = useNavigate();
 
-  if (loadingPost && loadingPost) {
+  if (loadingPost && loadingImgUpload) {
     console.log("Loading");
   }
-
+  console.log(post);
+  
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -67,6 +60,7 @@ export default function AdminPostEdit() {
       }).unwrap();
 
       refetch();
+      navigate("/admin/posts-list");
       // alert("Success");
     } catch (err) {
       console.log(err?.message);
@@ -84,21 +78,19 @@ export default function AdminPostEdit() {
   }, [post]);
 
   const uploadFileHandler = async (e) => {
-    // setSelectedFile(file);
-    // const fileName = file ? e.target.files[0] : "";
-    // setImageUrl(fileName);
-       const formData = new FormData();
+    // e.preventDefault();
+    const formData = new FormData();
     formData.append("imageUrl", e.target.files[0]);
-
-    if (!selectedFile) {
-      console.warn("No file selected");
-      return;
+    try {
+      // const file = e.target.files[0];
+      // await uploadPostImage(formData).unwrap();
+      const res = await uploadPostImage(formData).unwrap();
+      // toast.success(res.message);
+      setImageUrl(res.image);
+      console.log(res);
+    } catch (error) {
+      console.log("Error image upload", error);
     }
-    const file = e.target.files[0];
-    setSelectedFile(file);
-
-    await uploadPostImage(formData).unwrap();
-    setImageUrl(`/uploads/${imageUrl}`);
   };
 
   return (
@@ -152,24 +144,12 @@ export default function AdminPostEdit() {
               </Form.Group>
               <Form.Group controlId="image">
                 <Form.Label>Image</Form.Label>
-                {imageUrl ? (
-                  <img
-                    className="img-form 123"
-                    src={`/uploads/${imageUrl}`}
-                    alt={title}
-                  />
-                ) : (
-                  <>
-                    <img
-                      className="img-form 333"
-                      onChange={(e) => setImageUrl(e.target.value)}
-                      src={
-                        selectedFile ? URL.createObjectURL(selectedFile) : ""
-                      }
-                      alt={title}
-                    />
-                  </>
-                )}
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Image Url"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                ></Form.Control>
                 <Form.Control
                   label="Choose File"
                   type="file"

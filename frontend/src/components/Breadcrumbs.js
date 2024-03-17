@@ -8,6 +8,7 @@ export default function Breadcrumbs() {
   const parts = pathname.split("/");
 
   const secondPart = parts[parts.length - 2];
+  console.log(secondPart);
   const lastPart = parts[parts.length - 1];
 
   return (
@@ -23,9 +24,10 @@ export default function Breadcrumbs() {
             <>
               {secondPart ? (
                 <>
-                  <Link className="breadcrumb-item" to={`/${secondPart}`}>
+                  {/* <Link className="breadcrumb-item" to={`/${secondPart}`}>
                     {secondPart}{" "}
-                  </Link>
+                    </Link> */}
+                  <span className="breadcrumb-item">{secondPart}</span>
                 </>
               ) : (
                 <></>
