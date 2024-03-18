@@ -48,12 +48,6 @@ export default function CreatePost() {
     }
 
     try {
-      if (!selectedFile) {
-        console.warn("No file selected");
-        return;
-      }
-      const formData = new FormData();
-      formData.append("imageUrl", selectedFile);
       // console.log(formData);
       const { _id: userId } = dataProfile;
       await createPost({
@@ -64,11 +58,9 @@ export default function CreatePost() {
         imageUrl,
         category,
       }).unwrap();
-      await uploadPostImage(formData).unwrap();
       setImageUrl("");
       setTitle("");
       setContent("");
-      setImageUrl("");
       setTag("");
       setCategory("");
     } catch (error) {
@@ -80,13 +72,21 @@ export default function CreatePost() {
     setContent(value);
   }, []);
 
-  const uploadFileHandler = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file);
-    const fileName = file ? file.name : "";
-    setImageUrl(fileName);
+  const uploadFileHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("imageUrl", e.target.files[0]);
+    console.log("Work");
+    try {
+      const res = await uploadPostImage(formData).unwrap();
+      console.log(res);
+      setImageUrl(res.image);
+      console.log(res);
+    } catch (error) {
+      console.log("Error image upload", error);
+    }
   };
-  // console.log({ error });
+  console.log(123);
   return (
     <>
       <Breadcrumbs />
@@ -135,7 +135,7 @@ export default function CreatePost() {
                 <Form.Control
                   type="text"
                   placeholder="Enter image url"
-                  value={selectedFile ? selectedFile.name : ""}
+                  value={imageUrl}
                   onChange={(e) => setImageUrl(e.target.value)}
                 ></Form.Control>
                 <Form.Control

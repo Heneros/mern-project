@@ -82,10 +82,7 @@ export default function AdminPostEdit() {
     const formData = new FormData();
     formData.append("imageUrl", e.target.files[0]);
     try {
-      // const file = e.target.files[0];
-      // await uploadPostImage(formData).unwrap();
       const res = await uploadPostImage(formData).unwrap();
-      // toast.success(res.message);
       setImageUrl(res.image);
       console.log(res);
     } catch (error) {
