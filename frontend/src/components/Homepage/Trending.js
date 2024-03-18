@@ -6,9 +6,8 @@ import Loader from "../Loader";
 
 import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
-export default function Trending() {
-  const { pageNumber } = useParams();
-  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
+export default function Trending({ data, isLoading, error }) {
+
   const [randomPosts, setRandomPosts] = useState([]);
 
   useEffect(() => {

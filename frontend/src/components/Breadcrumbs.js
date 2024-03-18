@@ -8,7 +8,7 @@ export default function Breadcrumbs() {
   const parts = pathname.split("/");
 
   const secondPart = parts[parts.length - 2];
-  console.log(secondPart);
+
   const lastPart = parts[parts.length - 1];
 
   return (

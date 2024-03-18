@@ -5,11 +5,11 @@ export const postsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getPosts: builder.query({
       query: ({ pageNumber }) => ({
-        url: `${POSTS_URL}`,
+        url: POSTS_URL,
         params: { pageNumber },
       }),
-      providesTags: ["Post"],
       keepUnusedDataFor: 5,
+      providesTags: ["Post"],
     }),
     getPostDetails: builder.query({
       query: ({ postId }) => ({
@@ -52,20 +52,6 @@ export const postsApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
-    getTags: builder.query({
-      query: () => ({
-        url: `${POSTS_URL}/toptags`,
-      }),
-      keepUnusedDataFor: 5,
-      providesTags: ["Post"],
-    }),
-    getCategories: builder.query({
-      query: () => ({
-        url: `${POSTS_URL}/topcategories`,
-      }),
-      keepUnusedDataFor: 5,
-      providesTags: ["Post"],
-    }),
   }),
 });
 
@@ -75,7 +61,5 @@ export const {
   useGetPostDetailsQuery,
   useGetPostsQuery,
   useUpdatePostMutation,
-  useGetCategoriesQuery,
-  useGetTagsQuery,
   useUploadPostImageMutation,
 } = postsApiSlice;

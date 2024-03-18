@@ -9,10 +9,7 @@ import { useGetPostsQuery } from "../redux/slices/postsApiSlice";
 import Title from "./Title";
 import Post from "./Post";
 
-export default function AllPostsTag() {
-  const { pageNumber } = useParams();
-  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
-
+export default function AllPostsTag({ data, isLoading, error }) {
   const location = useLocation();
 
   const pathname = decodeURIComponent(location.pathname);
@@ -20,7 +17,7 @@ export default function AllPostsTag() {
 
   const lastPart = parts[parts.length - 1];
 
-  console.log(pathname);
+  // console.log(pathname);
   //   const categoryPost = postItems?.filter((item) => {
   //     return item?.tag?.value.toLowerCase() === lastPart;
   //   });
@@ -30,6 +27,7 @@ export default function AllPostsTag() {
     return tags.includes(lastPart.toLowerCase());
   });
 
+  
   //   console.log(matchedTags);
   return (
     <>

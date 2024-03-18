@@ -10,24 +10,31 @@ import { useGetPostsQuery } from "../redux/slices/postsApiSlice";
 import Title from "./Title";
 import Post from "./Post";
 
-export default function AllPostsCategory() {
-  const { pageNumber } = useParams();
-  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
-
+export default function AllPostsCategory({ data, isLoading, error }) {
   const location = useLocation();
   const pathname = decodeURIComponent(location.pathname);
   const parts = pathname.split("/");
+
   const lastPart = parts[parts.length - 1];
 
   const categoryPost = data?.posts?.filter((item) => {
     return item.category.toLowerCase() === lastPart;
   });
 
+  // const partsName = parts?.filter((item) =>
+  //   item.includes("category").join(", ")
+  // );
+  const partsName = parts
+    .filter((item) => item.includes("category"))
+    .join(", ");
+
+  console.log(partsName);
+
   return (
     <>
       <Breadcrumbs />
       <Row className="py-3">
-        <Title name={lastPart} />
+        <Title name={partsName} />
         {isLoading ? (
           <Loader />
         ) : error ? (

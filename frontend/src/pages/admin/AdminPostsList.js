@@ -14,6 +14,7 @@ import Message from "../../components/Message";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import NavMenu from "../../components/Profile/NavMenu";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
+import Paginate from "../../components/Paginate";
 
 export default function AdminPostsList() {
   const { pageNumber } = useParams();
@@ -22,6 +23,16 @@ export default function AdminPostsList() {
 
   const [deletePost, { isLoading: loadingDelete }] = useDeletePostMutation();
 
+  const deleteHandler = async (id) => {
+    if (window.confirm("Are you sure")) {
+      try {
+        await deletePost(id);
+        refetch();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   // console.log(posts);
   return (
     <>
@@ -63,12 +74,30 @@ export default function AdminPostsList() {
                       <td>
                         {format(new Date(post.createdAt), "MMMM dd, yyyy")}
                       </td>
+                      <td>
+                        <Link
+                          to={`/admin/post/${post._id}/edit`}
+                          style={{ color: "red", cursor: "pointer" }}
+                        >
+                          <Button variant="light" className="btn-sm mx-2">
+                            <FaEdit />
+                          </Button>
+                        </Link>
+                        <Button
+                          variant="danger"
+                          className="btn-sm"
+                          onClick={() => deleteHandler(post._id)}
+                        >
+                          <FaTrash style={{ color: "white" }} />
+                        </Button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </Table>
             </>
           )}
+          <Paginate pages={data?.pages} page={data?.page} isAdmin={false} />
         </Col>
       </Row>
     </>
