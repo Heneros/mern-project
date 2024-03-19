@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { format } from "date-fns";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
 import { Col, Row, Form, Button } from "react-bootstrap";
-import { FaTrash, FaEdit, FaCheck, FaTimes } from "react-icons/fa";
-
+import SimpleMDE from "react-simplemde-editor";
+import 'easymde/dist/easymde.min.css';
 import {
-  useDeletePostMutation,
   useGetPostDetailsQuery,
-  useGetPostsQuery,
   useUpdatePostMutation,
   useUploadPostImageMutation,
 } from "../../redux/slices/postsApiSlice";
@@ -46,7 +42,7 @@ export default function AdminPostEdit() {
     console.log("Loading");
   }
   console.log(post);
-  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -77,6 +73,21 @@ export default function AdminPostEdit() {
     }
   }, [post]);
 
+  const options = useMemo(
+    () => ({
+      spellChecker: false,
+      maxHeight: "200px",
+      autofocus: true,
+      placeholder: "Enter text...",
+      status: false,
+      autosave: {
+        enabled: true,
+        delay: 1000,
+      },
+    }),
+    []
+  );
+
   const uploadFileHandler = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
@@ -90,6 +101,9 @@ export default function AdminPostEdit() {
     }
   };
 
+  const onChange = useCallback((value) => {
+    setContent(value);
+  }, []);
   return (
     <>
       <Breadcrumbs />
@@ -131,14 +145,14 @@ export default function AdminPostEdit() {
               </Form.Group>
               <Form.Group controlId="content">
                 <Form.Label>Content</Form.Label>
-                <Form.Control
-                  as="textarea"
+  
+                <SimpleMDE
                   value={content}
-                  placeholder="Enter Content"
-                  onChange={(e) => setContent(e.target.value)}
-                  rows={3}
+                  options={options}
+                  onChange={onChange}
                 />
               </Form.Group>
+
               <Form.Group controlId="image">
                 <Form.Label>Image</Form.Label>
                 <Form.Control

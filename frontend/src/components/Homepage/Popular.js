@@ -26,7 +26,7 @@ export default function Popular() {
               <Title name={"News"} />
               <div className="col-lg-12">
                 <div className="row">
-                  {sortedPosts.map((item, index) => (
+                  {sortedPosts.slice(0, 6).map((item, index) => (
                     <div className="col-md-6" key={item._id}>
                       <div
                         className={
@@ -46,8 +46,7 @@ export default function Popular() {
                                 }
                               : {
                                   objectFit: "cover",
-                                  width: "100px",
-                                  height: "100px",
+                                  maxWidth: "100px",
                                 }
                           }
                         />

@@ -1,6 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import SimpleMDE from "react-simplemde-editor";
+import 'easymde/dist/easymde.min.css';
 
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
@@ -31,8 +32,6 @@ export default function CreatePost() {
   const [imageUrl, setImageUrl] = useState("");
   const [tag, setTag] = useState("");
   const [category, setCategory] = useState("");
-
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -86,7 +85,7 @@ export default function CreatePost() {
       console.log("Error image upload", error);
     }
   };
-  console.log(123);
+  // console.log(123);
   return (
     <>
       <Breadcrumbs />

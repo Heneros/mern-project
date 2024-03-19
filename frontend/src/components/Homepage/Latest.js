@@ -32,7 +32,7 @@ export default function Latest({ data, isLoading, error }) {
               </div>
               <div className="col-lg-12">
                 <div className="row">
-                  {sortedPosts.map((item, index) => (
+                  {sortedPosts.slice(0, 6).map((item, index) => (
                     <div className="col-md-6" key={index}>
                       <div
                         className={

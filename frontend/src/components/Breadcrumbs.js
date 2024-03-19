@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({ title = "" }) {
   const location = useLocation();
   const pathname = location.pathname;
   const parts = pathname.split("/");
 
   const secondPart = parts[parts.length - 2];
-
   const lastPart = parts[parts.length - 1];
 
   return (
@@ -32,7 +31,9 @@ export default function Breadcrumbs() {
               ) : (
                 <></>
               )}
-              <span className="breadcrumb-item active">{lastPart}</span>
+              <span className="breadcrumb-item active">
+                {title ? title : lastPart ? lastPart : null}
+              </span>
             </>
           )}
         </nav>

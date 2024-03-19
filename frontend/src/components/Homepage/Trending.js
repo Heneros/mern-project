@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
-import Message from "../Message";
-import Loader from "../Loader";
-
-import { useGetPostsQuery } from "../../redux/slices/postsApiSlice";
 
 export default function Trending({ data, isLoading, error }) {
-
   const [randomPosts, setRandomPosts] = useState([]);
 
   useEffect(() => {
@@ -40,15 +35,16 @@ export default function Trending({ data, isLoading, error }) {
             {randomPosts.map((post, index) => (
               <div
                 className=" d-flex mb-3 item-trending"
-                style={{ width: "100%" }}
+                style={{ width: "100%", height: "100%" }}
                 key={index}
               >
                 <img
                   src={post.imageUrl}
-                  alt=""
+                  alt={post.title}
                   style={{
                     objectFit: "cover",
-                    height: "100px",
+                    maxWidth: "100px",
+                    maxHeight: "100px",
                   }}
                 />
                 <div
