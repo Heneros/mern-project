@@ -52,6 +52,14 @@ export const postsApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+    createComment: builder.mutation({
+      query: (postId, data) => ({
+        url: `${POSTS_URL}/${postId}/comments`,
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -62,4 +70,5 @@ export const {
   useGetPostsQuery,
   useUpdatePostMutation,
   useUploadPostImageMutation,
+  useCreateCommentMutation,
 } = postsApiSlice;

@@ -1,5 +1,20 @@
 const mongoose = require("mongoose");
 
+const commentSchema = mongoose.Schema(
+  {
+    username: { type: String, required: true },
+    comment: { type: String, required: true },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
 const postSchema = new mongoose.Schema(
   {
     user: {
@@ -18,6 +33,7 @@ const postSchema = new mongoose.Schema(
       type: String,
       required: [true, "must insert image"],
     },
+    comments: [commentSchema],
     tag: {
       type: Array,
       required: true,

@@ -18,7 +18,7 @@ export default function AllPostsCategory({ data, isLoading, error }) {
   const lastPart = parts[parts.length - 1];
 
   const categoryPost = data?.posts?.filter((item) => {
-    return item.category.toLowerCase() === lastPart;
+    return item.category === lastPart;
   });
 
   // const partsName = parts?.filter((item) =>
@@ -28,13 +28,13 @@ export default function AllPostsCategory({ data, isLoading, error }) {
     .filter((item) => item.includes("category"))
     .join(", ");
 
-  console.log(partsName);
+  // console.log(partsName);
 
   return (
     <>
       <Breadcrumbs />
       <Row className="py-3">
-        <Title name={partsName} />
+        <Title name={lastPart} />
         {isLoading ? (
           <Loader />
         ) : error ? (
