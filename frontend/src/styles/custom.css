@@ -275,3 +275,26 @@ text-transform: capitalize;
 .img-form{
   max-width: 450px;
 }
+
+.top-info-post{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  /* margin: auto; */
+}
+.top-info-post  .item-post-info{
+/* flex-basis: 50%; */
+/* white-space: nowrap; */
+margin: 0 auto;
+}
+.top-info-post  .item-post-info:first-child{
+  flex-basis: 50%;
+  text-align: left;
+  /* white-space: nowrap; */
+
+  }
+  .top-info-post  .item-post-info:last-child{
+    flex-basis: 50%;
+    text-align: right;
+    }

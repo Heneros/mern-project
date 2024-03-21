@@ -21,7 +21,7 @@ router.route("/:id/comments").post(protect, createPostComment);
 
 router
   .route("/:id")
-  .get(protect, admin, getPost)
+  .get(getPost)
   .put(protect, admin, updatePost)
   .delete(protect, admin, deletePost);
 

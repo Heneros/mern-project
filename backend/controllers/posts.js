@@ -183,8 +183,7 @@ const createPostComment = asyncHandler(async (req, res) => {
     await post.save();
     res.status(201).json({ message: "Comment added successfully" });
   } else {
-    res.status(404);
-    throw new Error("Post not found");
+    res.status(404).json({ message: "Try authorize" });
   }
 });
 module.exports = {
