@@ -14,7 +14,6 @@ import {
 import "easymde/dist/easymde.min.css";
 
 import {
-  useCreateCommentMutation,
   useGetPostDetailsQuery,
   useGetPostsQuery,
 } from "../redux/slices/postsApiSlice";
@@ -26,6 +25,8 @@ import Newsletter from "../components/Homepage/Newsletter";
 import Trending from "../components/Homepage/Trending";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { useGetProfileQuery } from "../redux/slices/userApiSlice";
+import Comments from "../components/Comments";
 
 export default function SinglePost() {
   const { id: postId, pageNumber } = useParams();
@@ -35,10 +36,8 @@ export default function SinglePost() {
     refetch,
     isLoading,
   } = useGetPostDetailsQuery({ postId });
-  const [comment, setComment] = useState("");
 
-  const [createComment, { isLoading: loadingPostReview }, errorComment] =
-    useCreateCommentMutation();
+  const { data: dataProfile, error: errorProfile } = useGetProfileQuery();
 
   const {
     data,
@@ -46,25 +45,12 @@ export default function SinglePost() {
     isLoading: postsLoading,
   } = useGetPostsQuery({ pageNumber });
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    await createComment({ postId, comment }).unwrap();
-    refetch();
-    console.log("Comments success");
-    // try {
-    //   await createComment({ postId, comment }).unwrap();
-    //   refetch();
-    //   console.log("Comments success");
-    // } catch (error) {
-    //   console.log(error?.message || error?.data.msg);
-    // }
-  };
-  console.log(errorComment);
+  // console.log(errorComment);
 
   return (
     <>
       <Breadcrumbs title={post?.title} />
-      <Row>
+      <Row className="py-3">
         <Col lg={8}>
           {isLoading ? (
             <Loader />
@@ -74,7 +60,7 @@ export default function SinglePost() {
             </Message>
           ) : (
             <>
-              <div className="position-relative mb-3">
+              <div className="position-relative mb-3" key={post._id}>
                 <Image
                   src={post?.imageUrl}
                   alt={post?.title}
@@ -100,7 +86,7 @@ export default function SinglePost() {
                       <span className="views">Views {post?.views}</span>
                     </div>
                   </div>
-                  <div>
+                  <div className="info-post">
                     <h3 className="mb-3">{post?.title}</h3>
                     <ReactMarkdown children={post?.content} />
                   </div>
@@ -111,28 +97,36 @@ export default function SinglePost() {
 
                 {post?.comments.length > 0 ? (
                   post?.comments.map((item) => (
-                    <>
-                      <div className="media mb-4">
-                        {/* <img src="img/user.jpg" alt="Image" className="img-fluid mr-3 mt-1" style="width: 45px;" /> */}
-                        <div className="media-body">
-                          <h6>
-                            <Link to="#!">{item?.username}</Link>
-                            <small>
-                              <i>
-                                {format(
-                                  new Date(post?.createdAt),
-                                  "MMMM dd, yyyy, h:mm "
-                                )}
-                              </i>
-                            </small>
-                          </h6>
-                          <p>{item?.comment}</p>
-                          <button className="btn btn-sm btn-outline-secondary">
-                            Reply
-                          </button>
-                        </div>
+                    <div className="media mb-4" key={item._id}>
+                      {/* <img src="img/user.jpg" alt="Image" className="img-fluid mr-3 mt-1" style="width: 45px;" /> */}
+                      <div className="media-body">
+                        <h6>
+                          <Link to="#!">{item?.username}</Link>
+                          <small>
+                            <i>
+                              {format(
+                                new Date(post?.createdAt),
+                                "MMMM dd, yyyy, h:mm "
+                              )}
+                            </i>
+                          </small>
+                        </h6>
+                        <p>{item?.comment}</p>
+                        {!errorProfile ? (
+                          <>
+                            <button className="btn btn-sm btn-outline-secondary">
+                              Reply
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button className="btn btn-sm btn-outline-secondary">
+                              Login to comment
+                            </button>
+                          </>
+                        )}
                       </div>
-                    </>
+                    </div>
                   ))
                 ) : (
                   <p>No comments</p>
@@ -140,37 +134,11 @@ export default function SinglePost() {
               </div>
 
               <div className="bg-light mb-3" style={{ padding: "30px" }}>
-                {loadingPostReview ? (
-                  <Loader />
-                ) : error ? (
-                  <Message variant="danger">
-                    {errorComment?.data?.message || errorComment?.message}
-                  </Message>
+                {errorProfile ? (
+                  <>Your not logged</>
                 ) : (
                   <>
-                    <h3 className="mb-4">Leave a comment</h3>
-                    <Form onSubmit={submitHandler}>
-                      <Form.Group>
-                        <Form.Label label="message">Message *</Form.Label>
-                        <Form.Control
-                          id="message"
-                          cols="30"
-                          rows="5"
-                          as="textarea"
-                          value={comment}
-                          onChange={(e) => setComment(e.target.value)}
-                        ></Form.Control>
-                      </Form.Group>
-                      <div className="form-group mb-0">
-                        <Button
-                          type="submit"
-                          className="btn btn-primary font-weight-semi-bold py-2 px-3"
-                          disabled={loadingPostReview}
-                        >
-                          Leave a comment
-                        </Button>
-                      </div>
-                    </Form>
+                    <Comments postId={postId} refetch={refetch} />
                   </>
                 )}
               </div>

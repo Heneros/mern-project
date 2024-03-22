@@ -79,12 +79,6 @@ export default function Header() {
               >
                 News
               </Nav.Link>
-
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">Menu item 1</NavDropdown.Item>
-                <NavDropdown.Item href="#">Menu item 2</NavDropdown.Item>
-                <NavDropdown.Item href="#">Menu item 3</NavDropdown.Item>
-              </NavDropdown>
               <Nav.Link href="contact.html">Contact</Nav.Link>
               {error ? (
                 <>

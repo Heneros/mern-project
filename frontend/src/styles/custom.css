@@ -172,18 +172,23 @@
     max-height: 127px;
     object-fit: cover;
   }
+  .item-trending img{
+    width: 100%;
+    max-width: 100px
+    }
 }
 
 @media(min-width: 991px){
-  .item-trending img{
-  width: 100%;
-  max-width: 100px
-  }
+
 }
 @media(max-width: 991px){
   .item-trending img{
   width: 100%;
   max-width: 250px;
+  }
+      
+  .trending{
+    margin: 0 20px;
   }
   
 }
@@ -297,4 +302,11 @@ margin: 0 auto;
   .top-info-post  .item-post-info:last-child{
     flex-basis: 50%;
     text-align: right;
+    }
+
+    .info-post{
+      max-width: 100%;
+    }   
+     .info-post img{
+      max-width: 100%;
     }

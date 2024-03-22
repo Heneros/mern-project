@@ -12,23 +12,25 @@ export default function Post({ postItems }) {
             className={index < 4 ? "position-relative mb-3" : "d-flex mb-3"}
             key={index}
           >
-            <img
-              className={index < 4 ? "img-fluid w-100" : ""}
-              alt="preview post "
-              src={item.imageUrl}
-              style={
-                index < 4
-                  ? {
-                      objectFit: "cover",
-                      height: "163px",
-                    }
-                  : {
-                      objectFit: "cover",
-                      width: "100px",
-                      height: "100px",
-                    }
-              }
-            />
+            <Link to={`/news/${item._id}`}>
+              <img
+                className={index < 4 ? "img-fluid w-100" : ""}
+                alt="preview post "
+                src={item.imageUrl}
+                style={
+                  index < 4
+                    ? {
+                        objectFit: "cover",
+                        height: "163px",
+                      }
+                    : {
+                        objectFit: "cover",
+                        width: "100px",
+                        height: "100px",
+                      }
+                }
+              />
+            </Link>
             <div className="overlay position-relative bg-light">
               <div className="mb-2" style={{ fontSize: "14px" }}>
                 <Link to={`/category/${item.category.toLowerCase()}`}>

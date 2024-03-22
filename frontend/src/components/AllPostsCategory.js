@@ -18,7 +18,8 @@ export default function AllPostsCategory({ data, isLoading, error }) {
   const lastPart = parts[parts.length - 1];
 
   const categoryPost = data?.posts?.filter((item) => {
-    return item.category === lastPart;
+    ///   item.category.toLowerCase() === lastPart;
+    return item.category.toLowerCase() === lastPart;
   });
 
   // const partsName = parts?.filter((item) =>
@@ -27,8 +28,8 @@ export default function AllPostsCategory({ data, isLoading, error }) {
   const partsName = parts
     .filter((item) => item.includes("category"))
     .join(", ");
-
-  // console.log(partsName);
+  console.log(data?.posts);
+  console.log(lastPart);
 
   return (
     <>

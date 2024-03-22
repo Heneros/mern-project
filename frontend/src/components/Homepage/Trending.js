@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { format } from "date-fns";
+import { Row } from "react-bootstrap";
 
 export default function Trending({ data, isLoading, error }) {
   const [randomPosts, setRandomPosts] = useState([]);
@@ -31,7 +32,7 @@ export default function Trending({ data, isLoading, error }) {
         {isLoading && <p>Loading posts...</p>}
         {error && <p>Error fetching posts: {error.message}</p>}
         {randomPosts.length > 0 && (
-          <div className="row">
+          <Row className="trending">
             {randomPosts.map((post, index) => (
               <div
                 className=" d-flex mb-3 item-trending"
@@ -66,7 +67,7 @@ export default function Trending({ data, isLoading, error }) {
                 </div>
               </div>
             ))}
-          </div>
+          </Row>
         )}
       </div>
       <div className="pb-3">
