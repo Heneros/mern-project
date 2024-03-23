@@ -9,6 +9,7 @@ import Breadcrumbs from "./Breadcrumbs";
 import { useGetPostsQuery } from "../redux/slices/postsApiSlice";
 import Title from "./Title";
 import Post from "./Post";
+import Meta from "./Meta";
 
 export default function AllPostsCategory({ data, isLoading, error }) {
   const location = useLocation();
@@ -25,14 +26,15 @@ export default function AllPostsCategory({ data, isLoading, error }) {
   // const partsName = parts?.filter((item) =>
   //   item.includes("category").join(", ")
   // );
-  const partsName = parts
-    .filter((item) => item.includes("category"))
-    .join(", ");
-  console.log(data?.posts);
-  console.log(lastPart);
+  // const partsName = parts
+  //   .filter((item) => item.includes("category"))
+  //   .join(", ");
+  // console.log(data?.posts);
+  // console.log(lastPart);
 
   return (
     <>
+      <Meta title={lastPart} />
       <Breadcrumbs />
       <Row className="py-3">
         <Title name={lastPart} />

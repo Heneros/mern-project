@@ -25,6 +25,11 @@ const getAllPosts = asyncHandler(async (req, res) => {
   res.status(200).json({ posts, page, pages: Math.ceil(count / pageSize) });
 });
 
+const getAll = asyncHandler(async (req, res) => {
+  const posts = await Post.find({});
+  res.status(200).json({ posts });
+});
+
 const getPost = asyncHandler(async (req, res) => {
   // const post = await Post.findById(req.params.id);
   const postId = req.params.id;
@@ -196,4 +201,5 @@ module.exports = {
   getAllTags,
   getCategories,
   createPostComment,
+  getAll,
 };

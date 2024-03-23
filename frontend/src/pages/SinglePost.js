@@ -27,6 +27,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { useGetProfileQuery } from "../redux/slices/userApiSlice";
 import Comments from "../components/Comments";
+import Meta from "../components/Meta";
 
 export default function SinglePost() {
   const { id: postId, pageNumber } = useParams();
@@ -49,6 +50,7 @@ export default function SinglePost() {
 
   return (
     <>
+      <Meta title={post?.title} />
       <Breadcrumbs title={post?.title} />
       <Row className="py-3">
         <Col lg={8}>
@@ -70,7 +72,7 @@ export default function SinglePost() {
                 <div className="overlay position-relative bg-light">
                   <div className="mb-3 top-info-post">
                     <div className="item-post-info">
-                      <Link to={`/category/${post?.category}`}>
+                      <Link to={`/category/${post?.category.toLowerCase()}`}>
                         {post?.category}
                       </Link>
                       <span className="px-1">/</span>

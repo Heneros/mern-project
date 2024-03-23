@@ -9,11 +9,14 @@ import Trending from "../components/Homepage/Trending";
 import AllPostsTag from "../components/AllPostsTag";
 
 import Paginate from "../components/Paginate";
-import { useGetPostsQuery } from "../redux/slices/postsApiSlice";
+import {
+  useGetAllQuery,
+  useGetPostsQuery,
+} from "../redux/slices/postsApiSlice";
 
 export default function Tag() {
   const { pageNumber } = useParams();
-  const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
+  const { data, isLoading, error } = useGetAllQuery({ pageNumber });
 
   return (
     <Container>
@@ -24,7 +27,7 @@ export default function Tag() {
         <Col lg="4">
           <SidebarSocial />
           <Newsletter />
-          <Trending  data={data} error={error} isLoading={isLoading} />
+          <Trending data={data} error={error} isLoading={isLoading} />
         </Col>
       </Row>
     </Container>

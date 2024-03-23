@@ -8,6 +8,7 @@ import {
   useGetProfileQuery,
   useLogoutMutation,
 } from "../redux/slices/userApiSlice";
+import Meta from "./Meta";
 
 export default function Header() {
   const { error } = useGetProfileQuery();
@@ -30,6 +31,7 @@ export default function Header() {
   };
   return (
     <>
+      <Meta />
       <div className="container-fluid">
         <div className="row align-items-center bg-light px-lg-5">
           <div className="col-12 col-md-8">

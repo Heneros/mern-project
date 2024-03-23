@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import SimpleMDE from "react-simplemde-editor";
-import 'easymde/dist/easymde.min.css';
+import "easymde/dist/easymde.min.css";
 import {
   useGetPostDetailsQuery,
   useUpdatePostMutation,
@@ -23,7 +23,6 @@ export default function AdminPostEdit() {
   const [category, setCategory] = useState("");
   const [tag, setTag] = useState("");
   const [content, setContent] = useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
 
   const {
     data: post,
@@ -41,7 +40,7 @@ export default function AdminPostEdit() {
   if (loadingPost && loadingImgUpload) {
     console.log("Loading");
   }
-  console.log(post);
+  // console.log(post);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -115,67 +114,70 @@ export default function AdminPostEdit() {
           ) : err ? (
             <Message>{err?.message}</Message>
           ) : (
-            <Form onSubmit={submitHandler}>
-              <Form.Group controlId="title">
-                <Form.Label>Title</Form.Label>
-                <Form.Control
-                  type="title"
-                  placeholder="Enter title"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="category">
-                <Form.Label>Category</Form.Label>
-                <Form.Control
-                  type="category"
-                  placeholder="Enter Category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="tag">
-                <Form.Label>Tag</Form.Label>
-                <Form.Control
-                  type="tag"
-                  placeholder="Enter Tag"
-                  value={tag}
-                  onChange={(e) => setTag(e.target.value)}
-                ></Form.Control>
-              </Form.Group>
-              <Form.Group controlId="content">
-                <Form.Label>Content</Form.Label>
-  
-                <SimpleMDE
-                  value={content}
-                  options={options}
-                  onChange={onChange}
-                />
-              </Form.Group>
+            <>
+              Visit page: <Link to={`/news/${postId}`}>post</Link>
+              <Form onSubmit={submitHandler}>
+                <Form.Group controlId="title">
+                  <Form.Label>Title</Form.Label>
+                  <Form.Control
+                    type="title"
+                    placeholder="Enter title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group controlId="category">
+                  <Form.Label>Category</Form.Label>
+                  <Form.Control
+                    type="category"
+                    placeholder="Enter Category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group controlId="tag">
+                  <Form.Label>Tag</Form.Label>
+                  <Form.Control
+                    type="tag"
+                    placeholder="Enter Tag"
+                    value={tag}
+                    onChange={(e) => setTag(e.target.value)}
+                  ></Form.Control>
+                </Form.Group>
+                <Form.Group controlId="content">
+                  <Form.Label>Content</Form.Label>
 
-              <Form.Group controlId="image">
-                <Form.Label>Image</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Image Url"
-                  value={imageUrl}
-                  onChange={(e) => setImageUrl(e.target.value)}
-                ></Form.Control>
-                <Form.Control
-                  label="Choose File"
-                  type="file"
-                  onChange={uploadFileHandler}
-                ></Form.Control>
-                {loadingImgUpload && <Loader />}
-              </Form.Group>
-              <Button
-                type="submit"
-                variant="primary"
-                style={{ marginTop: "1rem" }}
-              >
-                Update
-              </Button>
-            </Form>
+                  <SimpleMDE
+                    value={content}
+                    options={options}
+                    onChange={onChange}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="image">
+                  <Form.Label>Image</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Image Url"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
+                  ></Form.Control>
+                  <Form.Control
+                    label="Choose File"
+                    type="file"
+                    onChange={uploadFileHandler}
+                  ></Form.Control>
+                  {loadingImgUpload && <Loader />}
+                </Form.Group>
+                <Button
+                  type="submit"
+                  variant="primary"
+                  style={{ marginTop: "1rem" }}
+                >
+                  Update
+                </Button>
+              </Form>
+            </>
           )}
         </Col>
       </Row>

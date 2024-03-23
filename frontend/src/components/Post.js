@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { format } from "date-fns";
+
+import DefaultImg from "../styles/img/sample.jpg";
 
 export default function Post({ postItems }) {
   return (
@@ -15,8 +16,8 @@ export default function Post({ postItems }) {
             <Link to={`/news/${item._id}`}>
               <img
                 className={index < 4 ? "img-fluid w-100" : ""}
-                alt="preview post "
-                src={item.imageUrl}
+                alt="preview post 123 "
+                src={item.imageUrl }
                 style={
                   index < 4
                     ? {
