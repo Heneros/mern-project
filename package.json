@@ -27,7 +27,7 @@
     "passport": "^0.7.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-google-oauth20": "^2.0.0",
-    "dotenv": "^16.4.1",
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
