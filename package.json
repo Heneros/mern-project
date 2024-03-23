@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/index.js",
+    "start": "node backend/index.js",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "server": "nodemon backend/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
