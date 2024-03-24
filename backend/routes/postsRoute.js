@@ -9,6 +9,7 @@ const {
   getCategories,
   createPostComment,
   getAll,
+  addToFavorites,
 } = require("../controllers/posts");
 const { protect, admin } = require("../middleware/authMiddleware");
 const checkObjectId = require("../middleware/checkObjectId");
@@ -27,5 +28,7 @@ router
   .get(checkObjectId, getPost)
   .put(protect, admin, checkObjectId, updatePost)
   .delete(protect, admin, checkObjectId, deletePost);
+
+
 
 module.exports = router;
