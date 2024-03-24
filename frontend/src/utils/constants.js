@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://mern-project-6ivb.onrender.com/";
 
 export const POSTS_URL = "/api/v1/posts";
 export const USERS_URL = "/api/v1/users";
