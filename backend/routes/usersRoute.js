@@ -12,7 +12,7 @@ const {
   getAllPublicUsers,
 } = require("../controllers/user");
 const { protect, admin } = require("../middleware/authMiddleware");
-const { addToFavorites, getAllFavorites } = require("../controllers/posts");
+const { addToFavorites, getAllFavorites, deleteFavoritePost } = require("../controllers/posts");
 
 const router = express.Router();
 
@@ -27,7 +27,7 @@ router
 router.route("/:id").get(protect, getUser).delete(deleteUser).put(updateUser);
 router.route("/logout").post(logoutUser);
 
-router.route("/addFavorite/:userId/:postId").post(addToFavorites);
+router.route("/addFavorite/:userId/:postId").post(addToFavorites).delete(deleteFavoritePost);
 
 router.route("/getfavorites/:userId").get(protect, getAllFavorites);
 
