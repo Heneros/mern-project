@@ -19,7 +19,7 @@ export default function NavMenu({ dataProfile }) {
                 My profile
               </Nav.Link>
               <Nav.Link
-                className={isCurrentPath("/favorites") ? "active" : ""}
+                className={isCurrentPath("/profile/favorites") ? "active" : ""}
                 href="/profile/favorites"
               >
                 Favorites

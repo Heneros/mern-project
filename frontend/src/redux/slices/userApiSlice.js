@@ -87,6 +87,21 @@ export const userApiSlice = apiSlice.injectEndpoints({
       credentials: "include",
       keepUnusedDataFor: 5,
     }),
+
+    deleteFavorite: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/deletefavorite/${data.userId}/${data.postId}`,
+        method: "DELETE",
+        credentials: "include",
+      }),
+    }),
+    addFavorites: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/addfavorite/${data.userId}/${data.postId}`,
+        method: "POST",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -102,5 +117,6 @@ export const {
   useUpdateUserMutation,
   useGetProfileQuery,
   useGetFavoritesQuery,
-  // useAuthGoogleMutation,
+  useDeleteFavoriteMutation,
+  useAddFavoritesMutation,
 } = userApiSlice;

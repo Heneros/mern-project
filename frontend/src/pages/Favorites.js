@@ -5,6 +5,7 @@ import { Col, Row, Button, Table } from "react-bootstrap";
 
 import Breadcrumbs from "../components/Breadcrumbs";
 import {
+  useDeleteFavoriteMutation,
   useGetFavoritesQuery,
   useGetProfileQuery,
   useGetUsersQuery,
@@ -14,16 +15,30 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { useGetAllQuery } from "../redux/slices/postsApiSlice";
 import { Link } from "react-router-dom";
+import { FaTrash } from "react-icons/fa";
 
 export default function Favorites() {
-  const { data: dataProfile, isLoading, error } = useGetProfileQuery();
+  const { data: dataProfile, isLoading, error, refetch } = useGetProfileQuery();
   const { data, loadPosts, errorPosts } = useGetAllQuery();
-
+  const [deleteFavorite] = useDeleteFavoriteMutation();
   const favoritesList = dataProfile?.favorites;
+
+  const userId = dataProfile?._id;
 
   const favoritesListPosts = data?.posts?.filter((item) => {
     return favoritesList?.includes(item._id);
   });
+
+  const deleteHandler = async (userId, postId) => {
+    if (window.confirm("Are you sure")) {
+      try {
+        await deleteFavorite({ userId, postId }).unwrap();
+        refetch();
+      } catch (error) {
+        console.log(`Error favorite`, error);
+      }
+    }
+  };
 
   return (
     <>
@@ -49,38 +64,51 @@ export default function Favorites() {
                   </tr>
                 </thead>
                 <tbody>
-                  {favoritesListPosts?.map((favorite) => (
-                    <tr key={favorite._id}>
-                      <td>
-                        <Link to={`/news/${favorite._id}`}>
-                          {favorite.title}
-                        </Link>
-                      </td>
-                      <td>
-                        <Link to={`/news/${favorite._id}`}>
-                          <img
-                            src={favorite.imageUrl}
-                            style={{ maxWidth: "150px", maxHeight: "150px" }}
-                            alt=""
-                          />
-                        </Link>
-                      </td>
-                      <td>
-                        <Link
-                          to={`/category/${favorite?.category?.toLowerCase()}`}
-                        >
-                          {favorite.category}
-                        </Link>
-                      </td>
-                      <td>
-                        {favorite?.tag.map((item) => (
-                          <Link to={`/tag/${item.toLowerCase()}`}>
-                            {item}
+                  {favoritesListPosts.length > 0 ? (
+                    favoritesListPosts?.map((favorite) => (
+                      <tr key={favorite._id}>
+                        <td>
+                          <Link to={`/news/${favorite._id}`}>
+                            {favorite.title}
                           </Link>
-                        ))}
-                      </td>
-                    </tr>
-                  ))}
+                        </td>
+                        <td>
+                          <Link to={`/news/${favorite._id}`}>
+                            <img
+                              src={favorite.imageUrl}
+                              style={{ maxWidth: "150px", maxHeight: "150px" }}
+                              alt=""
+                            />
+                          </Link>
+                        </td>
+                        <td>
+                          <Link
+                            to={`/category/${favorite?.category?.toLowerCase()}`}
+                          >
+                            {favorite.category}
+                          </Link>
+                        </td>
+                        <td>
+                          {favorite?.tag.map((item) => (
+                            <Link to={`/tag/${item.toLowerCase()}`}>
+                              {item}
+                            </Link>
+                          ))}
+                        </td>
+                        <td>
+                          <Button
+                            variant="danger"
+                            className="btn-sm"
+                            onClick={() => deleteHandler(userId, favorite._id)}
+                          >
+                            <FaTrash style={{ color: "white" }} />
+                          </Button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <>No favorite post been added.</>
+                  )}
                 </tbody>
               </Table>
             </>

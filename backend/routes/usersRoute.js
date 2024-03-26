@@ -27,7 +27,9 @@ router
 router.route("/:id").get(protect, getUser).delete(deleteUser).put(updateUser);
 router.route("/logout").post(logoutUser);
 
-router.route("/addFavorite/:userId/:postId").post(addToFavorites).delete(deleteFavoritePost);
+router.route("/addfavorite/:userId/:postId").post(addToFavorites);
+
+router.route("/deletefavorite/:userId/:postId").delete(deleteFavoritePost);
 
 router.route("/getfavorites/:userId").get(protect, getAllFavorites);
 
