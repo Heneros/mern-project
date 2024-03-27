@@ -25,17 +25,22 @@ import Newsletter from "../components/Homepage/Newsletter";
 import Trending from "../components/Homepage/Trending";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { useGetProfileQuery } from "../redux/slices/userApiSlice";
+import {
+  useAddFavoritesMutation,
+  useGetProfileQuery,
+} from "../redux/slices/userApiSlice";
 import Comments from "../components/Comments";
 import Meta from "../components/Meta";
 
 export default function SinglePost() {
+  const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
+
   const { id: postId, pageNumber } = useParams();
   const {
     data: post,
     error,
-    refetch,
     isLoading,
+    refetch,
   } = useGetPostDetailsQuery({ postId });
 
   const { data: dataProfile, error: errorProfile } = useGetProfileQuery();
@@ -46,7 +51,31 @@ export default function SinglePost() {
     isLoading: postsLoading,
   } = useGetPostsQuery({ pageNumber });
 
-  // console.log(errorComment);
+  const userId = dataProfile?._id;
+  const favoritesList = dataProfile?.favorites;
+
+  const favoritesListPosts = data?.posts?.filter((item) => {
+    return favoritesList?.includes(item._id);
+  });
+
+  const newCurrentFav = favoritesListPosts?.find((item) => {
+    return item._id === postId;
+  });
+
+  const [addFavorite] = useAddFavoritesMutation();
+
+  // const queryClient = useQueryClient();
+
+  const addToFavoriteFunc = async (userId, postId) => {
+    try {
+      await addFavorite({ userId, postId }).unwrap();
+      setIsAddedToFavorites(true);
+      console.log("success fav");
+    } catch (error) {
+      console.log("err favorite", error);
+    }
+  };
+  // console.log(newCurrentFav);
 
   return (
     <>
@@ -92,11 +121,22 @@ export default function SinglePost() {
                     <h3 className="mb-3">{post?.title}</h3>
                     <ReactMarkdown children={post?.content} />
                   </div>
+                  {dataProfile ? (
+                    <>
+                      <Button
+                        disabled={newCurrentFav || isAddedToFavorites}
+                        onClick={() => addToFavoriteFunc(userId, post._id)}
+                      >
+                        Add to Favorites
+                      </Button>
+                    </>
+                  ) : (
+                    <Button disabled> Log in to add to favorites </Button>
+                  )}
                 </div>
               </div>
               <div className="bg-light mb-3" style={{ padding: "30px" }}>
                 <h3 className="mb-4">Comments</h3>
-
                 {post?.comments.length > 0 ? (
                   post?.comments.map((item) => (
                     <div className="media mb-4" key={item._id}>

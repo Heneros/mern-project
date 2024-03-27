@@ -30,10 +30,7 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    favorites: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Post",
-    },
+    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
     isLoggedIn: {
       type: Boolean,
       default: false,

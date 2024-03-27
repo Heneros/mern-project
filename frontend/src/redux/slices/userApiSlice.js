@@ -79,14 +79,29 @@ export const userApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/allusers`,
       }),
     }),
-    // authGoogle: builder.mutation({
-    //   query: () => ({
-    //     url: `/auth/google`,
-    //     method: "GET",
-    //   }),
-    //   providesTags: ["User"],
-    //   keepUnusedDataFor: 5,
-    // }),
+    getFavorites: builder.query({
+      query: (data) => ({
+        url: `${USERS_URL}/getfavorites/${data.userId}`,
+      }),
+      providesTags: ["User"],
+      credentials: "include",
+      keepUnusedDataFor: 5,
+    }),
+
+    deleteFavorite: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/deletefavorite/${data.userId}/${data.postId}`,
+        method: "DELETE",
+        credentials: "include",
+      }),
+    }),
+    addFavorites: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/addfavorite/${data.userId}/${data.postId}`,
+        method: "POST",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -101,6 +116,7 @@ export const {
   useGetUsersPublicQuery,
   useUpdateUserMutation,
   useGetProfileQuery,
-
-  // useAuthGoogleMutation,
+  useGetFavoritesQuery,
+  useDeleteFavoriteMutation,
+  useAddFavoritesMutation,
 } = userApiSlice;
