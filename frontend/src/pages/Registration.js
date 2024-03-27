@@ -33,7 +33,7 @@ export default function Registration() {
 
   const [register] = useRegisterMutation();
   const google = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "https://mern-project-6ivb.onrender.com/auth/google";
   };
 
   const submitHandler = async (e) => {

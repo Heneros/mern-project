@@ -35,7 +35,7 @@ export default function Login() {
   // };
 
   const google = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.location.href = "https://mern-project-6ivb.onrender.com/auth/google";
   };
 
   useEffect(() => {
