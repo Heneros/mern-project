@@ -32,6 +32,7 @@ import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
 import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
+import ContactUs from "./pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "/login",

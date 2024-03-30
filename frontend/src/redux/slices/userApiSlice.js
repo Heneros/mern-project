@@ -102,6 +102,13 @@ export const userApiSlice = apiSlice.injectEndpoints({
         credentials: "include",
       }),
     }),
+    feedback: builder.mutation({
+      query: () => ({
+        url: `${USERS_URL}/feedback`,
+        method: "POST",
+        credentials: "include",
+      }),
+    }),
   }),
 });
 
@@ -119,4 +126,5 @@ export const {
   useGetFavoritesQuery,
   useDeleteFavoriteMutation,
   useAddFavoritesMutation,
+  useFeedbackMutation,
 } = userApiSlice;
