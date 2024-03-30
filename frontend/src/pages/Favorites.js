@@ -23,6 +23,9 @@ export default function Favorites() {
   const [deleteFavorite] = useDeleteFavoriteMutation();
   const favoritesList = dataProfile?.favorites;
 
+  if (isLoading && !favoritesList) {
+    return <Loader />;
+  }
   const userId = dataProfile?._id;
 
   const favoritesListPosts = data?.posts?.filter((item) => {

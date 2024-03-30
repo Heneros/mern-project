@@ -7,11 +7,35 @@ import { useFeedbackMutation } from "../redux/slices/userApiSlice";
 export default function ContactUs() {
   const [feedback] = useFeedbackMutation();
   const [name, setName] = useState("");
-  const [email, seEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandler = async () => {};
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const data = { name, subject, email, message };
+      // console.log("Sending data:", data);
+      await feedback(data);
+      // await feedback({ name, subject, email, message });
+      // await feedback({
+      //   name,
+      //   subject,
+      //   email,
+      //   message,
+      // });
+      // if (response.error) {
+      //   console.log(response.error.message || "An error occurred");
+      // } else {
+      //   console.log("Feedback submitted successfully");
+      // }
+    } catch (err) {
+      console.log(
+        "Error submitting feedback:",
+        err?.data?.message || err.error
+      );
+    }
+  };
   return (
     <>
       <Breadcrumbs />
@@ -61,7 +85,7 @@ export default function ContactUs() {
               style={{ padding: "30px" }}
             >
               <div id="success"></div>
-              <Form name="sentMessage" id="contactForm" novalidate="novalidate">
+              <Form onSubmit={submitHandler}>
                 <Row>
                   <Col md={6}>
                     <Form.Group>
@@ -71,6 +95,8 @@ export default function ContactUs() {
                         id="name"
                         placeholder="Your Name"
                         required="required"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         data-validation-required-message="Please enter your name"
                       />
                       <p className="help-block text-danger"></p>
@@ -83,6 +109,8 @@ export default function ContactUs() {
                         type="email"
                         className=" p-4"
                         id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your Email"
                         required="required"
                         data-validation-required-message="Please enter your email"
@@ -97,6 +125,8 @@ export default function ContactUs() {
                     id="subject"
                     placeholder="Subject"
                     required="required"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                     data-validation-required-message="Please enter a subject"
                   />
                   <p className="help-block text-danger"></p>
@@ -108,6 +138,8 @@ export default function ContactUs() {
                     id="message"
                     placeholder="Message"
                     required="required"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     data-validation-required-message="Please enter your message"
                   ></textarea>
                   <p className="help-block text-danger"></p>

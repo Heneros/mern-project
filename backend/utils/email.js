@@ -16,9 +16,9 @@ const feedbackForm = asyncHandler(async (req, res) => {
     });
   } else {
     transporter = nodemailer.createTransport({
-      //   host: "localhost",
-      address: "localhost",
-      //   host: "127.0.0.1",
+      // host: "localhost",
+      // address: "localhost",
+        host: "127.0.0.1",
       //   port: 1080,
       port: 1025,
       secure: false,
@@ -26,9 +26,9 @@ const feedbackForm = asyncHandler(async (req, res) => {
         user: process.env.SMTP_NAME,
         pass: process.env.SMTP_PASS,
       },
-    //   tls: {
-    //     rejectUnauthorized: false,
-    //   },
+        tls: {
+          rejectUnauthorized: false,
+        },
       debug: true,
     });
   }

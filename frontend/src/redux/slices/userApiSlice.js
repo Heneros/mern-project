@@ -103,10 +103,11 @@ export const userApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     feedback: builder.mutation({
-      query: () => ({
+      query: (data) => ({
         url: `${USERS_URL}/feedback`,
         method: "POST",
-        credentials: "include",
+        body: data,
+        // credentials: "include",
       }),
     }),
   }),
