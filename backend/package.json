@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/index.js",
+    "start": "node index.js",
     "maildev": "maildev",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "server": "nodemon backend/index.js && maildev",
+    "server": "nodemon index.js && maildev",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "client": "set PORT=7200 && npm start --prefix frontend"
   },
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "dotenv": "^16.4.1",
+    "dotenv": "^16.4.5",
     "nodemon": "^3.0.3"
   }
 }

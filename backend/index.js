@@ -1,5 +1,8 @@
-require("dotenv").config();
+
 const path = require("path");
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+
+
 const express = require("express");
 const cors = require("cors");
 const passport = require("passport");
@@ -59,7 +62,6 @@ app.get(
 
 // app.get(
 //   "/auth/google/callback",
-
 //   passport.authenticate("google", {
 //     successRedirect: "http://localhost:7200/profile", //change latter
 //     failureRedirect: "/auth/google/failure",
