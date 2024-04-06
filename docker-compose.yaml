@@ -1,9 +1,7 @@
 version: '3.8'
 
-# Services
 services:
-  # Server service
-  server:
+  backend:
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -19,35 +17,57 @@ services:
       - DB_PORT=$MONGODB_DOCKER_PORT
     depends_on:
       - mongodb
+    networks:
+      -  mern-blog
 
-  # Client service
-  client:
+ 
+  frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-
     container_name: frontend
     ports:
-      - "80:80"
-    depends_on:
-      - server
+      - "7200:80"
+    networks:
+      - mern-blog
 
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/build:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/nginx.conf
+      -  static_volume:/app/staticfiles
+    networks: 
+      -  mern-blog
 
   mongodb:
     image: mongo:4.0 
     container_name: mongodb_server
-
     env_file: ./.env
     environment:
       - MONGO_INITDB_ROOT_USERNAME=$MONGODB_USER
       - MONGO_INITDB_ROOT_PASSWORD=$MONGODB_PASSWORD
-
     ports:
       - "27017:27017"
-
     volumes:
       - ./mydata:/data/db
+    networks:
+      - mern-blog
 
-# Volumes define
+networks:
+    mern-blog:
+        driver: bridge
+
+
 volumes: 
   mydata:
+  static_volume: 

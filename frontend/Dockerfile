@@ -1,29 +1,29 @@
-# Stage-1 & specify a name 'builder'
-FROM  node:latest AS builder
+# Use the latest Node.js image as the base
+FROM node:latest AS builder
 
-# Create a directory  and go to the directory 
+# Set the working directory
 WORKDIR /app
 
-# Copy the package.json file to my current directory to install the necessary dependence  
-COPY package.json .
+# Copy the package.json and package-lock.json files
+COPY package*.json ./
 
-# Install the dependence
-RUN npm install
+# Install the dependencies
+RUN npm ci
 
-# Copy other files to my current directory
+# Copy the rest of the application code
 COPY . .
 
-# Build and optimize static file
+# Build the React app
 RUN npm run build
 
-# Stage-2
+# Use the Nginx image as the production environment
 FROM nginx:1.25.2-alpine-slim
 
-# Copy the static file to my Nginx folder to serve static contain
+# Copy the built assets from the builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Open the port to react
+# Expose port 80
 EXPOSE 80
 
-# Run nginx in the foreground
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
