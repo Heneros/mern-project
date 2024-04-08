@@ -1,29 +1,15 @@
-# Use the latest Node.js image as the base
-FROM node:latest AS builder
+ARG NODE_VERSION=16-alpine3.12
 
-# Set the working directory
-WORKDIR /app
+FROM node:${NODE_VERSION}
 
-# Copy the package.json and package-lock.json files
+ARG APP_HOME=/app
+
+WORKDIR ${APP_HOME}
+
 COPY package*.json ./
 
-# Install the dependencies
-RUN npm ci
+RUN npm install
 
-# Copy the rest of the application code
-COPY . .
+COPY . ${APP_HOME}
 
-# Build the React app
-RUN npm run build
-
-# Use the Nginx image as the production environment
-FROM nginx:1.25.2-alpine-slim
-
-# Copy the built assets from the builder stage
-COPY --from=builder /app/build /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm","start"]

@@ -15,36 +15,34 @@ services:
       - DB_PASSWORD=$MONGODB_PASSWORD
       - DB_NAME=$MONGODB_DATABASE
       - DB_PORT=$MONGODB_DOCKER_PORT
+    volumes:
+      - /app/node_modules
+      - .:/app
     depends_on:
       - mongodb
     networks:
       -  mern-blog
-
- 
+  
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: frontend
-    ports:
-      - "7200:80"
+    volumes:
+    - ./frontend:/app
+    - /app/node_modules
     networks:
       - mern-blog
-
 
   nginx:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    container_name: nginx
     ports:
       - "8080:80"
     restart: always
     depends_on:
       - backend
     volumes:
-      - ./frontend/build:/usr/share/nginx/html
-      - ./nginx/default.conf:/etc/nginx/nginx.conf
       -  static_volume:/app/staticfiles
     networks: 
       -  mern-blog

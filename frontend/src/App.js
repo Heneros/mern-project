@@ -43,6 +43,9 @@ const App = () => {
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<SinglePost />} />
         <Route path="/news/page/:pageNumber" element={<SinglePost />} />
+        <Route path="/category/:id" element={<Category />} />
+        <Route path="/tag/:id" element={<Tag />} />
+        <Route path="profile/favorites" element={<Favorites />} />
       </Route>
     </Routes>
   );
