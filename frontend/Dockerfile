@@ -1,15 +1,10 @@
-ARG NODE_VERSION=16-alpine3.12
 
-FROM node:${NODE_VERSION}
-
-ARG APP_HOME=/app
-
-WORKDIR ${APP_HOME}
-
-COPY package*.json ./
-
+FROM node:latest AS builder
+WORKDIR /app
+COPY ./frontend/package*.json ./
 RUN npm install
-
-COPY . ${APP_HOME}
-
-CMD ["npm","start"]
+COPY ./frontend ./
+FROM nginx:1.25.2-alpine-slim
+COPY --from=builder /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
