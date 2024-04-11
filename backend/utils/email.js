@@ -43,10 +43,10 @@ const feedbackForm = asyncHandler(async (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      // console.log(error);
       res.status(500).send("Error message from server. Send Mail ");
     } else {
-      console.log("Success" + info.response);
+      // console.log("Success" + info.response);
       res.status(200).send("Success message was sent ");
     }
   });

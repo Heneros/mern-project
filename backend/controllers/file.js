@@ -1,10 +1,9 @@
 const path = require("path");
-
 const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, "D:/Projects/fullstack-blog/uploads/");
   },
   filename(req, file, cb) {
     cb(
@@ -31,21 +30,15 @@ function fileFilter(req, file, cb) {
 const upload = multer({ storage, fileFilter });
 const uploadSingleImage = upload.single("imageUrl");
 
-function uploadFunctionSingleImage(req, res, next) {
+function uploadFunctionSingleImage(req, res) {
   uploadSingleImage(req, res, function (err) {
     if (err) {
       return res.status(400).send({ message: err.message });
     }
-    // if (req.file && req.file.path) {
     res.status(200).send({
       message: "Image uploaded successfully",
       image: `/${req.file.path}`,
     });
-    // } else {
-    //   res.status(400).send({
-    //     message: "Error upload image",
-    //   });
-    // }
   });
 }
 module.exports = uploadFunctionSingleImage;
