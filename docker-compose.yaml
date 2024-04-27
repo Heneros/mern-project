@@ -17,10 +17,13 @@ services:
       - DB_PASSWORD=$MONGODB_PASSWORD
       - DB_NAME=$MONGODB_DATABASE
       - DB_PORT=$MONGODB_DOCKER_PORT
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
     volumes:
       - /app/node_modules
       - .:/app
-      - ./backend:/usr/src/app 
+       - ./backend:/usr/src/app
     depends_on:
       - mongodb
     networks:
@@ -33,7 +36,6 @@ services:
     container_name: frontend
     ports:
     -  "7200:80"
-    command: npm run build
     volumes:
     - ./frontend:/app
     - /app/node_modules
