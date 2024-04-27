@@ -64,8 +64,6 @@ export default function SinglePost() {
 
   const [addFavorite] = useAddFavoritesMutation();
 
-  // const queryClient = useQueryClient();
-
   const addToFavoriteFunc = async (userId, postId) => {
     try {
       await addFavorite({ userId, postId }).unwrap();

@@ -55,7 +55,7 @@ export default function AdminPostEdit() {
       }).unwrap();
 
       refetch();
-      navigate("/admin/posts-list");
+      // navigate("/admin/posts-list");
       // alert("Success");
     } catch (err) {
       console.log(err?.message);

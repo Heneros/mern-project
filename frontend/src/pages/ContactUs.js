@@ -10,25 +10,19 @@ export default function ContactUs() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(null);
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       const data = { name, subject, email, message };
-      // console.log("Sending data:", data);
       await feedback(data);
-      // await feedback({ name, subject, email, message });
-      // await feedback({
-      //   name,
-      //   subject,
-      //   email,
-      //   message,
-      // });
-      // if (response.error) {
-      //   console.log(response.error.message || "An error occurred");
-      // } else {
-      //   console.log("Feedback submitted successfully");
-      // }
+      setMessage("");
+      setSubject("");
+      setEmail("");
+      setName("");
+      setEmail("");
+      setSuccess("Message sent successfully!");
     } catch (err) {
       console.log(
         "Error submitting feedback:",
@@ -84,7 +78,8 @@ export default function ContactUs() {
               className="contact-form bg-light mb-3"
               style={{ padding: "30px" }}
             >
-              <div id="success"></div>
+              {success && <div className="success-message">{success} </div>}
+
               <Form onSubmit={submitHandler}>
                 <Row>
                   <Col md={6}>

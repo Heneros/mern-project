@@ -29,7 +29,7 @@ export default function CreatePost() {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [imageUrl, setImageUrl] = useState(defaultImg);
+  const [imageUrl, setImageUrl] = useState("");
   const [tag, setTag] = useState("");
   const [category, setCategory] = useState("");
 
@@ -72,10 +72,11 @@ export default function CreatePost() {
   }, []);
 
   const uploadFileHandler = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const formData = new FormData();
     formData.append("imageUrl", e.target.files[0]);
-    console.log("Work");
+    // console.log("Work");
+    console.log(formData);
     try {
       const res = await uploadPostImage(formData).unwrap();
       console.log(res);

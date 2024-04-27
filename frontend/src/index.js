@@ -2,11 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/style.css";
@@ -34,7 +32,6 @@ import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
 import ContactUs from "./pages/ContactUs";
-import App from "./App";
 
 const router = createBrowserRouter([
   {
@@ -124,20 +121,14 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 library.add(fas, fab);
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Provider store={store}>
-        <Router>
-          <Routes>
-            <Route path="/*" element={<App />} />
-          </Routes>
-        </Router>
-        {/* <RouterProvider router={router} /> */}
+        <RouterProvider router={router} />
       </Provider>
     </HelmetProvider>
   </React.StrictMode>

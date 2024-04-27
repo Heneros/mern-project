@@ -4,12 +4,13 @@ services:
   backend:
     restart: always
     build:
-       context: .
-       dockerfile: ./backend/Dockerfile  
+      context: .
+      dockerfile: ./docker/local/express/Dockerfile
     container_name: backend
     env_file: ./.env
     ports:
     - "3000:3000"
+    command: npm run server
     environment:
       - DB_HOST=mongodb_server
       - DB_USER=$MONGODB_USER
@@ -27,11 +28,12 @@ services:
   
   frontend:
     build:
-      context: ./ 
-      dockerfile: ./frontend/Dockerfile
+      context: .
+      dockerfile: ./docker/local/react/Dockerfile
     container_name: frontend
     ports:
     -  "7200:80"
+    command: npm run build
     volumes:
     - ./frontend:/app
     - /app/node_modules
@@ -53,6 +55,21 @@ services:
       - ./mydata:/data/db
     networks:
       - mern-blog
+  
+  nginx:
+    build:
+      context: .
+      dockerfile: ./docker/local/nginx/Dockerfile
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - backend
+    volumes:
+      - static_volume:/app/staticfiles
+    networks:
+      - mern-blog
+
 
 networks:
     mern-blog:
