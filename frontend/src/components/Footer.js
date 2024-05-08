@@ -29,7 +29,7 @@ export default function Footer() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTop({
+    window.scroll({
       top: 0,
       behavior: "smooth",
     });

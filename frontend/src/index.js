@@ -27,7 +27,7 @@ import AdminPostsList from "./pages/admin/AdminPostsList";
 import UsersList from "./pages/admin/UsersList";
 import CreatePost from "./pages/admin/CreatePost";
 
-import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
+
 import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <ScrollToTopOnPageChange />
+
         <Layout />
       </>
     ),
