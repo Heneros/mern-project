@@ -6,19 +6,19 @@ const feedbackForm = asyncHandler(async (req, res) => {
   if (process.env.NODE_ENV === "production") {
     transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: 587,
+      port: 25,
       secure: true,
       auth: {
         user: process.env.SMTP_NAME,
         pass: process.env.SMTP_PASS,
       },
-      debug: true,
+      debug: false,
     });
   } else {
     transporter = nodemailer.createTransport({
       // host: "localhost",
       // address: "localhost",
-        host: "127.0.0.1",
+      host: "127.0.0.1",
       //   port: 1080,
       port: 1025,
       secure: false,
