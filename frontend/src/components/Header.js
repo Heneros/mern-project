@@ -81,7 +81,12 @@ export default function Header() {
               >
                 News
               </Nav.Link>
-              <Nav.Link href="contact.html">Contact</Nav.Link>
+              <Nav.Link
+                className={isCurrentPath("/contact-us") ? "active" : ""}
+                href="contact-us"
+              >
+                Contact
+              </Nav.Link>
               {error ? (
                 <>
                   <Nav.Link

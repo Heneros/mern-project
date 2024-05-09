@@ -310,3 +310,11 @@ margin: 0 auto;
      .info-post img{
       max-width: 100%;
     }
+
+
+    .success-message{
+      color: green;
+      font-weight: 600;
+      margin: 15px 0;
+      font-size: 17px;
+    }

@@ -1,7 +1,7 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import SimpleMDE from "react-simplemde-editor";
-import 'easymde/dist/easymde.min.css';
+import "easymde/dist/easymde.min.css";
 
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
@@ -12,7 +12,7 @@ import {
 import Breadcrumbs from "../../components/Breadcrumbs";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
 import NavMenu from "../../components/Profile/NavMenu";
-
+import defaultImg from "../../styles/img/defaultImg.jpg";
 export default function CreatePost() {
   const {
     data: dataProfile,
@@ -72,10 +72,11 @@ export default function CreatePost() {
   }, []);
 
   const uploadFileHandler = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const formData = new FormData();
     formData.append("imageUrl", e.target.files[0]);
-    console.log("Work");
+    // console.log("Work");
+    console.log(formData);
     try {
       const res = await uploadPostImage(formData).unwrap();
       console.log(res);

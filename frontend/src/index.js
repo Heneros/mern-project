@@ -5,7 +5,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
 import "./styles/style.css";
@@ -28,17 +27,18 @@ import AdminPostsList from "./pages/admin/AdminPostsList";
 import UsersList from "./pages/admin/UsersList";
 import CreatePost from "./pages/admin/CreatePost";
 
-import ScrollToTopOnPageChange from "./components/ScrollToTopOnPageChange";
+
 import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
+import ContactUs from "./pages/ContactUs";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <ScrollToTopOnPageChange />
+
         <Layout />
       </>
     ),
@@ -52,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration />,
+      },
+      {
+        path: "/contact-us",
+        element: <ContactUs />,
       },
       {
         path: "/login",
@@ -117,6 +121,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 library.add(fas, fab);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
