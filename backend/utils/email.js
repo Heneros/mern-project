@@ -14,7 +14,7 @@ const feedbackForm = asyncHandler(async (req, res) => {
         user: process.env.SMTP_NAME,
         pass: process.env.SMTP_PASS,
       },
-      debug: false,
+      debug: true,
     });
     console.log('Send prod')
   } else {
