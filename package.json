@@ -8,7 +8,7 @@
     "maildev": "maildev",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "server": "nodemon backend/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"maildev\"  ",
     "client": "set PORT=7200 && npm start --prefix frontend"
   },
   "keywords": [],
