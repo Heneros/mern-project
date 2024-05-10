@@ -5,15 +5,18 @@ const feedbackForm = asyncHandler(async (req, res) => {
   let transporter = null;
   if (process.env.NODE_ENV === "production") {
     transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: 25,
-      secure: true,
+      // host: process.env.SMTP_HOST,
+      host: "smtp-relay.brevo.com",
+      // port: 25,
+      port: 587,
+      secure: false,
       auth: {
         user: process.env.SMTP_NAME,
         pass: process.env.SMTP_PASS,
       },
       debug: false,
     });
+    console.log('Send prod')
   } else {
     transporter = nodemailer.createTransport({
       // host: "localhost",
