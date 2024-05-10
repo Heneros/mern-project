@@ -32,7 +32,7 @@ router
 router.route("/:id").get(protect, getUser).delete(deleteUser).put(updateUser);
 router.route("/logout").post(logoutUser);
 
-router.route("/feedback").post(feedbackForm);
+router.route("/feedback").post(protect, feedbackForm);
 
 router.route("/addfavorite/:userId/:postId").post(addToFavorites);
 router.route("/deletefavorite/:userId/:postId").delete(deleteFavoritePost);
