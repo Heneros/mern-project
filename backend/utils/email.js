@@ -12,7 +12,7 @@ const feedbackForm = asyncHandler(async (req, res) => {
         user: process.env.SMTP_NAME,
         pass: process.env.SMTP_PASS,
       },
-      debug: true,
+      debug: false,
     });
   } else {
     transporter = nodemailer.createTransport({
@@ -43,7 +43,7 @@ const feedbackForm = asyncHandler(async (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      // console.log(error);
+      console.log(error);
       res.status(500).send("Error message from server. Send Mail ");
     } else {
       // console.log("Success" + info.response);
