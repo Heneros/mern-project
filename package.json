@@ -8,7 +8,7 @@
     "maildev": "maildev",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "server": "nodemon backend/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"maildev\"  ",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "client": "set PORT=7200 && npm start --prefix frontend"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.2.0",
     "cookie-parser": "^1.4.6",
@@ -32,7 +33,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "dotenv": "^16.4.5",
+ 
     "nodemon": "^3.0.3"
   }
 }

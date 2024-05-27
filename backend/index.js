@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:7200',
+    origin: 'https://mern-project-6ivb.onrender.com',
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   }),
@@ -81,8 +81,8 @@ app.get(
       maxAge: 30 * 24 * 60 * 60 * 1000,
     });
 
-    res.redirect('http://localhost:7200/profile');
-  },
+    res.redirect("http://localhost:7200/profile");
+  }
 );
 
 app.get('/auth/google/failure', (req, res) => {
