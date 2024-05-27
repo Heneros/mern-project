@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-
+const {USER} = require("../constants/index.js")
 const userSchema = mongoose.Schema(
   {
     username: {
@@ -30,11 +30,16 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    roles:{
+      type: [String],
+      default: [USER]
+    },
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
     isLoggedIn: {
       type: Boolean,
       default: false,
     },
+    refreshToken: [String]
   },
   {
     timestamps: true,
