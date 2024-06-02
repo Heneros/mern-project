@@ -1,6 +1,6 @@
-const Post = require("../models/Posts");
-const asyncHandler = require("../middleware/asyncHandler");
-const User = require("../models/Users");
+const Post = require("../../models/Posts");
+const asyncHandler = require("../../middleware/asyncHandler");
+const User = require("../../models/Users");
 
 ///GET
 const getAllPosts = asyncHandler(async (req, res) => {
