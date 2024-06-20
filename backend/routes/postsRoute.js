@@ -1,16 +1,25 @@
 const express = require("express");
-const {
-  getAllPosts,
-  createPost,
-  getPost,
-  updatePost,
-  deletePost,
-  getAllTags,
-  getCategories,
-  createPostComment,
-  getAll,
-  addToFavorites,
-} = require("../controllers/posts");
+// const {
+//   getAll,
+//   createPost,
+//   getPost,
+//   updatePost,
+//   deletePost,
+//   getAllTags,
+//   getCategories,
+//   createPostComment,
+//   getAll,
+//   addToFavorites,
+// } = require("../controllers/posts");
+
+
+const {getAllPosts} = require("../controllers/posts/getAllPosts");
+
+const {createPost} = require("../controllers/posts/createPost");
+const {createPost} = require("../controllers/posts/getAll");
+
+
+
 const { protect, admin } = require("../middleware/authMiddleware");
 const checkObjectId = require("../middleware/checkObjectId");
 
