@@ -14,9 +14,13 @@ const express = require("express");
 
 
 const {getAllPosts} = require("../controllers/posts/getAllPosts");
-
 const {createPost} = require("../controllers/posts/createPost");
-const {createPost} = require("../controllers/posts/getAll");
+const {getAll} = require("../controllers/posts/getAll");
+const {createPostComment} = require("../controllers/posts/createPostComment");
+const {getPost} = require("../controllers/posts/getPost");
+const {updatePost} = require("../controllers/posts/updatePost");
+const {deletePost} = require("../controllers/posts/deletePost");
+
 
 
 

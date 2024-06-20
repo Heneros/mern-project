@@ -1,22 +1,36 @@
 const express = require("express");
-const {
-  createUser,
-  getUser,
-  getAllUsers,
-  updateUser,
-  deleteUser,
-  authUser,
-  logoutUser,
-  getUserProfile,
-  updateUserProfile,
-  getAllPublicUsers,
-} = require("../controllers/user");
 const { protect, admin } = require("../middleware/authMiddleware");
 const {
-  addToFavorites,
-  getAllFavorites,
-  deleteFavoritePost,
-} = require("../controllers/posts");
+createUser
+} = require("../controllers/users/createUser");
+const {
+getAllPublicUsers
+} = require("../controllers/users/getAllPublicUsers");
+const {
+authUser
+} = require("../controllers/users/authUser");
+const {
+createUser
+} = require("../controllers/users/getUser");
+const {
+getUserProfile
+} = require("../controllers/users/getUserProfile");
+const {
+updateUser
+} = require("../controllers/users/updateUser");
+const {
+getUser
+} = require("../controllers/users/getUser");
+const {
+addToFavorites
+} = require("../controllers/users/addToFavorites");
+const {
+deleteFavoritePost
+} = require("../controllers/users/deleteFavoritePost");
+const {
+getAllFavorites
+} = require("../controllers/users/getAllFavorites");
+
 const feedbackForm = require("../utils/email");
 
 const router = express.Router();
