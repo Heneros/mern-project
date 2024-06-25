@@ -10,4 +10,4 @@ const deletePost = asyncHandler(async (req, res) => {
   res.status(201).json({ post });
 });
 
-module.exports = deletePost;
+module.exports = {deletePost};

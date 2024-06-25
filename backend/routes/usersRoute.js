@@ -7,11 +7,11 @@ const {
 getAllPublicUsers
 } = require("../controllers/users/getAllPublicUsers");
 const {
+getAllFavorites
+} = require("../controllers/users/getAllFavorites");
+const {
 authUser
 } = require("../controllers/users/authUser");
-const {
-createUser
-} = require("../controllers/users/getUser");
 const {
 getUserProfile
 } = require("../controllers/users/getUserProfile");
@@ -28,8 +28,17 @@ const {
 deleteFavoritePost
 } = require("../controllers/users/deleteFavoritePost");
 const {
-getAllFavorites
-} = require("../controllers/users/getAllFavorites");
+getAllUsers
+} = require("../controllers/users/getAllUsers");
+const {
+deleteUser
+} = require("../controllers/users/deleteUser");
+const {
+logoutUser
+} = require("../controllers/users/logoutUser");
+const {
+updateUserProfile
+} = require("../controllers/users/updateUserProfile");
 
 const feedbackForm = require("../utils/email");
 

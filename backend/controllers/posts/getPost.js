@@ -1,3 +1,5 @@
+const Post = require("../../models/Posts");
+const asyncHandler = require("../../middleware/asyncHandler");
 
 
 const getPost = asyncHandler(async (req, res) => {
@@ -13,4 +15,4 @@ const getPost = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports =getPost;
+module.exports ={getPost};

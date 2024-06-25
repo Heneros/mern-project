@@ -3,7 +3,7 @@ const express = require("express");
 
 
 const cloudinaryUploader = require("../config/cloudinaryConfig");
-const uploadFile = require("../controllers/file");
+const uploadFile = require("../controllers/file/file");
 
 
 const router = express.Router();

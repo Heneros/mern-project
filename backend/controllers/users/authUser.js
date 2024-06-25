@@ -82,4 +82,4 @@ refreshToken
 });
 
 
-module.exports = authUser;
+module.exports = {authUser};

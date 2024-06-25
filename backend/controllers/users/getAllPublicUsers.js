@@ -7,4 +7,4 @@ const getAllPublicUsers = asyncHandler(async (req, res) => {
   res.status(200).json(users);
 });
 
-module.exports = getAllPublicUsers;
+module.exports = {getAllPublicUsers};

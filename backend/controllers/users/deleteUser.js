@@ -17,4 +17,4 @@ const deleteUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = deleteUser;
+module.exports = {deleteUser};

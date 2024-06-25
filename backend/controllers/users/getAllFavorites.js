@@ -17,4 +17,4 @@ const getAllFavorites = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = getAllFavorites
+module.exports = {getAllFavorites}

@@ -30,4 +30,4 @@ const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = updateUser;
+module.exports = {updateUser};

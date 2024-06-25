@@ -12,4 +12,4 @@ const logoutUser = asyncHandler(async (req, res) => {
 });
 
 
-module.exports = logoutUser;
+module.exports = {logoutUser};

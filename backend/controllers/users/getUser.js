@@ -11,4 +11,4 @@ const getUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = getUser;
+module.exports = {getUser};

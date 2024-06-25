@@ -25,4 +25,4 @@ const deleteFavoritePost = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = deleteFavoritePost;
+module.exports = {deleteFavoritePost};

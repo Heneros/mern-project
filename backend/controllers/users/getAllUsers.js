@@ -7,4 +7,4 @@ const getAllUsers = asyncHandler(async (req, res) => {
 });
 
 
-module.exports = getAllUsers;
+module.exports = {getAllUsers};

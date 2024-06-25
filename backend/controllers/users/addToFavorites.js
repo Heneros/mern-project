@@ -1,10 +1,6 @@
 const asyncHandler = require("../../middleware/asyncHandler");
 const User = require("../../models/Users");
 
-
-
-
-
 const addToFavorites = asyncHandler(async (req, res) => {
   try {
     const { userId, postId } = req.params;
@@ -23,4 +19,4 @@ const addToFavorites = asyncHandler(async (req, res) => {
     res.status(500).json({ message: "error favorites added" });
   }
 });
- module.exports = addToFavorites;
+ module.exports = {addToFavorites};

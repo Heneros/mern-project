@@ -25,4 +25,4 @@ const getAllPosts = asyncHandler(async (req, res) => {
 });
 
 
-module.exports = getAllPosts;
+module.exports = {getAllPosts};
