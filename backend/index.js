@@ -13,6 +13,8 @@ const connectDB = require('./config/db.js');
 const postsRoute = require('./routes/postsRoute');
 const usersRoute = require('./routes/usersRoute');
 const uploadRoute = require('./routes/uploadRoute');
+const authRoute = require('./routes/authRoute');
+
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -50,6 +52,8 @@ app.use(passport.session());
 
 app.use('/api/v1/posts', postsRoute);
  app.use('/api/v1/users', usersRoute);
+  app.use('/api/v1/auth', authRoute);
+
  app.use('/api/upload', uploadRoute);
 
 app.get(
