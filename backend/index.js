@@ -4,6 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
+const mongoSanitize = require("express-mongo-sanitize")
 const morgan = require("morgan")
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
@@ -16,7 +17,7 @@ const usersRoute = require('./routes/usersRoute');
 const uploadRoute = require('./routes/uploadRoute');
 const authRoute = require('./routes/authRoute');
 
-const {systemLogs} = require("./utils/Logger")
+const {systemLogs, morganMiddleware} = require("./utils/Logger")
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -37,6 +38,8 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.use(mongoSanitize())
+// app.use(morganMiddleware())
 
 app.use(
   session({
@@ -57,6 +60,8 @@ app.use('/api/v1/posts', postsRoute);
   app.use('/api/v1/auth', authRoute);
 
  app.use('/api/upload', uploadRoute);
+
+ app.use(mongoSanitize())
 
 app.get(
   '/auth/google',
