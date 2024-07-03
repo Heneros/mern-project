@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 
 const {Schema } = mongoose;
@@ -16,4 +16,9 @@ const verifyResetTokenSchema = new Schema({
         default: Date.now(),
         expires:900
      }
-})
+});
+
+const VerifyResetToken = mongoose.model("VerifyResetToken", verifyResetTokenSchema);
+
+
+module.exports = VerifyResetToken;

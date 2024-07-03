@@ -4,6 +4,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
+const morgan = require("morgan")
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const jwt = require('jsonwebtoken');
@@ -15,6 +16,7 @@ const usersRoute = require('./routes/usersRoute');
 const uploadRoute = require('./routes/uploadRoute');
 const authRoute = require('./routes/authRoute');
 
+const {systemLogs} = require("./utils/Logger")
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -118,6 +120,7 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
     await app.listen(port, console.log(`Working on port ${port}`));
+    systemLogs.info(`Server running in ${process.env.NODE_ENV} on ${port}`)
   } catch (error) {
     console.error(error);
   }
