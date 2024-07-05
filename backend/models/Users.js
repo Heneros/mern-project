@@ -16,6 +16,15 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    passwordConfirm:{
+      type: String,
+      validate: {
+        validator: function(value){
+          return value === this.password
+        },
+        message: "Passwords dont match"
+      }
+    },
     googleId: {
       type: String,
       unique: true,

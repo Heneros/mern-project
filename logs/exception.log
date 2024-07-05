@@ -1,34 +1,43 @@
 {
-  error: ReferenceError: morganMiddleware is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:42:5)
+  error: ReferenceError: url is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\utils\sendEmail.js:10:35)
       at Module._compile (node:internal/modules/cjs/loader:1358:14)
       at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
       at Module.load (node:internal/modules/cjs/loader:1208:32)
       at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
-      at node:internal/main/run_main_module:28:49,
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\controllers\auth\registerController.js:4:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10),
   level: 'error',
-  message: 'uncaughtException: morganMiddleware is not defined\n' +
-    'ReferenceError: morganMiddleware is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:5)\n' +
+  message: 'uncaughtException: url is not defined\n' +
+    'ReferenceError: url is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js:10:35)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
     '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: morganMiddleware is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:5)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js:4:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)',
+  stack: 'ReferenceError: url is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js:10:35)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
     '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js:4:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)',
   exception: true,
-  date: 'Wed Jul 03 2024 22:58:33 GMT+0300 (Москва, стандартное время)',
+  date: 'Fri Jul 05 2024 21:07:46 GMT+0300 (Москва, стандартное время)',
   process: {
-    pid: 3980,
+    pid: 1932,
     uid: null,
     gid: null,
     cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
@@ -39,20 +48,20 @@
       'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js'
     ],
     memoryUsage: {
-      rss: 76234752,
-      heapTotal: 59023360,
-      heapUsed: 30469128,
-      external: 20551932,
+      rss: 77152256,
+      heapTotal: 59924480,
+      heapUsed: 33667776,
+      external: 20551940,
       arrayBuffers: 18262463
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 2630006.421 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 2796158.812 },
   trace: [
     {
-      column: 5,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      column: 35,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js',
       function: null,
-      line: 42,
+      line: 10,
       method: null,
       native: false
     },
@@ -89,199 +98,112 @@
       native: false
     },
     {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 174,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-03 10:58:33.697 PM'
-}
-{
-  error: ReferenceError: morganMiddleware is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:42:5)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: morganMiddleware is not defined\n' +
-    'ReferenceError: morganMiddleware is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:5)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: morganMiddleware is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:5)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Wed Jul 03 2024 23:00:02 GMT+0300 (Москва, стандартное время)',
-  process: {
-    pid: 10208,
-    uid: null,
-    gid: null,
-    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.14.0',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js'
-    ],
-    memoryUsage: {
-      rss: 80302080,
-      heapTotal: 56139776,
-      heapUsed: 37561304,
-      external: 20551932,
-      arrayBuffers: 18262463
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 2630095.453 },
-  trace: [
-    {
-      column: 5,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
-      function: null,
-      line: 42,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
+      column: 19,
       file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1358,
-      method: '_compile',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
       native: false
     },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1416,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1208,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1024,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 174,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-03 11:00:02.807 PM'
-}
-{
-  error: TypeError: Cannot set properties of undefined (setting '_startAt')
-      at logger (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\morgan\index.js:105:18)
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:42:9)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: "uncaughtException: Cannot set properties of undefined (setting '_startAt')\n" +
-    "TypeError: Cannot set properties of undefined (setting '_startAt')\n" +
-    '    at logger (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\morgan\\index.js:105:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:9)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: "TypeError: Cannot set properties of undefined (setting '_startAt')\n" +
-    '    at logger (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\morgan\\index.js:105:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:42:9)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Wed Jul 03 2024 23:00:16 GMT+0300 (Москва, стандартное время)',
-  process: {
-    pid: 8004,
-    uid: null,
-    gid: null,
-    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.14.0',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js'
-    ],
-    memoryUsage: {
-      rss: 76083200,
-      heapTotal: 59023360,
-      heapUsed: 30176552,
-      external: 20551932,
-      arrayBuffers: 18262463
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 2630109.25 },
-  trace: [
     {
       column: 18,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\morgan\\index.js',
-      function: 'logger',
-      line: 105,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
       method: null,
       native: false
     },
     {
-      column: 9,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js',
       function: null,
-      line: 42,
+      line: 4,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    }
+  ],
+  timestamp: '2024-07-05 09:07:46.078 PM'
+}
+{
+  error: ReferenceError: meta is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\utils\sendEmail.js:10:35)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\controllers\auth\registerController.js:4:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10),
+  level: 'error',
+  message: 'uncaughtException: meta is not defined\n' +
+    'ReferenceError: meta is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js:10:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js:4:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)',
+  stack: 'ReferenceError: meta is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js:10:35)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js:4:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)',
+  exception: true,
+  date: 'Fri Jul 05 2024 21:09:14 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 15432,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js'
+    ],
+    memoryUsage: {
+      rss: 77291520,
+      heapTotal: 59924480,
+      heapUsed: 33443552,
+      external: 20551940,
+      arrayBuffers: 18262463
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 2796247.468 },
+  trace: [
+    {
+      column: 35,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\sendEmail.js',
+      function: null,
+      line: 10,
       method: null,
       native: false
     },
@@ -318,21 +240,45 @@
       native: false
     },
     {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 174,
-      method: 'executeUserEntryPoint [as runMain]',
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
       native: false
     },
     {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
       method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\registerController.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
       native: false
     }
   ],
-  timestamp: '2024-07-03 11:00:16.541 PM'
+  timestamp: '2024-07-05 09:09:14.743 PM'
 }

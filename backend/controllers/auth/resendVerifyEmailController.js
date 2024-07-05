@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler")
-const Post = require("../../models/Users");
+const User = require("../../models/Users");
 const VerificationToken = require("../../models/verifyResetTokenModel");
 const{randomBytes} =  require("crypto")
 const domainURL = process.env.DOMAIN;

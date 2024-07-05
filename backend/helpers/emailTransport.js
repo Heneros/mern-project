@@ -1,6 +1,6 @@
 require("dotenv/config")
 const nodemailer = require("nodemailer")
-const mg = require("nodemailer-mailgun-transport");
+// const mg = require("nodemailer-mailgun-transport");
 
 let transporter;
 
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "development") {
       domain: process.env.MAILGUN_DOMAIN,
     },
   };
-  transporter = nodemailer.createTransport(mg(mailgunAuth));
+  transporter = nodemailer.createTransport((mailgunAuth));
 }
 
 module.exports = transporter;

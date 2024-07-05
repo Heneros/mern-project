@@ -1,17 +1,17 @@
 const express = require("express");
 const { protect, admin } = require("../middleware/authMiddleware");
-const {
-createUser
-} = require("../controllers/users/createUser");
+// const {
+// createUser
+// } = require("../controllers/users/createUser");
 const {
 getAllPublicUsers
 } = require("../controllers/users/getAllPublicUsers");
 const {
 getAllFavorites
 } = require("../controllers/users/getAllFavorites");
-const {
-authUser
-} = require("../controllers/users/authUser");
+// const {
+// authUser
+// } = require("../controllers/users/authUser");
 const {
 getUserProfile
 } = require("../controllers/users/getUserProfile");
@@ -44,10 +44,10 @@ const feedbackForm = require("../utils/email");
 
 const router = express.Router();
 
-router.route("/").post(createUser).get(protect, admin, getAllUsers);
+router.route("/").get(protect, admin, getAllUsers);
 router.route("/allusers").get(getAllPublicUsers);
 
-router.route("/auth").post(authUser);
+// router.route("/auth").post(authUser);
 router
   .route("/profile")
   .get(protect, getUserProfile)
