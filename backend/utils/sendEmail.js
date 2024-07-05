@@ -7,12 +7,12 @@ const {fileURLToPath} = require("url")
 const transporter = require("../helpers/emailTransport")
 const {systemLogs} = require("./Logger")
 
-const __filenamee = fileURLToPath(meta.url);
-const __dirnamee = path.dirname(__filenamee)
+// const __filename = __filename;
+// const __dirname = path.dirname(__filename)
 
 const sendEmail = async(email, subject, payload, template ) =>{
     try {
-       const sourceDirectory = fs.readFileSync(path.join(__dirnamee, template),
+       const sourceDirectory = fs.readFileSync(path.join(__dirname, template),
       'utf8'
     ) ;
     const compliedTemplate = handlebars.compile(sourceDirectory);
@@ -22,7 +22,7 @@ const sendEmail = async(email, subject, payload, template ) =>{
       subject: subject,
       html: compliedTemplate(payload)
     }; 
-    await transporter.sendEmail(emailOptions)
+    await transporter.sendMail(emailOptions)
     } catch (error) {
       console.log(`email was not sent: ${error}`);
       systemLogs.error(`email was not sent: ${error}`);

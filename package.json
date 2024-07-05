@@ -7,7 +7,7 @@
     "start": "node backend/index.js",
     "maildev": "maildev",
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-    "server": "nodemon backend/index.js",
+    "server": "nodemon backend/index.js \"maidev\" ",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"maildev\"  ",
     "client": "set PORT=7200 && npm start --prefix frontend"
   },
@@ -33,6 +33,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.13",
+    "nodemailer-mailgun-transport": "^2.1.5",
     "passport": "^0.7.0",
     "passport-google-oauth2": "^0.2.0",
     "passport-google-oauth20": "^2.0.0",

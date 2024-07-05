@@ -1,13 +1,14 @@
 require("dotenv/config")
 const nodemailer = require("nodemailer")
-// const mg = require("nodemailer-mailgun-transport");
+ const mg = require("nodemailer-mailgun-transport");
 
 let transporter;
 
 if (process.env.NODE_ENV === "development") {
   transporter = nodemailer.createTransport({
-    host: "mailhog",
-    port: 1025,
+     host: "127.0.0.1",
+      port: 1025,
+      secure: false,
   });
 } else if (process.env.NODE_ENV === "production") {
   const mailgunAuth = {
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV === "development") {
       domain: process.env.MAILGUN_DOMAIN,
     },
   };
-  transporter = nodemailer.createTransport((mailgunAuth));
+  transporter = nodemailer.createTransport(mg(mailgunAuth));
 }
 
 module.exports = transporter;

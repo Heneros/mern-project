@@ -1,9 +1,27 @@
 const asyncHandler = require("express-async-handler");
 
+const User = require("../../models/Users");
+const VerificationToken = require("../../models/verifyResetTokenModel");
+const sendEmail = require("../../utils/sendEmail");
 
 
 const domainURL = process.env.DOMAIN;
 
 // $-title   Verify User Email
 // $-path    GET /api/v1/auth/verify/:emailToken/:userId
-// $-auth    Public
+// $-auth     Public
+
+
+const verifyUserEmail = asyncHandler(async(req, res) =>{
+    const user = await User.findOne({_id: req.params.userId}).select("-passwordConfirm");
+
+      if (!user) {
+    res.status(400).json({message: "We were unable to find a user for this token"});
+    throw new Error("We were unable to find a user for this token");
+  }
+  if (user.isEmailVerified) {
+    res.status(400).json({message:"This user has already been verified. Please login"});
+  }
+});
+
+module.exports = verifyUserEmail
