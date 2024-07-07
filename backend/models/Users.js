@@ -25,6 +25,7 @@ const userSchema = mongoose.Schema(
         message: "Passwords dont match"
       }
     },
+    isEmailVerified: { type: Boolean, required: true, default: false },
     googleId: {
       type: String,
       unique: true,
@@ -64,6 +65,8 @@ userSchema.pre("save", async function (next) {
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
+    this.passwordConfirm = undefined;
+
 });
 
 const User = mongoose.model("User", userSchema);

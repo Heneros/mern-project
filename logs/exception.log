@@ -1519,3 +1519,445 @@
   ],
   timestamp: '2024-07-06 02:08:35.456 AM'
 }
+{
+  error: C:\Users\Admin\Desktop\Projects\mern-project\backend\controllers\auth\resendVerifyEmailController.js:49
+        const payload = {.firstName : "Anonym",
+                         ^
+  
+  SyntaxError: Unexpected token '.'
+      at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+      at Module._compile (node:internal/modules/cjs/loader:1321:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\authRoute.js:1:37)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:18:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14),
+  level: 'error',
+  message: "uncaughtException: Unexpected token '.'\n" +
+    'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\resendVerifyEmailController.js:49\n' +
+    '      const payload = {.firstName : "Anonym",\n' +
+    '                       ^\n' +
+    '\n' +
+    "SyntaxError: Unexpected token '.'\n" +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1281:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1321:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:1:37)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)',
+  stack: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\resendVerifyEmailController.js:49\n' +
+    '      const payload = {.firstName : "Anonym",\n' +
+    '                       ^\n' +
+    '\n' +
+    "SyntaxError: Unexpected token '.'\n" +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1281:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1321:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:1:37)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)',
+  exception: true,
+  date: 'Mon Jul 08 2024 00:18:37 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 7256,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 82022400,
+      heapTotal: 62308352,
+      heapUsed: 38965080,
+      external: 20551935,
+      arrayBuffers: 18262466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 2980410.093 },
+  trace: [
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1281,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1321,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 12:18:37.382 AM'
+}
+{
+  error: C:\Users\Admin\Desktop\Projects\mern-project\backend\controllers\auth\resendVerifyEmailController.js:49
+        const payload = {.firstName : "Anonym",
+                         ^
+  
+  SyntaxError: Unexpected token '.'
+      at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+      at Module._compile (node:internal/modules/cjs/loader:1321:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\authRoute.js:1:37)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:18:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14),
+  level: 'error',
+  message: "uncaughtException: Unexpected token '.'\n" +
+    'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\resendVerifyEmailController.js:49\n' +
+    '      const payload = {.firstName : "Anonym",\n' +
+    '                       ^\n' +
+    '\n' +
+    "SyntaxError: Unexpected token '.'\n" +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1281:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1321:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:1:37)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)',
+  stack: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\controllers\\auth\\resendVerifyEmailController.js:49\n' +
+    '      const payload = {.firstName : "Anonym",\n' +
+    '                       ^\n' +
+    '\n' +
+    "SyntaxError: Unexpected token '.'\n" +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1281:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1321:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:1:37)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)',
+  exception: true,
+  date: 'Mon Jul 08 2024 00:18:48 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 18096,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 82878464,
+      heapTotal: 62308352,
+      heapUsed: 39015760,
+      external: 20551935,
+      arrayBuffers: 18262466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 2980421.39 },
+  trace: [
+    {
+      column: 20,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1281,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1321,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js',
+      function: null,
+      line: 1,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 12:18:48.672 AM'
+}

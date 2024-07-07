@@ -12,6 +12,7 @@ After registration you should activate your email during 15 minutes. Mail could 
 - React
 - Node.js
 - Passport.js
+- Nodemailer+handlebars
 - Cloudflare
 - Multer
 - Redux
@@ -21,7 +22,7 @@ After registration you should activate your email during 15 minutes. Mail could 
 
 Install project
 ```sh
-$ npm install
+$ npm ci
  ```
 
 Start dev version

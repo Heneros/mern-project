@@ -1,0 +1,55 @@
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:01:17.420 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:08:18.656 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:08:57.860 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:17:34.505 AM'
+}
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\emails\\template\\accountVerification.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-08 12:17:50.555 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:20:10.021 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:23:07.578 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:23:27.088 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:23:50.056 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:37:19.032 AM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 12:37:33.810 AM'
+}

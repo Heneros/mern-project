@@ -1,7 +1,11 @@
 const asyncHandler = require("express-async-handler")
 const User = require("../../models/Users");
 const VerificationToken = require("../../models/verifyResetTokenModel");
+
+const sendEmail = require("../../utils/sendEmail");
+
 const{randomBytes} =  require("crypto")
+
 const domainURL = process.env.DOMAIN;
 
 
@@ -45,11 +49,18 @@ const resendEmailVerificationToken = asyncHandler(async(req, res) => {
       const payload = {
         name: user.firstName ? user.firstName : "Anonym",
         link: emailLink
-      }
+      }  
+
+      await sendEmail(
+        user.email,
+        "Account Verification",
+        payload,
+            "./email/template/accountVerification.handlebars"
+      )
 
       res.json({
             success: true,
-    message: `${user.firstName}, an email has been sent to your account, please verify within 15 minutes`,
+    message: `${user?.username}, an email has been sent to your account, please verify within 15 minutes`,
       });
 
 })

@@ -33,3 +33,8 @@
   level: 'error',
   timestamp: '2024-07-06 01:50:20.048 AM'
 }
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\emails\\template\\accountVerification.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-08 12:17:50.555 AM'
+}
