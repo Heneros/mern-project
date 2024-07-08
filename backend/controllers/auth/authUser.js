@@ -11,9 +11,6 @@ const authUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
-  // if(!user || !(!await user.comparePassword(password))){
-  //       res.status(401).json({message: 'Incorrect email or password'})
-  // }
   if (user && (await user.matchPassword(password))) {
     ////  generateToken(res, user._id);
     // user.isLoggedIn = true;
@@ -36,10 +33,10 @@ const authUser = asyncHandler(async (req, res) => {
 
     const cookies = req.cookies;
 
-    let newRefreshTokenArray = !cookies?.jwt ? user.refreshToken :  user.refreshToken.filter((refT) => refT !== cookies.jwt )
+    let newRefreshTokenArray = !cookies?.blog_info ? user.refreshToken :  user.refreshToken.filter((refT) => refT !== cookies.blog_info )
 
-    if(cookies?.jwt){
-      const refreshToken = cookies.jwt;
+    if(cookies?.blog_info){
+      const refreshToken = cookies.blog_info;
       const existingRefreshToken = await User.findOne({
 refreshToken
       }).exec();
@@ -54,7 +51,7 @@ refreshToken
         sameSite: "None",
       };
 
-      res.clearCookie("jwt", options);
+      res.clearCookie("blog_info", options);
     }
     user.refreshToken = [...newRefreshTokenArray, newRefreshToken]
 
@@ -67,7 +64,7 @@ refreshToken
       sameSite: "None",
     };
 
-    res.cookie("jwt", newRefreshToken, options);
+    res.cookie("blog_info", newRefreshToken, options);
 
     res.json({
       _id: user._id,

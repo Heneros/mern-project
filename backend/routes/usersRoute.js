@@ -33,9 +33,9 @@ getAllUsers
 const {
 deleteUser
 } = require("../controllers/users/deleteUser");
-const {
-logoutUser
-} = require("../controllers/auth/logoutUser");
+// const {
+// logoutUser
+// } = require("../controllers/auth/logoutUser");
 const {
 updateUserProfile
 } = require("../controllers/users/updateUserProfile");
@@ -53,7 +53,7 @@ router
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
 router.route("/:id").get(protect, getUser).delete(deleteUser).put(updateUser);
-router.route("/logout").post(logoutUser);
+// router.route("/logout").post(logoutUser);
 
 router.route("/feedback").post( feedbackForm);
 

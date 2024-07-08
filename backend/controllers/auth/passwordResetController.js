@@ -48,6 +48,7 @@ const resetPasswordRequest = asyncHandler(async (req, res) => {
   if (existingUser && existingUser.isEmailVerified) {
     const emailLink = `${domainURL}/auth/reset_password?emailToken=${newVerificationToken.token}&userId=${existingUser._id}`;
 
+  
 
     const payload = {
           name: existingUser.username,
@@ -57,7 +58,7 @@ const resetPasswordRequest = asyncHandler(async (req, res) => {
     await sendEmail( existingUser.email,
       "Password Reset Request",
       payload,
-      "./emails/template/requestResetPassword.handlebars");
+      "./email/template/requestResetPassword.handlebars");
 
           res.status(200).json({
       success: true,
@@ -113,7 +114,7 @@ const resetPassword = asyncHandler(async(req, res) =>{
       user.email,
       "Password Reset Success",
       payload,
-      "./emails/template/resetPassword.handlebars"
+      "./email/template/resetPassword.handlebars"
     );
  res.json({
       success: true,

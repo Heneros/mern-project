@@ -1,5 +1,4 @@
-const asyncHandler = require("../../middleware/asyncHandler");
-
+const asyncHandler = require("express-async-handler");
 
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie("blog_info", "", {
@@ -12,4 +11,4 @@ const logoutUser = asyncHandler(async (req, res) => {
 });
 
 
-module.exports = {logoutUser};
+module.exports = logoutUser;

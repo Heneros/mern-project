@@ -2,6 +2,8 @@ const resendEmailVerificationToken =require("../controllers/auth/resendVerifyEma
 const registerUser = require("../controllers/auth/registerController");
 const verifyEmail = require("../controllers/auth/verifyEmailController");
 const authUser = require("../controllers/auth/authUser");
+const logoutUser = require("../controllers/auth/logoutUser");
+
 const {loginLimiter} = require("../middleware/apiLimiter");
 const newAccessToken = require("../controllers/auth/refreshTokenController");
 
@@ -18,7 +20,8 @@ router.route("/new_access_token").get(newAccessToken);
 router.route("/resend_email_token").post(resendEmailVerificationToken);
 router.route("/reset_password_request").post(resetPasswordRequest);
 router.route("/reset_password").post(resetPassword);
+router.route("/logout").get(logoutUser); 
 
 
-
+ 
 module.exports = router;

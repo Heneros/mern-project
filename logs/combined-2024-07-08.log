@@ -108,3 +108,48 @@
   level: 'info',
   timestamp: '2024-07-08 07:02:08.388 PM'
 }
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:03:13.569 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:06:48.240 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:07:32.379 PM'
+}
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\emails\\template\\requestResetPassword.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-08 11:13:57.839 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:15:31.857 PM'
+}
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\email\\template\\requestResetPassword.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-08 11:15:49.619 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:33:22.599 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:36:11.013 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-08 11:36:58.820 PM'
+}

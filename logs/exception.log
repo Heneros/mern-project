@@ -26004,3 +26004,1961 @@
   ],
   timestamp: '2024-07-08 07:02:03.058 PM'
 }
+{
+  error: ReferenceError: logoutUs is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\authRoute.js:21:29)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:18:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: logoutUs is not defined\n' +
+    'ReferenceError: logoutUs is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:21:29)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'ReferenceError: logoutUs is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:21:29)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:22:12 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 5968,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 83943424,
+      heapTotal: 62308352,
+      heapUsed: 39676296,
+      external: 20551935,
+      arrayBuffers: 18262466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20102.625 },
+  trace: [
+    {
+      column: 29,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js',
+      function: null,
+      line: 21,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:22:12.704 PM'
+}
+{
+  error: ReferenceError: logoutUser is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\authRoute.js:21:29)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:18:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: logoutUser is not defined\n' +
+    'ReferenceError: logoutUser is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:21:29)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'ReferenceError: logoutUser is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:21:29)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:22:20 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 11516,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 83918848,
+      heapTotal: 62308352,
+      heapUsed: 39598096,
+      external: 20551935,
+      arrayBuffers: 18262466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20110.765 },
+  trace: [
+    {
+      column: 29,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js',
+      function: null,
+      line: 21,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:22:20.835 PM'
+}
+{
+  error: Error: Route.get() requires a callback function but got a [object Object]
+      at Route.<computed> [as get] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\authRoute.js:23:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:18:19)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.get() requires a callback function but got a [object Object]\n' +
+    'Error: Route.get() requires a callback function but got a [object Object]\n' +
+    '    at Route.<computed> [as get] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:23:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.get() requires a callback function but got a [object Object]\n' +
+    '    at Route.<computed> [as get] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js:23:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:18:19)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:24:17 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 11524,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 84004864,
+      heapTotal: 62308352,
+      heapUsed: 39674656,
+      external: 20551935,
+      arrayBuffers: 18262466
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20227.437 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as get]',
+      line: 216,
+      method: '<computed> [as get]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\authRoute.js',
+      function: null,
+      line: 23,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 19,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 18,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:24:17.510 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:25:34 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 9076,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 75984896,
+      heapTotal: 41836544,
+      heapUsed: 31459104,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20304.312 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:25:34.393 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:26:58 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 9752,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 75870208,
+      heapTotal: 41836544,
+      heapUsed: 31900304,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20388.5 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:26:58.576 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:27:22 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 1612,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 76541952,
+      heapTotal: 41574400,
+      heapUsed: 31983040,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20412.234 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:27:22.311 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:28:57 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 14044,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 75976704,
+      heapTotal: 41574400,
+      heapUsed: 31619968,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20507.015 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:28:57.085 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:29:54 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 1444,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 76394496,
+      heapTotal: 41836544,
+      heapUsed: 31607096,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20564.75 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:29:54.819 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:30:36 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 7540,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 76341248,
+      heapTotal: 41836544,
+      heapUsed: 32139816,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20606.734 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:30:36.811 PM'
+}
+{
+  error: Error: Route.post() requires a callback function but got a [object Undefined]
+      at Route.<computed> [as post] (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\express\lib\router\route.js:216:15)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:56:25)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Module.require (node:internal/modules/cjs/loader:1233:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
+      at Module._compile (node:internal/modules/cjs/loader:1358:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+      at Module.load (node:internal/modules/cjs/loader:1208:32)
+      at Module._load (node:internal/modules/cjs/loader:1024:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: Route.post() requires a callback function but got a [object Undefined]\n' +
+    'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'Error: Route.post() requires a callback function but got a [object Undefined]\n' +
+    '    at Route.<computed> [as post] (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js:216:15)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:56:25)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 08 2024 23:31:11 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 7260,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 72794112,
+      heapTotal: 41836544,
+      heapUsed: 32021320,
+      external: 20551934,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 20641.89 },
+  trace: [
+    {
+      column: 15,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\express\\lib\\router\\route.js',
+      function: 'Route.<computed> [as post]',
+      line: 216,
+      method: '<computed> [as post]',
+      native: false
+    },
+    {
+      column: 25,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      function: null,
+      line: 56,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1233,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 20,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      function: null,
+      line: 16,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1358,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1416,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1208,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1024,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 174,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-08 11:31:11.975 PM'
+}
