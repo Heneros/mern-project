@@ -1,5 +1,4 @@
 const asyncHandler = require("express-async-handler");
-
 const User = require("../../models/Users");
 const VerificationToken = require("../../models/verifyResetTokenModel");
 const sendEmail = require("../../utils/sendEmail");
@@ -21,6 +20,37 @@ const verifyUserEmail = asyncHandler(async(req, res) =>{
   }
   if (user.isEmailVerified) {
     res.status(400).json({message:"This user has already been verified. Please login"});
+  }
+
+  const userToken = await VerificationToken.findOne({
+    _userId: user._id,
+    token: req.params.emailToken
+  });
+
+if (!userToken) {
+    res.status(400).json({message:"Token invalid! Your token may have expired"});
+  }
+
+  user.isEmailVerified = true;
+  await  user.save();
+
+  if(user.isEmailVerified){
+    const emailToken = `${domainURL}/login`;
+
+
+        const payload = {
+            name: user.username,
+            link: emailLink,
+        }
+
+
+        await sendEmail(
+            user.email,
+            'Welcome, Account Verified',
+            payload,
+            "./emails/template/welcome.handlebars"
+        );
+        res.redirect("/auth/verify")
   }
 });
 

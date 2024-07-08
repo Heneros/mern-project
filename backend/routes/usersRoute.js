@@ -35,7 +35,7 @@ deleteUser
 } = require("../controllers/users/deleteUser");
 const {
 logoutUser
-} = require("../controllers/users/logoutUser");
+} = require("../controllers/auth/logoutUser");
 const {
 updateUserProfile
 } = require("../controllers/users/updateUserProfile");

@@ -7,14 +7,18 @@ const newAccessToken = require("../controllers/auth/refreshTokenController");
 
 
 const express = require("express");
+const { resetPassword, resetPasswordRequest } = require("../controllers/auth/passwordResetController");
 
 const router = express.Router();
 
 router.route("/register").post(registerUser)
 router.route("/verify/:emailToken/:userId").get(verifyEmail);
-router.route("/auth").get(loginLimiter, authUser);
+router.route("/").get(loginLimiter, authUser);
 router.route("/new_access_token").get(newAccessToken);
 router.route("/resend_email_token").post(resendEmailVerificationToken);
+router.route("/reset_password_request").post(resetPasswordRequest);
+router.route("/reset_password").post(resetPassword);
+
 
 
 module.exports = router;
