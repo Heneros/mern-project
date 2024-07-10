@@ -11,7 +11,7 @@ const createPost = asyncHandler(async (req, res) => {
       tag,
       category,
       imageUrl,
-      user,
+      user: req.user._id,
     });
 
     if (post) {

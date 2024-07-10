@@ -1,3 +1,4 @@
  const ADMIN = "Admin";
  const USER = "User";
-module.exports = {ADMIN ,USER}
+const EDITOR = "Editor";
+module.exports = {ADMIN, EDITOR, USER}

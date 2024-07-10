@@ -1,26 +1,25 @@
-const { ADMIN, USER, } = require('../constants/index');
+const { ADMIN, USER, EDITOR } = require('../constants/index');
 
 const ROLES = {
     User: USER,
+    Editor: EDITOR,
     Admin: ADMIN,
 };
 
 const checkRole = (...allowedRoles) => {
     return (req, res, next) => {
-        if (!req?.user && !req?.roles) {
-            res.status(401).json({
+        if (!req?.user || !req?.roles) {
+            return res.status(401).json({
                 message: 'You are not authorized to use our platform',
             });
         }
+ const allowedRoleValues = allowedRoles.flat().map(role => ROLES[role]);
+        console.log('Allowed role values:', allowedRoleValues);
 
-        const rolesArray = [...allowedRoles];
-
-        const roleFound = req.roles
-            .map((role) => rolesArray.includes(role))
-            .find((value) => value === true);
+        const roleFound = req.roles.some(role => allowedRoleValues.includes(role));
 
         if (!roleFound) {
-            res.status(401).json({
+            return res.status(401).json({
                 message: 'You are not authorized to perform this request',
             });
         }
@@ -28,6 +27,7 @@ const checkRole = (...allowedRoles) => {
         next();
     };
 };
+
 
 const role = { ROLES, checkRole };
 module.exports = role;

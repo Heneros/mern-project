@@ -38,3 +38,344 @@
   level: 'info',
   timestamp: '2024-07-10 12:48:33.397 PM'
 }
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:02:38.479 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:07:31.635 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:11:21.255 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:18:17.819 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:22:59.893 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:24:41.057 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:25:44.143 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:26:33.005 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:28:51.097 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:29:05.406 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:30:52.039 PM'
+}
+{
+  error: MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+      at Timeout.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:185:23)
+      at listOnTimeout (node:internal/timers:573:17)
+      at process.processTimers (node:internal/timers:514:7),
+  level: 'error',
+  message: 'unhandledRejection: Operation `users.findOne()` buffering timed out after 10000ms\n' +
+    'MongooseError: Operation `users.findOne()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at process.processTimers (node:internal/timers:514:7)',
+  stack: 'MongooseError: Operation `users.findOne()` buffering timed out after 10000ms\n' +
+    '    at Timeout.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:185:23)\n' +
+    '    at listOnTimeout (node:internal/timers:573:17)\n' +
+    '    at process.processTimers (node:internal/timers:514:7)',
+  rejection: true,
+  date: 'Wed Jul 10 2024 13:31:09 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 2144,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.14.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 68411392,
+      heapTotal: 31789056,
+      heapUsed: 29496216,
+      external: 20588978,
+      arrayBuffers: 18270782
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 157439.031 },
+  trace: [
+    {
+      column: 23,
+      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js',
+      function: null,
+      line: 185,
+      method: null,
+      native: false
+    },
+    {
+      column: 17,
+      file: 'node:internal/timers',
+      function: 'listOnTimeout',
+      line: 573,
+      method: null,
+      native: false
+    },
+    {
+      column: 7,
+      file: 'node:internal/timers',
+      function: 'process.processTimers',
+      line: 514,
+      method: 'processTimers',
+      native: false
+    }
+  ],
+  timestamp: '2024-07-10 01:31:09.104 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 01:33:18.026 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 03:03:05.773 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 03:06:56.636 PM'
+}
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\utils\\emails\\template\\welcome.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-10 03:07:54.136 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:16:34.962 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:21:01.082 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:21:27.500 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:25:20.155 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:26:24.329 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:27:55.458 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:28:28.167 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:30:05.565 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:30:23.154 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:31:20.847 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:38:04.527 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:39:26.787 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:40:15.632 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:42:01.050 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:43:26.777 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:48:04.030 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:52:14.641 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:53:27.865 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:54:41.255 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:55:02.652 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:55:49.595 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 06:56:46.145 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:00:51.868 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:03:45.991 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:10:50.378 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:14:05.877 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:14:52.946 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:15:16.836 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:18:37.712 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:24:05.066 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:25:49.769 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:30:09.729 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:32:51.685 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:33:33.201 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:39:16.887 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:41:32.580 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:44:00.443 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:45:58.799 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:48:18.994 PM'
+}
+{
+  message: 'Server running in development on 3000',
+  level: 'info',
+  timestamp: '2024-07-10 07:48:48.116 PM'
+}

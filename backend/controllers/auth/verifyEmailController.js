@@ -35,7 +35,7 @@ if (!userToken) {
   await  user.save();
 
   if(user.isEmailVerified){
-    const emailToken = `${domainURL}/login`;
+    const emailLink = `${domainURL}/login`;
 
 
         const payload = {

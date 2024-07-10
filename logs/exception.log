@@ -1,6 +1,6 @@
 {
-  error: ReferenceError: protect is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:25:23)
+  error: ReferenceError: role is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:39:21)
       at Module._compile (node:internal/modules/cjs/loader:1358:14)
       at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
       at Module.load (node:internal/modules/cjs/loader:1208:32)
@@ -15,9 +15,9 @@
       at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
       at node:internal/main/run_main_module:28:49,
   level: 'error',
-  message: 'uncaughtException: protect is not defined\n' +
-    'ReferenceError: protect is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:25:23)\n' +
+  message: 'uncaughtException: role is not defined\n' +
+    'ReferenceError: role is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
@@ -31,8 +31,8 @@
     '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
     '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: protect is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:25:23)\n' +
+  stack: 'ReferenceError: role is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
@@ -47,9 +47,9 @@
     '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
   exception: true,
-  date: 'Wed Jul 10 2024 12:24:49 GMT+0300 (Москва, стандартное время)',
+  date: 'Wed Jul 10 2024 19:06:39 GMT+0300 (Москва, стандартное время)',
   process: {
-    pid: 3260,
+    pid: 10672,
     uid: null,
     gid: null,
     cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
@@ -61,20 +61,20 @@
       'maidev'
     ],
     memoryUsage: {
-      rss: 75399168,
-      heapTotal: 41836544,
-      heapUsed: 31538976,
+      rss: 75276288,
+      heapTotal: 41574400,
+      heapUsed: 31925936,
       external: 20551934,
       arrayBuffers: 18262465
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 153459.14 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 177569.031 },
   trace: [
     {
-      column: 23,
+      column: 21,
       file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
       function: null,
-      line: 25,
+      line: 39,
       method: null,
       native: false
     },
@@ -183,11 +183,11 @@
       native: false
     }
   ],
-  timestamp: '2024-07-10 12:24:49.213 PM'
+  timestamp: '2024-07-10 07:06:39.101 PM'
 }
 {
-  error: ReferenceError: protect is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:25:23)
+  error: ReferenceError: role is not defined
+      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:39:21)
       at Module._compile (node:internal/modules/cjs/loader:1358:14)
       at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
       at Module.load (node:internal/modules/cjs/loader:1208:32)
@@ -202,9 +202,9 @@
       at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
       at node:internal/main/run_main_module:28:49,
   level: 'error',
-  message: 'uncaughtException: protect is not defined\n' +
-    'ReferenceError: protect is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:25:23)\n' +
+  message: 'uncaughtException: role is not defined\n' +
+    'ReferenceError: role is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
@@ -218,8 +218,8 @@
     '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
     '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: protect is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:25:23)\n' +
+  stack: 'ReferenceError: role is not defined\n' +
+    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
     '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
     '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
     '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
@@ -234,9 +234,9 @@
     '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
   exception: true,
-  date: 'Wed Jul 10 2024 12:25:28 GMT+0300 (Москва, стандартное время)',
+  date: 'Wed Jul 10 2024 19:07:56 GMT+0300 (Москва, стандартное время)',
   process: {
-    pid: 6104,
+    pid: 10540,
     uid: null,
     gid: null,
     cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
@@ -248,20 +248,20 @@
       'maidev'
     ],
     memoryUsage: {
-      rss: 73621504,
+      rss: 75182080,
       heapTotal: 41836544,
-      heapUsed: 31608536,
+      heapUsed: 31568896,
       external: 20551934,
       arrayBuffers: 18262465
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 153498.828 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 177646.328 },
   trace: [
     {
-      column: 23,
+      column: 21,
       file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
       function: null,
-      line: 25,
+      line: 39,
       method: null,
       native: false
     },
@@ -370,5 +370,5 @@
       native: false
     }
   ],
-  timestamp: '2024-07-10 12:25:28.903 PM'
+  timestamp: '2024-07-10 07:07:56.412 PM'
 }

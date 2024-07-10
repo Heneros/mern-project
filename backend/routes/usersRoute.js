@@ -1,28 +1,25 @@
 const express = require('express');
-const {  checkAuth } = require('../middleware/authMiddleware');
-const role = require('../middleware/roleMIddleware');
+const { checkAuth } = require('../middleware/authMiddleware');
+const { checkRole, ROLES } = require('../middleware/roleMIddleware');
+
 const { getAllPublicUsers } = require('../controllers/users/getAllPublicUsers');
 const { getAllFavorites } = require('../controllers/users/getAllFavorites');
-// const {
-// authUser
-// } = require("../controllers/users/authUser");
 const { getUserProfile } = require('../controllers/users/getUserProfile');
 const { updateUser } = require('../controllers/users/updateUser');
 const { getUser } = require('../controllers/users/getUser');
 const { addToFavorites } = require('../controllers/users/addToFavorites');
-const {
-    deleteFavoritePost,
-} = require('../controllers/users/deleteFavoritePost');
+const { deleteFavoritePost } = require('../controllers/users/deleteFavoritePost');
 const { getAllUsers } = require('../controllers/users/getAllUsers');
 const { deleteUser } = require('../controllers/users/deleteUser');
-
 const { updateUserProfile } = require('../controllers/users/updateUserProfile');
-const  deleteMyAccount  = require('../controllers/users/deleteMyAccount');
+const deleteMyAccount = require('../controllers/users/deleteMyAccount');
 const feedbackForm = require('../utils/email');
 
 const router = express.Router();
 
-router.route('/').get(checkAuth, role.checkRole(role.ROLES.Admin), getAllUsers);
+router
+    .route('/')
+    .get(checkAuth, checkRole(ROLES.Admin), getAllUsers);
 router.route('/allusers').get(getAllPublicUsers);
 
 router
@@ -31,8 +28,11 @@ router
     .put(checkAuth, updateUserProfile)
     .delete(checkAuth, deleteMyAccount);
 
-router.route('/:id').get(checkAuth, role.checkRole(role.ROLES.Admin), getUser).delete(checkAuth, role.checkRole(role.ROLES.Admin), deleteUser).put(checkAuth, role.checkRole(role.ROLES.Admin), updateUser);
-// router.route("/logout").post(logoutUser);
+router
+    .route('/:id')
+    .get(checkAuth, checkRole([ROLES.Admin]), getUser)
+    .delete(checkAuth, checkRole([ROLES.Admin]), deleteUser)
+    .put(checkAuth, checkRole('Editor', 'Admin'), updateUser);
 
 router.route('/feedback').post(feedbackForm);
 
