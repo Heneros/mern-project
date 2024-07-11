@@ -19,7 +19,7 @@ const router = express.Router();
 
 router
     .route('/')
-    .get(checkAuth, checkRole(ROLES.Admin), getAllUsers);
+    .get(checkAuth, checkRole('Admin'), getAllUsers);
 router.route('/allusers').get(getAllPublicUsers);
 
 router
@@ -30,8 +30,8 @@ router
 
 router
     .route('/:id')
-    .get(checkAuth, checkRole([ROLES.Admin]), getUser)
-    .delete(checkAuth, checkRole([ROLES.Admin]), deleteUser)
+    .get(checkAuth, checkRole('Admin'), getUser)
+    .delete(checkAuth, checkRole('Admin'), deleteUser)
     .put(checkAuth, checkRole('Editor', 'Admin'), updateUser);
 
 router.route('/feedback').post(feedbackForm);

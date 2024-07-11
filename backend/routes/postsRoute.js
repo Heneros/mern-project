@@ -16,7 +16,7 @@ const checkObjectId = require('../middleware/checkObjectId');
 router
     .route('/')
     .get(getAllPosts)
-    .post(checkAuth, checkRole(ROLES.Admin, ROLES.Editor), createPost);
+    .post(checkAuth,  checkRole('Admin', 'Editor'),createPost);
 router.route('/getall').get(getAll);
 
 router.route('/:id/comments').post(checkAuth, checkObjectId, createPostComment);
@@ -24,7 +24,7 @@ router.route('/:id/comments').post(checkAuth, checkObjectId, createPostComment);
 router
     .route('/:id')
     .get(checkObjectId, getPost)
-    .put(checkAuth, checkRole(ROLES.Admin, ROLES.Editor),checkObjectId, updatePost)
-    .delete(checkAuth, checkRole(ROLES.Admin, ROLES.Editor),checkObjectId, deletePost);
+    .put(checkAuth, checkRole('Admin', 'Editor'),checkObjectId, updatePost)
+    .delete(checkAuth,  checkRole('Admin', 'Editor'),checkObjectId, deletePost);
  
 module.exports = router;

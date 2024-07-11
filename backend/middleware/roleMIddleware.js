@@ -14,7 +14,8 @@ const checkRole = (...allowedRoles) => {
             });
         }
  const allowedRoleValues = allowedRoles.flat().map(role => ROLES[role]);
-        console.log('Allowed role values:', allowedRoleValues);
+        // console.log('Allowed role values:', allowedRoleValues);
+        console.log('Current Role', req?.user.roles);
 
         const roleFound = req.roles.some(role => allowedRoleValues.includes(role));
 
