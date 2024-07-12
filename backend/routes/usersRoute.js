@@ -32,7 +32,7 @@ router
     .route('/:id')
     .get(checkAuth, checkRole('Admin'), getUser)
     .delete(checkAuth, checkRole('Admin'), deleteUser)
-    .put(checkAuth, checkRole('Editor', 'Admin'), updateUser);
+    .put(checkAuth, checkRole( 'Admin'), updateUser);
 
 router.route('/feedback').post(feedbackForm);
 

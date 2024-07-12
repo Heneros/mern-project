@@ -68,14 +68,6 @@ app.get(
   passport.authenticate('google', { scope: ['email', 'profile'] }),
 );
 
-// app.get(
-//   "/auth/google/callback",
-//   passport.authenticate("google", {
-//     successRedirect: "http://localhost:7200/profile", //change latter
-//     failureRedirect: "/auth/google/failure",
-//   })
-// );
-
 app.get(
   '/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),

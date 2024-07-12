@@ -11,6 +11,7 @@ import {
   // useAuthGoogleQuery,
   useLoginMutation,
 } from "../redux/slices/userApiSlice";
+import { useLoginUserMutation } from "../redux/slices/authApiSlice";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -22,18 +23,6 @@ export default function Login() {
 
   const { data: dataProfile, errorProfile, isLoading } = useGetProfileQuery();
 
-  // const [authGoogle] = useAuthGoogleMutation();
-
-  // const google = (e) => {
-  //   e.preventDefault();
-  //   // console.log(123);
-  //   try {
-  //     dispatch(authGoogle());
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const google = () => {
     window.location.href = "http://localhost:3000/auth/google";
   };
@@ -41,24 +30,25 @@ export default function Login() {
   useEffect(() => {
     if (dataProfile) {
       
-      // navigate("/");
+    navigate("/");
       // window.location.reload();
   
     }
   }, [dataProfile, navigate]);
 
-  const [login] = useLoginMutation();
+  // const [login, {data, isLoading, isSuccess}] = useLoginMutation();
+  const [loginUser, {data, isLoadingLogin}] =  useLoginUserMutation()
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      await login({ email, password }).unwrap();
+      await loginUser({ email, password }).unwrap();
       setError("");
-      navigate("/");
+      // navigate("/");
     } catch (err) {
       // console.log(err);
       const { data: errorMessage } = err;
-      setError(errorMessage.message);
+      setError(errorMessage?.message);
       console.log(err?.data?.message || err.error);
     }
   };
@@ -101,7 +91,7 @@ export default function Login() {
       </Row>
       <Row className="py-3">
         <Col>
-          Dont have an account? <Link to={"/registration"}>Registration</Link>
+          Don't have an account? <Link to={"/registration"}>Registration</Link>
         </Col>
       </Row>
     </FormContainer>
