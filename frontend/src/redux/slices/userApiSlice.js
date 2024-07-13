@@ -3,30 +3,15 @@ import { USERS_URL, AUTH_URL } from "../../utils/constants";
 
 export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation({
-      query: (data) => ({
-        url: `${AUTH_URL}`,
-        // method: "GET",
-        // body: data,
-        // credentials: "include",
-      }),
-    }),
-    logout: builder.mutation({
-      query: (data) => ({
-        url: `${AUTH_URL}/logout`,
-        method: "POST",
-        body: data,
-        credentials: "include",
-      }),
-    }),
-    register: builder.mutation({
-      query: (data) => ({
-        url: `${AUTH_URL}/register`,
-        method: "POST",
-        // body: data,
-        credentials: "include",
-      }),
-    }),
+    // login: builder.mutation({
+    //   query: (data) => ({
+    //     url: `${AUTH_URL}`,
+    //     // method: "GET",
+    //     // body: data,
+    //     // credentials: "include",
+    //   }),
+    // }),
+
     getProfile: builder.query({
       query: () => ({
         url: `${USERS_URL}/profile`,
@@ -118,7 +103,7 @@ export const {
   useDeleteUserMutation,
   useLoginMutation,
   useUpdateProfileMutation,
-  useLogoutMutation,
+
   useGetUserDetailsQuery,
   useGetUsersQuery,
   useGetUsersPublicQuery,
