@@ -7,8 +7,9 @@ import Google from "../styles/img/google.png";
 import FormContainer from "./../components/FormContainer";
 import {
   useGetProfileQuery,
-  useRegisterMutation,
+  
 } from "../redux/slices/userApiSlice";
+import { useRegisterMutation } from "../redux/slices/authApiSlice";
 
 export default function Registration() {
   const [username, setUsername] = useState("");
@@ -31,7 +32,7 @@ export default function Registration() {
   const sp = new URLSearchParams(search);
   const redirect = sp.get("redirect") || "/";
 
-  const [register] = useRegisterMutation();
+  const[registerUser] = useRegisterMutation()
   const google = () => {
     window.location.href = "http://localhost:3000/auth/google";
   };
@@ -42,7 +43,7 @@ export default function Registration() {
       alert("Password don't match");
     } else {
       try {
-        await register({ username, email, password }).unwrap();
+        await registerUser({ username, email, password }).unwrap();
         // const result = await register({ username, email, password });
 
         navigate("/");

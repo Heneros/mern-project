@@ -5,9 +5,11 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import HeaderDate from "./HeaderDate";
 import TrendingCarousel from "./TrendingCarousel";
 import {
-  useGetProfileQuery,
-  useLogoutMutation,
+  useGetProfileQuery
 } from "../redux/slices/userApiSlice";
+import {
+  useLogoutMutation
+} from "../redux/slices/authApiSlice";
 import Meta from "./Meta";
 
 export default function Header() {
@@ -18,13 +20,13 @@ export default function Header() {
 
   const isCurrentPath = (path) => location.pathname === path;
 
-  const [logout] = useLogoutMutation();
+  const [logout, {data, isSuccess}] = useLogoutMutation();
 
   const logoutHandler = async () => {
     try {
       await logout().unwrap();
       navigate("/");
-      window.location.reload();
+     // window.location.reload();
     } catch (err) {
       console.log(err);
     }

@@ -26,12 +26,14 @@ import Tag from "./pages/Tag";
 import AdminPostsList from "./pages/admin/AdminPostsList";
 import UsersList from "./pages/admin/UsersList";
 import CreatePost from "./pages/admin/CreatePost";
-
-
 import Favorites from "./pages/Favorites";
 import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
 import ContactUs from "./pages/ContactUs";
+import ResendEmailTokenPage from "./pages/ResendEmailTokenPage";
+
+import PasswordResetRequestPage from "./pages/PasswordResetRequestPage";
+import PasswordResetPage from "./pages/PasswordResetPage";
 
 const router = createBrowserRouter([
   {
@@ -84,6 +86,14 @@ const router = createBrowserRouter([
       {
         path: "tag/:id",
         element: <Tag />,
+      },
+          {
+        path: "/reset_password_request",
+        element: <PasswordResetRequestPage />,
+      },
+           {
+        path: "/auth/reset_password",
+        element: <PasswordResetPage />,
       },
       {
         path: "profile/favorites",
