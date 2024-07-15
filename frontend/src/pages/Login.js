@@ -12,10 +12,6 @@ import { useLoginUserMutation } from '../redux/slices/authApiSlice';
 import { logIn, setCredentials } from '../redux/slices/auth';
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const [error, setError] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
@@ -30,10 +26,10 @@ export default function Login() {
 
     useEffect(() => {
         if (isSuccess) {
-           /// navigate('/');
+         navigate('/');
         }
     }, [isSuccess, navigate]);
-
+ 
     return (
         <Formik
             initialValues={{ email: '', password: '', submit: null }}
@@ -51,10 +47,12 @@ export default function Login() {
                     const getUserCredentials = await loginUser(values).unwrap();
                     //console.log(getUserCredentials);
                     dispatch(logIn({ ...getUserCredentials }));
-                    setSubmitting(false);
+                    // setSubmitting(false);
                 } catch (err) {
+                      console.log(err)
                     const message = err.data.message;
                     toast.error(message);
+                  
                 }
             }}
         >
