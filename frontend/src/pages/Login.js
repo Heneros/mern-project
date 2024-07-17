@@ -142,6 +142,13 @@ export default function Login() {
                             <Link to={'/reset_password_request'}>Click Here to Reset it</Link>
                         </Col>
                     </Row>
+                             <Row className="py-1">
+                        <Col>
+                  Didn't get the verification email?
+                            <Link to={'/resend'}>	
+									Resend Email</Link>
+                        </Col>
+                    </Row>
                 </FormContainer>
             )}
         </Formik>

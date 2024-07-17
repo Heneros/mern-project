@@ -99,6 +99,10 @@ const router = createBrowserRouter([
         path: "profile/favorites",
         element: <Favorites />,
       },
+          {
+        path: "resend",
+        element: <ResendEmailTokenPage />,
+      },
       {
         element: <PrivateRoute />,
         children: [
