@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { Container, Form, Button, Spinner } from 'react-bootstrap';
+import { Container, Form, Row, Button, Spinner } from 'react-bootstrap';
 import { usePasswordResetRequestMutation } from '../redux/slices/authApiSlice';
 import FormContainer from '../components/FormContainer';
 
@@ -67,7 +67,34 @@ const PasswordResetRequestPage = () => {
             <Spinner animation="border" />
           ) : (
             <>
-             
+              <Form.Group className="my-2" controlId="email">
+ <Form.Label>Email</Form.Label>
+ <Form.Control
+            type="email"
+            placeholder="Enter email. Example bond@gmail.cpm"
+            value={values.email}
+            name="email"
+    onChange={handleChange}
+                isInvalid={touched.email && errors.email}
+          />
+ <Form.Control.Feedback type="invalid">
+            {errors.email}
+          </Form.Control.Feedback>
+              </Form.Group>
+              <Row className="d-flex justify-content-between">
+            <Button type="submit" variant="primary"  disabled={!values.email}>
+          Submit
+          </Button>
+            <Button
+                variant="warning"
+              
+                onClick={goBack}
+
+              >
+                Go Back
+              </Button>
+
+              </Row>
             </>
           )}
         </Form>
