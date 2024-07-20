@@ -13,6 +13,8 @@ const PasswordResetPage = () => {
     const navigate = useNavigate();
     const [level, setLevel] = useState();
 
+    const goBack = () => navigate(-1);
+
     const [resetPassword, { data, isLoading, isSuccess }] =
         useResetPasswordMutation();
 
