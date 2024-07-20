@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -10,7 +10,6 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import "./styles/style.css";
 import "./styles/custom.css";
 
-import PrivateRoute from "./components/PrivateRoute";
 
 import Layout from "./pages/Layout";
 import Homepage from "./pages/Homepage";
@@ -34,38 +33,38 @@ import ResendEmailTokenPage from "./pages/ResendEmailTokenPage";
 
 import PasswordResetRequestPage from "./pages/PasswordResetRequestPage";
 import PasswordResetPage from "./pages/PasswordResetPage";
+import AuthRequired from "./components/AuthRequired";
 
-const router = createBrowserRouter([
-  {
+import {ROLES} from "./utils/roles";
+
+const router = createBrowserRouter([{
     path: "/",
-    element: (
-      <>
-
-        <Layout />
-      </>
-    ),
-    children: [
-      {
+    element:      <Layout />, 
+    children: [{
         index: true,
         path: "/",
         element: <Homepage />,
-      },
-
-      {
+      },  {
         path: "/registration",
         element: <Registration />,
-      },
-      {
+      },   {
         path: "/contact-us",
         element: <ContactUs />,
-      },
-      {
+      },    {
         path: "/login",
         element: <Login />,
       },
       {
+        element: <AuthRequired allowedRoles=
+        {[ROLES.User]} />,
+          children:[ {
         path: "/profile",
         element: <Profile />,
+      },   {
+        path: "profile/favorites",
+        element: <Favorites />,
+      },
+          ] 
       },
       {
         path: "/news",
@@ -94,17 +93,12 @@ const router = createBrowserRouter([
            {
         path: "/auth/reset_password",
         element: <PasswordResetPage />,
-      },
-      {
-        path: "profile/favorites",
-        element: <Favorites />,
-      },
-          {
+      },   {
         path: "resend",
         element: <ResendEmailTokenPage />,
       },
       {
-        element: <PrivateRoute />,
+        element: <AuthRequired allowedRoles={[ROLES.Admin]} />,
         children: [
           {
             path: "/admin/posts-list",
@@ -119,16 +113,20 @@ const router = createBrowserRouter([
             element: <UsersList />,
           },
           {
+            path: "/admin/user/:id/edit",
+            element: <UserEdit />,
+          },
+        ],
+      },  {
+        element: <AuthRequired allowedRoles={[ROLES.Editor]} />,
+        children: [
+           {
             path: "/admin/create-post",
             element: <CreatePost />,
           },
           {
             path: "/admin/post/:id/edit",
             element: <AdminPostEdit />,
-          },
-          {
-            path: "/admin/user/:id/edit",
-            element: <UserEdit />,
           },
         ],
       },

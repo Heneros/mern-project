@@ -22,7 +22,7 @@ After registration you should activate your email during 15 minutes. Mail could 
 
 Install project
 ```sh
-$ npm ci
+$ npm install
  ```
 
 Start dev version

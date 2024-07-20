@@ -29,7 +29,7 @@ export default function Profile() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!dataProfile && !isLoading) {
-      navigate("/login");
+     navigate("/login");
     } else {
       setUsername(dataProfile?.username);
       setEmail(dataProfile?.email);

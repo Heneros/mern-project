@@ -38,4 +38,6 @@ const authSlice = createSlice({
 });
 
 export const { setCredentials , logout, logIn } = authSlice.actions;
+export const selectCurrentUserToken = (state) => state.auth.user?.accessToken;
+export const selectCurrentUserGoogleToken = (state) => state.auth?.googleToken;
 export const authReducer = authSlice.reducer;
