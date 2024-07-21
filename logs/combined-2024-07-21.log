@@ -138,3 +138,8 @@
   level: 'info',
   timestamp: '2024-07-21 03:35:08.455 PM'
 }
+{
+  message: "email was not sent: Error: ENOENT: no such file or directory, open 'D:\\Projects\\fullstack-blog\\backend\\utils\\emails\\template\\welcome.handlebars'",
+  level: 'error',
+  timestamp: '2024-07-21 04:54:39.644 PM'
+}

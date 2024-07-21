@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -30,7 +30,6 @@ import UserEdit from "./pages/admin/UserEdit";
 import AdminPostEdit from "./pages/admin/AdminPostEdit";
 import ContactUs from "./pages/ContactUs";
 import ResendEmailTokenPage from "./pages/ResendEmailTokenPage";
-
 import PasswordResetRequestPage from "./pages/PasswordResetRequestPage";
 import PasswordResetPage from "./pages/PasswordResetPage";
 import AuthRequired from "./components/AuthRequired";
@@ -53,78 +52,63 @@ const router = createBrowserRouter([{
   }, {
     path: "/login",
     element: <Login />,
-  },
-  {
+  }, {
+    path: "/news",
+    element: <News />,
+  }, {
+    path: "/news/:id",
+    element: <SinglePost />,
+  }, {
+    path: "/news/page/:pageNumber",
+    element: <News />,
+  }, {
+    path: "/category/:id",
+    element: <Category />,
+  }, {
+    path: "/tag/:id",
+    element: <Tag />,
+  }, {
+    path: "/reset_password_request",
+    element: <PasswordResetRequestPage />,
+  }, {
+    path: "/auth/reset_password",
+    element: <PasswordResetPage />,
+  }, {
+    path: "/resend",
+    element: <ResendEmailTokenPage />,
+  }, {
     element: <AuthRequired allowedRoles=
       {[ROLES.User]} />,
     children: [{
       path: "/profile",
       element: <Profile />,
     }, {
-      path: "profile/favorites",
+      path: "/profile/favorites",
       element: <Favorites />,
     },
     ]
-  },
-  {
-    path: "/news",
-    element: <News />,
-  },
-  {
-    path: "/news/:id",
-    element: <SinglePost />,
-  },
-  {
-    path: "/news/page/:pageNumber",
-    element: <News />,
-  },
-  {
-    path: "category/:id",
-    element: <Category />,
-  },
-  {
-    path: "tag/:id",
-    element: <Tag />,
-  },
-  {
-    path: "/reset_password_request",
-    element: <PasswordResetRequestPage />,
-  },
-  {
-    path: "/auth/reset_password",
-    element: <PasswordResetPage />,
   }, {
-    path: "resend",
-    element: <ResendEmailTokenPage />,
-  },
-  {
     element: <AuthRequired allowedRoles={[ROLES.Admin]} />,
-    children: [
-      {
-        path: "/admin/posts-list",
-        element: <AdminPostsList />,
-      },
-      {
-        path: "/admin/posts-list/:pageNumber",
-        element: <AdminPostsList />,
-      },
-      {
-        path: "/admin/users-list",
-        element: <UsersList />,
-      },
-      {
-        path: "/admin/user/:id/edit",
-        element: <UserEdit />,
-      },
-    ],
+    children: [{
+      path: "/admin/users-list",
+      element: <UsersList />,
+    }, {
+      path: "/admin/user/:id/edit",
+      element: <UserEdit />,
+    }],
   }, {
     element: <AuthRequired allowedRoles={[ROLES.Editor]} />,
     children: [
       {
+        path: "/admin/posts-list",
+        element: <AdminPostsList />,
+      }, {
+        path: "/admin/posts-list/:pageNumber",
+        element: <AdminPostsList />,
+      }, {
         path: "/admin/create-post",
         element: <CreatePost />,
-      },
-      {
+      }, {
         path: "/admin/post/:id/edit",
         element: <AdminPostEdit />,
       },

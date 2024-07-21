@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Nav, Col, Row, Form, Button } from "react-bootstrap";
+import { Col, Row, Form, Button } from "react-bootstrap";
 
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -24,12 +24,12 @@ export default function Profile() {
   const [updateProfile, { isLoading: loadingUpdateProfile }] =
     useUpdateProfileMutation();
   // const idUser = dataProfile?._id;
-  console.log(dataProfile?._id);
+  // console.log(dataProfile?._id);
 
   const navigate = useNavigate();
   useEffect(() => {
     if (!dataProfile && !isLoading) {
-      //  navigate("/login");
+      navigate("/login");
     } else {
       setUsername(dataProfile?.username);
       setEmail(dataProfile?.email);

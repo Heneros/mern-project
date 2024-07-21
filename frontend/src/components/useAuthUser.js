@@ -28,6 +28,7 @@ const useAuthUser = () => {
             accessRight = 'Editor';
             return { roles, isEditor, accessRight };
         }
+        return { roles, isEditor, accessRight };
     } else if (googleToken) {
         const gDecodedToken = decodeToken(googleToken);
         const { roles } = gDecodedToken;
@@ -40,8 +41,9 @@ const useAuthUser = () => {
             accessRight = 'Editor';
             return { roles, isEditor, accessRight };
         }
+        return { roles, isEditor, accessRight };
     }
-        return {roles: [], isAdmin, isEditor, accessRight}
+    return { roles: [], isAdmin, isEditor, accessRight }
 
 };
 

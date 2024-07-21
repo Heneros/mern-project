@@ -40,7 +40,7 @@ export default function Header() {
             <div className="d-flex justify-content-between">
               <div
                 className="bg-primary text-white text-center py-2"
-                style={{ width: "100px" }}
+                style={{ width: "100px", padding: "0 12px" }}
               >
                 Trending
               </div>
