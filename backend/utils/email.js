@@ -4,23 +4,23 @@ const sendEmail = require("./sendEmail")
 
 
 const feedbackForm = asyncHandler(async (req, res) => {
-const { name, subject, email, message } = req.body;
-const payload = {
-name: name,
-subject, 
-email,
-message
-}
+  const { name, subject, email, message } = req.body;
+  const payload = {
+    name: name,
+    subject,
+    email,
+    message
+  }
 
-await sendEmail(
-  email,
-   "Account Verification",
-   payload,
-   "./email/template/feedbackFormMessage.handlebars"
+  await sendEmail(
+    email,
+    "Account Verification",
+    payload,
+    "./email/template/feedbackFormMessage.handlebars"
   );
 
 
-    res.status(200).json({
+  res.status(200).json({
     success: true,
     message: `Message was sent! `
   });

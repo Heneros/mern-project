@@ -7,8 +7,8 @@ export const authApiSlice = apiSlice.injectEndpoints({
         loginUser: builder.mutation({
             query: (credentials) => ({
                 url: `${AUTH_URL}/login`,
-                   method: "POST",
-        body: credentials,
+                method: "POST",
+                body: credentials,
             }),
         }),
         logout: builder.mutation({
@@ -41,18 +41,18 @@ export const authApiSlice = apiSlice.injectEndpoints({
             }),
         }),
         passwordResetRequest: builder.mutation({
-                query: (formData) => ({
-        url: `${AUTH_URL}/reset_password_request`,
-        method: "POST",
-        body: formData,
-      }),
+            query: (formData) => ({
+                url: `${AUTH_URL}/reset_password_request`,
+                method: "POST",
+                body: formData,
+            }),
         }),
-                resetPassword: builder.mutation({
-                query: (formData) => ({
-        url: `${AUTH_URL}/reset_password`,
-        method: "POST",
-        body: formData,
-      }),
+        resetPassword: builder.mutation({
+            query: (formData) => ({
+                url: `${AUTH_URL}/reset_password`,
+                method: "POST",
+                body: formData,
+            }),
         }),
     }),
 });

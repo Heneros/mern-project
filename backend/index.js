@@ -17,7 +17,7 @@ const usersRoute = require('./routes/usersRoute');
 const uploadRoute = require('./routes/uploadRoute');
 const authRoute = require('./routes/authRoute');
 
-const {systemLogs, morganMiddleware} = require("./utils/Logger")
+const { systemLogs, morganMiddleware } = require("./utils/Logger")
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
@@ -56,12 +56,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/api/v1/posts', postsRoute);
- app.use('/api/v1/users', usersRoute);
+app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/auth', authRoute);
 
- app.use('/api/upload', uploadRoute);
+app.use('/api/upload', uploadRoute);
 
- app.use(mongoSanitize())
+app.use(mongoSanitize())
 
 app.get(
   '/auth/google',
@@ -117,7 +117,7 @@ const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
     await app.listen(port, console.log(`Working on port ${port}`));
-    systemLogs.info(`Server running in ${process.env.NODE_ENV} on ${port}`)
+    // systemLogs.info(`Server running in ${process.env.NODE_ENV} on ${port}`)
   } catch (error) {
     console.error(error);
   }

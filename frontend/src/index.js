@@ -35,103 +35,103 @@ import PasswordResetRequestPage from "./pages/PasswordResetRequestPage";
 import PasswordResetPage from "./pages/PasswordResetPage";
 import AuthRequired from "./components/AuthRequired";
 
-import {ROLES} from "./utils/roles";
+import { ROLES } from "./utils/roles";
 
 const router = createBrowserRouter([{
+  path: "/",
+  element: <Layout />,
+  children: [{
+    index: true,
     path: "/",
-    element:      <Layout />, 
+    element: <Homepage />,
+  }, {
+    path: "/registration",
+    element: <Registration />,
+  }, {
+    path: "/contact-us",
+    element: <ContactUs />,
+  }, {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    element: <AuthRequired allowedRoles=
+      {[ROLES.User]} />,
     children: [{
-        index: true,
-        path: "/",
-        element: <Homepage />,
-      },  {
-        path: "/registration",
-        element: <Registration />,
-      },   {
-        path: "/contact-us",
-        element: <ContactUs />,
-      },    {
-        path: "/login",
-        element: <Login />,
+      path: "/profile",
+      element: <Profile />,
+    }, {
+      path: "profile/favorites",
+      element: <Favorites />,
+    },
+    ]
+  },
+  {
+    path: "/news",
+    element: <News />,
+  },
+  {
+    path: "/news/:id",
+    element: <SinglePost />,
+  },
+  {
+    path: "/news/page/:pageNumber",
+    element: <News />,
+  },
+  {
+    path: "category/:id",
+    element: <Category />,
+  },
+  {
+    path: "tag/:id",
+    element: <Tag />,
+  },
+  {
+    path: "/reset_password_request",
+    element: <PasswordResetRequestPage />,
+  },
+  {
+    path: "/auth/reset_password",
+    element: <PasswordResetPage />,
+  }, {
+    path: "resend",
+    element: <ResendEmailTokenPage />,
+  },
+  {
+    element: <AuthRequired allowedRoles={[ROLES.Admin]} />,
+    children: [
+      {
+        path: "/admin/posts-list",
+        element: <AdminPostsList />,
       },
       {
-        element: <AuthRequired allowedRoles=
-        {[ROLES.User]} />,
-          children:[ {
-        path: "/profile",
-        element: <Profile />,
-      },   {
-        path: "profile/favorites",
-        element: <Favorites />,
-      },
-          ] 
+        path: "/admin/posts-list/:pageNumber",
+        element: <AdminPostsList />,
       },
       {
-        path: "/news",
-        element: <News />,
+        path: "/admin/users-list",
+        element: <UsersList />,
       },
       {
-        path: "/news/:id",
-        element: <SinglePost />,
+        path: "/admin/user/:id/edit",
+        element: <UserEdit />,
+      },
+    ],
+  }, {
+    element: <AuthRequired allowedRoles={[ROLES.Editor]} />,
+    children: [
+      {
+        path: "/admin/create-post",
+        element: <CreatePost />,
       },
       {
-        path: "/news/page/:pageNumber",
-        element: <News />,
-      },
-      {
-        path: "category/:id",
-        element: <Category />,
-      },
-      {
-        path: "tag/:id",
-        element: <Tag />,
-      },
-          {
-        path: "/reset_password_request",
-        element: <PasswordResetRequestPage />,
-      },
-           {
-        path: "/auth/reset_password",
-        element: <PasswordResetPage />,
-      },   {
-        path: "resend",
-        element: <ResendEmailTokenPage />,
-      },
-      {
-        element: <AuthRequired allowedRoles={[ROLES.Admin]} />,
-        children: [
-          {
-            path: "/admin/posts-list",
-            element: <AdminPostsList />,
-          },
-          {
-            path: "/admin/posts-list/:pageNumber",
-            element: <AdminPostsList />,
-          },
-          {
-            path: "/admin/users-list",
-            element: <UsersList />,
-          },
-          {
-            path: "/admin/user/:id/edit",
-            element: <UserEdit />,
-          },
-        ],
-      },  {
-        element: <AuthRequired allowedRoles={[ROLES.Editor]} />,
-        children: [
-           {
-            path: "/admin/create-post",
-            element: <CreatePost />,
-          },
-          {
-            path: "/admin/post/:id/edit",
-            element: <AdminPostEdit />,
-          },
-        ],
+        path: "/admin/post/:id/edit",
+        element: <AdminPostEdit />,
       },
     ],
   },
+  ],
+},
 ]);
 
 library.add(fas, fab);

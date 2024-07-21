@@ -17,7 +17,7 @@ const useAuthUser = () => {
     if (token) {
         const decodedToken = decodeToken(token);
         const { roles } = decodedToken;
-        console.log(roles)
+        // console.log(roles)
 
         isAdmin = roles.includes('Admin');
         isEditor = roles.includes('Editor');

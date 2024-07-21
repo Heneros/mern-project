@@ -14,7 +14,6 @@ import { logIn, setCredentials } from '../redux/slices/auth';
 export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const location = useLocation();
 
     const { data: dataProfile, errorProfile } = useGetProfileQuery();
     const [loginUser, { data, isLoading, isSuccess, errorLog }] =
@@ -26,10 +25,10 @@ export default function Login() {
 
     useEffect(() => {
         if (isSuccess) {
-         navigate('/');
+            navigate('/');
         }
     }, [isSuccess, navigate]);
- 
+
     return (
         <Formik
             initialValues={{ email: '', password: '', submit: null }}
@@ -47,12 +46,14 @@ export default function Login() {
                     const getUserCredentials = await loginUser(values).unwrap();
                     //console.log(getUserCredentials);
                     dispatch(logIn({ ...getUserCredentials }));
-                    // setSubmitting(false);
+                    setSubmitting(false);
+                    setStatus({ success: true });
                 } catch (err) {
-                      console.log(err)
+                    console.log(err)
                     const message = err.data.message;
-                    toast.error(message);
-                  
+                    toast.error(err.data.message || err || message);
+                    setStatus({ success: false });
+                    setSubmitting(false);
                 }
             }}
         >
@@ -67,7 +68,7 @@ export default function Login() {
                 <FormContainer>
                     <h1>Login</h1>
                     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-                        {/* {error && <p style={{ color: "red" }}>{error} </p>} */}
+                        {errorLog && <p style={{ color: "red" }}>{errorLog} </p>}
                         {isLoading ? (
                             <Spinner />
                         ) : (
@@ -110,7 +111,7 @@ export default function Login() {
                                         </Form.Control.Feedback>
                                     </InputGroup>
                                 </Form.Group>
-                                <Button type="submit" variant="primary">
+                                <Button type="submit" disabled={isSubmitting} variant="primary">
                                     Submit
                                 </Button>
                             </>
@@ -136,17 +137,17 @@ export default function Login() {
                             <Link to={'/registration'}>Registration</Link>
                         </Col>
                     </Row>
-                     <Row className="py-1">
+                    <Row className="py-1">
                         <Col>
                             Forgot Password?{' '}
                             <Link to={'/reset_password_request'}>Click Here to Reset it</Link>
                         </Col>
                     </Row>
-                             <Row className="py-1">
+                    <Row className="py-1">
                         <Col>
-                  Didn't get the verification email?
-                            <Link to={'/resend'}>	
-									Resend Email</Link>
+                            Didn't get the verification email?
+                            <Link to={'/resend'}>
+                                Resend Email</Link>
                         </Col>
                     </Row>
                 </FormContainer>

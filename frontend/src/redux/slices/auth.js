@@ -1,13 +1,13 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { decodeToken} from 'react-jwt';
+import { createSlice } from "@reduxjs/toolkit";
+import { decodeToken } from 'react-jwt';
 
 
 const user = JSON.parse(localStorage.getItem("user"))
 const googleToken = localStorage.getItem("googleToken");
 
-const decodedToken = decodeToken(googleToken)
+const decodedToken = decodeToken(googleToken);
 const initialState = {
-    user: user ? user : decodedToken,
+  user: user ? user : decodedToken,
   googleToken: googleToken ? googleToken : null,
   data: null,
   status: "loading",
@@ -24,12 +24,12 @@ const authSlice = createSlice({
       state.isLogged = true;
       localStorage.setItem("isLogged", JSON.stringify(true));
     },
-    logIn: (state, action) =>{
-     state.user = action.payload;
-     localStorage.setItem("user", JSON.stringify(action.payload))
+    logIn: (state, action) => {
+      state.user = action.payload;
+      localStorage.setItem("user", JSON.stringify(action.payload))
     },
     logout: (state, action) => {
-         state.user = null;
+      state.user = null;
       state.googleToken = null;
       state.isLogged = null;
       localStorage.clear();
@@ -37,7 +37,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { setCredentials , logout, logIn } = authSlice.actions;
+export const { setCredentials, logout, logIn } = authSlice.actions;
 export const selectCurrentUserToken = (state) => state.auth.user?.accessToken;
 export const selectCurrentUserGoogleToken = (state) => state.auth?.googleToken;
 export const authReducer = authSlice.reducer;
