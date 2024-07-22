@@ -46,14 +46,13 @@
 
 
 // module.exports = uploadFile;
-// config/multerConfig.js
 const multer = require("multer");
 const path = require("path");
 
 const storage = multer.memoryStorage();
 
 function checkImageType(file, cb) {
-  console.log('Checking file:', file.originalname, 'MIME type:', file.mimetype);
+  // console.log('Checking file:', file.originalname, 'MIME type:', file.mimetype);
 
   const filetypes = /jpeg|jpg|png/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
@@ -68,7 +67,7 @@ function checkImageType(file, cb) {
 
 const uploadFile = multer({
   storage,
-  limits: { fileSize: 5024 * 5024 },
+  limits: { fileSize: 2024 * 2024 },
   fileFilter: function (req, file, cb) {
     checkImageType(file, cb);
   }

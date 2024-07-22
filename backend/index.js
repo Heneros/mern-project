@@ -31,8 +31,9 @@ const app = express();
 app.use(
   cors({
     origin: 'http://localhost:7200',
-    methods: 'GET,POST,PUT,DELETE',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   }),
 );
 app.use(express.json());
@@ -58,7 +59,6 @@ app.use(passport.session());
 app.use('/api/v1/posts', postsRoute);
 app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/auth', authRoute);
-
 app.use('/api/upload', uploadRoute);
 
 app.use(mongoSanitize())
@@ -116,7 +116,7 @@ app.use(errorHandler);
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    await app.listen(port, console.log(`Working on port ${port}`));
+    app.listen(port, console.log(`Working on port ${port}`));
     // systemLogs.info(`Server running in ${process.env.NODE_ENV} on ${port}`)
   } catch (error) {
     console.error(error);

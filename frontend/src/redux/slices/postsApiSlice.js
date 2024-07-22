@@ -54,7 +54,8 @@ export const postsApiSlice = apiSlice.injectEndpoints({
     uploadPostImage: builder.mutation({
       query: (data) => ({
         url: `/api/upload`,
-        method: "POST",
+        method: "PATCH",
+        credentials: "include",
         body: data,
       }),
     }),

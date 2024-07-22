@@ -8,23 +8,21 @@ const updatePost = asyncHandler(async (req, res) => {
   const post = await Post.findById(req.params.id);
 
   if (post) {
+
+    post.title = title;
+    post.content = content;
     if (imageUrl) {
       post.imageUrl = imageUrl;
     }
 
-    post.title = title;
-    post.content = content;
-    post.imageUrl = imageUrl;
     post.category = category;
     post.tag = tag;
 
     const updatedPost = await post.save();
-    res.status(202).json(updatedPost);
+    return res.status(202).json(updatedPost);
   } else {
-    res.status(404).json({ message: "Resource not found" });
+    return res.status(404).json({ message: "Resource not found" });
   }
-
-  res.status(201).json({ message: "updatePost" });
 });
 
-module.exports = {updatePost};
+module.exports = { updatePost };

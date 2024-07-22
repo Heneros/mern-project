@@ -17,7 +17,7 @@ router.route("/").patch(upload.single("logo"), async (req, res) => {
                 }
 
                 const result = await cloudinaryUploader(req.file.buffer, req.file.originalname);
-                res.send(result.url);
+                res.send(result);
         } catch (error) {
                 console.error("Error uploading to Cloudinary:", error);
                 res.status(500).send("Error uploading file");

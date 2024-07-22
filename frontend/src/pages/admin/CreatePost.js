@@ -13,6 +13,7 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
 import NavMenu from "../../components/Profile/NavMenu";
 import defaultImg from "../../styles/img/defaultImg.jpg";
+import { toast } from "react-toastify";
 export default function CreatePost() {
   const {
     data: dataProfile,
@@ -42,7 +43,7 @@ export default function CreatePost() {
     }
 
     if (!title && !dataProfile && !category) {
-      console.error("Please provide title and category");
+      toast.error("Please provide title and category");
       return;
     }
 
@@ -76,7 +77,7 @@ export default function CreatePost() {
     const formData = new FormData();
     formData.append("imageUrl", e.target.files[0]);
     // console.log("Work");
-    console.log(formData);
+    console.log('imageUrl', formData);
     try {
       const res = await uploadPostImage(formData).unwrap();
       console.log(res);

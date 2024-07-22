@@ -13,6 +13,7 @@ import Message from "../../components/Message";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import NavMenu from "../../components/Profile/NavMenu";
 import { useGetProfileQuery } from "../../redux/slices/userApiSlice";
+import { toast } from "react-toastify";
 
 export default function AdminPostEdit() {
   const { id: postId } = useParams();
@@ -35,7 +36,7 @@ export default function AdminPostEdit() {
   const [uploadPostImage, { isLoading: loadingImgUpload }] =
     useUploadPostImageMutation();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   if (loadingPost && loadingImgUpload) {
     console.log("Loading");
@@ -55,8 +56,7 @@ export default function AdminPostEdit() {
       }).unwrap();
 
       refetch();
-      // navigate("/admin/posts-list");
-      // alert("Success");
+      toast.success("Post updated successfully");
     } catch (err) {
       console.log(err?.message);
     }
@@ -86,17 +86,28 @@ export default function AdminPostEdit() {
     }),
     []
   );
-
   const uploadFileHandler = async (e) => {
     // e.preventDefault();
     const formData = new FormData();
-    formData.append("imageUrl", e.target.files[0]);
+    formData.append("logo", e.target.files[0]);
     try {
       const res = await uploadPostImage(formData).unwrap();
-      setImageUrl(res.image);
-      console.log(res);
+      if (typeof res === 'string') {
+        setImageUrl(res);
+      } else if (res.url) {
+        setImageUrl(res.url);
+      } else {
+        throw new Error('Unexpected response format');
+      }
+
     } catch (error) {
+      toast.error("Error image upload", error);
+
       console.log("Error image upload", error);
+      console.log("Error details:", error.message);
+      if (error.response) {
+        console.log("Server response:", error.response.data);
+      }
     }
   };
 
@@ -160,6 +171,7 @@ export default function AdminPostEdit() {
                     type="text"
                     placeholder="Enter Image Url"
                     value={imageUrl}
+                    name="logo"
                     onChange={(e) => setImageUrl(e.target.value)}
                   ></Form.Control>
                   <Form.Control

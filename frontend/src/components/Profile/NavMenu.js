@@ -10,7 +10,7 @@ export default function NavMenu() {
   const token = useSelector(selectCurrentUserToken);
   const googleToken = useSelector(selectCurrentUserGoogleToken);
 
-  console.log(token)
+  // console.log(token)
 
   let isAdmin = false;
   let isEditor = false;
