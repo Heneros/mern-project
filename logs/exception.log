@@ -1,80 +1,80 @@
 {
-  error: ReferenceError: role is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:39:21)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Module.require (node:internal/modules/cjs/loader:1233:19)
+  error: ReferenceError: multer is not defined
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\routes\uploadRoute.js:10:16)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
       at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:17:21)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
       at node:internal/main/run_main_module:28:49,
   level: 'error',
-  message: 'uncaughtException: role is not defined\n' +
-    'ReferenceError: role is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+  message: 'uncaughtException: multer is not defined\n' +
+    'ReferenceError: multer is not defined\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:10:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
     '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: role is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
+  stack: 'ReferenceError: multer is not defined\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:10:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
     '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
     '    at node:internal/main/run_main_module:28:49',
   exception: true,
-  date: 'Wed Jul 10 2024 19:06:39 GMT+0300 (Москва, стандартное время)',
+  date: 'Mon Jul 22 2024 16:23:19 GMT+0300 (Восточная Европа, летнее время)',
   process: {
-    pid: 10672,
+    pid: 14708,
     uid: null,
     gid: null,
-    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
+    cwd: 'D:\\Projects\\fullstack-blog',
     execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.14.0',
+    version: 'v20.12.2',
     argv: [
       'C:\\Program Files\\nodejs\\node.exe',
-      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
+      'D:\\Projects\\fullstack-blog\\backend\\index.js',
       'maidev'
     ],
     memoryUsage: {
-      rss: 75276288,
-      heapTotal: 41574400,
-      heapUsed: 31925936,
-      external: 20551934,
-      arrayBuffers: 18262465
+      rss: 85557248,
+      heapTotal: 59682816,
+      heapUsed: 39387056,
+      external: 20550946,
+      arrayBuffers: 18262467
     }
   },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 177569.031 },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 153188.25 },
   trace: [
     {
-      column: 21,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
+      column: 16,
+      file: 'D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js',
       function: null,
-      line: 39,
+      line: 10,
       method: null,
       native: false
     },
@@ -82,7 +82,7 @@
       column: 14,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._compile',
-      line: 1358,
+      line: 1369,
       method: '_compile',
       native: false
     },
@@ -90,7 +90,7 @@
       column: 10,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._extensions..js',
-      line: 1416,
+      line: 1427,
       method: '.js',
       native: false
     },
@@ -98,7 +98,7 @@
       column: 32,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module.load',
-      line: 1208,
+      line: 1206,
       method: 'load',
       native: false
     },
@@ -106,7 +106,7 @@
       column: 12,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._load',
-      line: 1024,
+      line: 1022,
       method: '_load',
       native: false
     },
@@ -114,7 +114,7 @@
       column: 19,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module.require',
-      line: 1233,
+      line: 1231,
       method: 'require',
       native: false
     },
@@ -123,22 +123,366 @@
       file: 'node:internal/modules/helpers',
       function: 'require',
       line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 135,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-22 04:23:19.021 PM'
+}
+{
+  error: ReferenceError: multer is not defined
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\routes\uploadRoute.js:10:16)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:17:21)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
+      at node:internal/main/run_main_module:28:49,
+  level: 'error',
+  message: 'uncaughtException: multer is not defined\n' +
+    'ReferenceError: multer is not defined\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:10:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  stack: 'ReferenceError: multer is not defined\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:10:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
+    '    at node:internal/main/run_main_module:28:49',
+  exception: true,
+  date: 'Mon Jul 22 2024 16:23:33 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 17472,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\fullstack-blog',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\Projects\\fullstack-blog\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 84062208,
+      heapTotal: 60993536,
+      heapUsed: 37838136,
+      external: 20550946,
+      arrayBuffers: 18262467
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 153202.64 },
+  trace: [
+    {
+      column: 16,
+      file: 'D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js',
+      function: null,
+      line: 10,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
+      function: null,
+      line: 17,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/run_main',
+      function: 'Function.executeUserEntryPoint [as runMain]',
+      line: 135,
+      method: 'executeUserEntryPoint [as runMain]',
+      native: false
+    },
+    {
+      column: 49,
+      file: 'node:internal/main/run_main_module',
+      function: null,
+      line: 28,
+      method: null,
+      native: false
+    }
+  ],
+  timestamp: '2024-07-22 04:23:33.426 PM'
+}
+{
+  error: D:\Projects\fullstack-blog\backend\config\cloudinaryConfig.js:5
+  const streamifier = require('streamifier');
+        ^
+  
+  SyntaxError: Identifier 'streamifier' has already been declared
+      at internalCompileFunction (node:internal/vm:128:18)
+      at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+      at Module._compile (node:internal/modules/cjs/loader:1332:27)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\routes\uploadRoute.js:4:28)
+      at Module._compile (node:internal/modules/cjs/loader:1369:14)
+      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+      at Module.load (node:internal/modules/cjs/loader:1206:32)
+      at Module._load (node:internal/modules/cjs/loader:1022:12)
+      at Module.require (node:internal/modules/cjs/loader:1231:19)
+      at require (node:internal/modules/helpers:179:18)
+      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:17:21),
+  level: 'error',
+  message: "uncaughtException: Identifier 'streamifier' has already been declared\n" +
+    'D:\\Projects\\fullstack-blog\\backend\\config\\cloudinaryConfig.js:5\n' +
+    "const streamifier = require('streamifier');\n" +
+    '      ^\n' +
+    '\n' +
+    "SyntaxError: Identifier 'streamifier' has already been declared\n" +
+    '    at internalCompileFunction (node:internal/vm:128:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1280:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1332:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:4:28)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)',
+  stack: 'D:\\Projects\\fullstack-blog\\backend\\config\\cloudinaryConfig.js:5\n' +
+    "const streamifier = require('streamifier');\n" +
+    '      ^\n' +
+    '\n' +
+    "SyntaxError: Identifier 'streamifier' has already been declared\n" +
+    '    at internalCompileFunction (node:internal/vm:128:18)\n' +
+    '    at wrapSafe (node:internal/modules/cjs/loader:1280:20)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1332:27)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js:4:28)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
+    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
+    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
+    '    at require (node:internal/modules/helpers:179:18)\n' +
+    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:17:21)',
+  exception: true,
+  date: 'Mon Jul 22 2024 16:36:25 GMT+0300 (Восточная Европа, летнее время)',
+  process: {
+    pid: 17992,
+    uid: null,
+    gid: null,
+    cwd: 'D:\\Projects\\fullstack-blog',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v20.12.2',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'D:\\Projects\\fullstack-blog\\backend\\index.js',
+      'maidev'
+    ],
+    memoryUsage: {
+      rss: 78413824,
+      heapTotal: 58085376,
+      heapUsed: 29384256,
+      external: 20550944,
+      arrayBuffers: 18262465
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 153975 },
+  trace: [
+    {
+      column: 18,
+      file: 'node:internal/vm',
+      function: 'internalCompileFunction',
+      line: 128,
       method: null,
       native: false
     },
     {
       column: 20,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
-      function: null,
-      line: 16,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapSafe',
+      line: 1280,
       method: null,
       native: false
     },
     {
-      column: 14,
+      column: 27,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._compile',
-      line: 1358,
+      line: 1332,
       method: '_compile',
       native: false
     },
@@ -146,7 +490,7 @@
       column: 10,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._extensions..js',
-      line: 1416,
+      line: 1427,
       method: '.js',
       native: false
     },
@@ -154,7 +498,7 @@
       column: 32,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module.load',
-      line: 1208,
+      line: 1206,
       method: 'load',
       native: false
     },
@@ -162,2094 +506,90 @@
       column: 12,
       file: 'node:internal/modules/cjs/loader',
       function: 'Module._load',
-      line: 1024,
+      line: 1022,
       method: '_load',
       native: false
     },
     {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 174,
-      method: 'executeUserEntryPoint [as runMain]',
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
       native: false
     },
     {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
       method: null,
       native: false
-    }
-  ],
-  timestamp: '2024-07-10 07:06:39.101 PM'
-}
-{
-  error: ReferenceError: role is not defined
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\routes\usersRoute.js:39:21)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Module.require (node:internal/modules/cjs/loader:1233:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (C:\Users\Admin\Desktop\Projects\mern-project\backend\index.js:16:20)
-      at Module._compile (node:internal/modules/cjs/loader:1358:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
-      at Module.load (node:internal/modules/cjs/loader:1208:32)
-      at Module._load (node:internal/modules/cjs/loader:1024:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: role is not defined\n' +
-    'ReferenceError: role is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'ReferenceError: role is not defined\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js:39:21)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1233:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js:16:20)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1358:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1208:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1024:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:174:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Wed Jul 10 2024 19:07:56 GMT+0300 (Москва, стандартное время)',
-  process: {
-    pid: 10540,
-    uid: null,
-    gid: null,
-    cwd: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.14.0',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 75182080,
-      heapTotal: 41836544,
-      heapUsed: 31568896,
-      external: 20551934,
-      arrayBuffers: 18262465
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 177646.328 },
-  trace: [
+    },
+    {
+      column: 28,
+      file: 'D:\\Projects\\fullstack-blog\\backend\\routes\\uploadRoute.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1369,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._extensions..js',
+      line: 1427,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1206,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._load',
+      line: 1022,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1231,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 179,
+      method: null,
+      native: false
+    },
     {
       column: 21,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\routes\\usersRoute.js',
-      function: null,
-      line: 39,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1358,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1416,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1208,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1024,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1233,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 20,
-      file: 'C:\\Users\\Admin\\Desktop\\Projects\\mern-project\\backend\\index.js',
-      function: null,
-      line: 16,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1358,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1416,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1208,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1024,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 174,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-10 07:07:56.412 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:10:19 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 336,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 84918272,
-      heapTotal: 59944960,
-      heapUsed: 41204120,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4805.875 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
       file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
       function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
+      line: 17,
       method: null,
       native: false
     }
   ],
-  timestamp: '2024-07-20 11:10:19.167 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:12:11 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 19748,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 87691264,
-      heapTotal: 59944960,
-      heapUsed: 40705400,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4917.828 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:12:11.107 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:12:30 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 19464,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 86204416,
-      heapTotal: 61255680,
-      heapUsed: 39171704,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4937.437 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:12:30.716 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:12:41 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 11388,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 86454272,
-      heapTotal: 61255680,
-      heapUsed: 39255840,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4948.296 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:12:41.579 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:12:42 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 19472,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 86249472,
-      heapTotal: 61255680,
-      heapUsed: 39269576,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4949.39 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:12:42.666 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:12:54 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 18992,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 88154112,
-      heapTotal: 59944960,
-      heapUsed: 41063792,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4961 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:12:54.284 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:13:10 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 16980,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 86241280,
-      heapTotal: 61255680,
-      heapUsed: 39162896,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4976.796 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:13:10.083 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sat Jul 20 2024 23:13:30 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 12692,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 89382912,
-      heapTotal: 59944960,
-      heapUsed: 40803104,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 4997.093 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-20 11:13:30.375 PM'
-}
-{
-  error: TypeError: OAuth2Strategy requires a clientID option
-      at Strategy.OAuth2Strategy (D:\Projects\fullstack-blog\node_modules\passport-oauth2\lib\strategy.js:87:34)
-      at new Strategy (D:\Projects\fullstack-blog\node_modules\passport-google-oauth20\lib\strategy.js:52:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\utils\oauth.js:8:3)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Module.require (node:internal/modules/cjs/loader:1231:19)
-      at require (node:internal/modules/helpers:179:18)
-      at Object.<anonymous> (D:\Projects\fullstack-blog\backend\index.js:24:1)
-      at Module._compile (node:internal/modules/cjs/loader:1369:14)
-      at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
-      at Module.load (node:internal/modules/cjs/loader:1206:32)
-      at Module._load (node:internal/modules/cjs/loader:1022:12)
-      at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)
-      at node:internal/main/run_main_module:28:49,
-  level: 'error',
-  message: 'uncaughtException: OAuth2Strategy requires a clientID option\n' +
-    'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  stack: 'TypeError: OAuth2Strategy requires a clientID option\n' +
-    '    at Strategy.OAuth2Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js:87:34)\n' +
-    '    at new Strategy (D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js:52:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js:8:3)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Module.require (node:internal/modules/cjs/loader:1231:19)\n' +
-    '    at require (node:internal/modules/helpers:179:18)\n' +
-    '    at Object.<anonymous> (D:\\Projects\\fullstack-blog\\backend\\index.js:24:1)\n' +
-    '    at Module._compile (node:internal/modules/cjs/loader:1369:14)\n' +
-    '    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)\n' +
-    '    at Module.load (node:internal/modules/cjs/loader:1206:32)\n' +
-    '    at Module._load (node:internal/modules/cjs/loader:1022:12)\n' +
-    '    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n' +
-    '    at node:internal/main/run_main_module:28:49',
-  exception: true,
-  date: 'Sun Jul 21 2024 13:11:57 GMT+0300 (Восточная Европа, летнее время)',
-  process: {
-    pid: 6116,
-    uid: null,
-    gid: null,
-    cwd: 'D:\\Projects\\fullstack-blog',
-    execPath: 'C:\\Program Files\\nodejs\\node.exe',
-    version: 'v20.12.2',
-    argv: [
-      'C:\\Program Files\\nodejs\\node.exe',
-      'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      'maidev'
-    ],
-    memoryUsage: {
-      rss: 80748544,
-      heapTotal: 61255680,
-      heapUsed: 39413488,
-      external: 20550946,
-      arrayBuffers: 18262467
-    }
-  },
-  os: { loadavg: [ 0, 0, 0 ], uptime: 55304.5 },
-  trace: [
-    {
-      column: 34,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-oauth2\\lib\\strategy.js',
-      function: 'Strategy.OAuth2Strategy',
-      line: 87,
-      method: 'OAuth2Strategy',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'D:\\Projects\\fullstack-blog\\node_modules\\passport-google-oauth20\\lib\\strategy.js',
-      function: 'new Strategy',
-      line: 52,
-      method: null,
-      native: false
-    },
-    {
-      column: 3,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\utils\\oauth.js',
-      function: null,
-      line: 8,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 19,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.require',
-      line: 1231,
-      method: 'require',
-      native: false
-    },
-    {
-      column: 18,
-      file: 'node:internal/modules/helpers',
-      function: 'require',
-      line: 179,
-      method: null,
-      native: false
-    },
-    {
-      column: 1,
-      file: 'D:\\Projects\\fullstack-blog\\backend\\index.js',
-      function: null,
-      line: 24,
-      method: null,
-      native: false
-    },
-    {
-      column: 14,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._compile',
-      line: 1369,
-      method: '_compile',
-      native: false
-    },
-    {
-      column: 10,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._extensions..js',
-      line: 1427,
-      method: '.js',
-      native: false
-    },
-    {
-      column: 32,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module.load',
-      line: 1206,
-      method: 'load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/cjs/loader',
-      function: 'Module._load',
-      line: 1022,
-      method: '_load',
-      native: false
-    },
-    {
-      column: 12,
-      file: 'node:internal/modules/run_main',
-      function: 'Function.executeUserEntryPoint [as runMain]',
-      line: 135,
-      method: 'executeUserEntryPoint [as runMain]',
-      native: false
-    },
-    {
-      column: 49,
-      file: 'node:internal/main/run_main_module',
-      function: null,
-      line: 28,
-      method: null,
-      native: false
-    }
-  ],
-  timestamp: '2024-07-21 01:11:57.785 PM'
+  timestamp: '2024-07-22 04:36:25.788 PM'
 }

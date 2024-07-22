@@ -1,38 +1,38 @@
 const cloudinary = require('cloudinary').v2;
-
+const dotenv = require('dotenv');
 const path = require('path');
 
-const dotenv = require('dotenv');
+const streamifier = require('streamifier');
+
 dotenv.config();
 
-const fs = require("fs");
-
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const cloudinaryUploader = async function uploadToCloudinary(localFilePath) {
-    const mainFolderName = "fullstackblog";
+const cloudinaryUploader = async function uploadToCloudinary(fileBuffer, originalname) {
+  const mainFolderName = "fullstackblog";
+  const fileName = path.parse(originalname).name;
+  const uniqueFileName = `${fileName}_${Date.now()}`;
 
+  const filePathOnCloudinary = mainFolderName + "/" + uniqueFileName;
 
-// const filePathOnCloudinary = path.join(mainFolderName, path.parse(localFilePath).base);
-const filePathOnCloudinary = path.parse(localFilePath).base;
+  return new Promise((resolve, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      { public_id: filePathOnCloudinary, resource_type: 'auto' },
+      (error, result) => {
+        if (error) reject(error);
+        else resolve({
+          message: "Success",
+          url: result.secure_url,
+        });
+      }
+    );
 
-return cloudinary.uploader
-  .upload(localFilePath, { public_id: mainFolderName + "/" + filePathOnCloudinary, resource_type: 'auto' })
-  .then((result) => {
-    fs.unlinkSync(localFilePath);
-    return {
-      message: "Success",
-      url: result.secure_url,
-    };
-  })
-  .catch((error) => {
-    fs.unlinkSync(localFilePath);
-    return { message: error };
+    streamifier.createReadStream(fileBuffer).pipe(uploadStream);
   });
 };
-module.exports = cloudinaryUploader;
 
+module.exports = cloudinaryUploader;
