@@ -9,7 +9,7 @@ import Google from '../styles/img/google.png';
 import FormContainer from '../components/FormContainer';
 import { useGetProfileQuery } from '../redux/slices/userApiSlice';
 import { useLoginUserMutation } from '../redux/slices/authApiSlice';
-import { logIn, setCredentials } from '../redux/slices/auth';
+import { logIn } from '../redux/slices/auth';
 
 export default function Login() {
     const dispatch = useDispatch();

@@ -9,9 +9,9 @@ const apiLimiter = rateLimit({
             message: "Too many requests from this IP address",
     },
      handler: (req, res, next, options) => {
-    systemLogs.error(
-      `Too many requests: ${options.message.message}\t${req.method}\t${req.url}\t${req.headers.origin}`
-    );
+    // systemLogs.error(
+    //   `Too many requests: ${options.message.message}\t${req.method}\t${req.url}\t${req.headers.origin}`
+    // );
     res.status(options.statusCode).send(options.message);
   },
     standardHeaders: true,
@@ -26,9 +26,9 @@ const loginLimiter = rateLimit({
       "Too many login attempts from this IP address, please try again after 30 minutes",
   },
     handler: (req, res, next, options) => {
-    systemLogs.error(
-      `Too many requests: ${options.message.message}\t${req.method}\t${req.url}\t${req.headers.origin}`
-    );
+    // systemLogs.error(
+    //   `Too many requests: ${options.message.message}\t${req.method}\t${req.url}\t${req.headers.origin}`
+    // );
     res.status(options.statusCode).send(options.message);
   },
   standardHeaders: true,

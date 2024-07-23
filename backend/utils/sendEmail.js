@@ -25,7 +25,7 @@ const sendEmail = async(email, subject, payload, template ) =>{
     await transporter.sendMail(emailOptions)
     } catch (error) {
       console.log(`email was not sent: ${error}`);
-      systemLogs.error(`email was not sent: ${error}`);
+      // systemLogs.error(`email was not sent: ${error}`);
     }
 }
 

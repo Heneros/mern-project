@@ -11,6 +11,7 @@ import {
 } from "../redux/slices/userApiSlice";
 import Breadcrumbs from "../components/Breadcrumbs";
 import NavMenu from "../components/Profile/NavMenu";
+import { toast } from "react-toastify";
 
 export default function Profile() {
   const { data: dataProfile, error, isLoading } = useGetProfileQuery();
@@ -21,10 +22,8 @@ export default function Profile() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const [updateProfile, { isLoading: loadingUpdateProfile }] =
+  const [updateProfile, { isLoading: loadingUpdateProfile },] =
     useUpdateProfileMutation();
-  // const idUser = dataProfile?._id;
-  // console.log(dataProfile?._id);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -38,8 +37,9 @@ export default function Profile() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
-      alert("Passwords dont match");
+      alert("Passwords do not match");
     } else {
       try {
         await updateProfile({
@@ -48,9 +48,13 @@ export default function Profile() {
           email,
           password,
         }).unwrap();
-        console.log("Success success updated");
+        // console.log("Success success updated");
+        toast.success(`${username} successfully updated`)
       } catch (error) {
-        console.log(error?.message || error);
+        const { data } = error
+        console.log(data.message);
+
+        toast.error(data.message)
       }
     }
   };
@@ -71,7 +75,7 @@ export default function Profile() {
       <Row className="my-5">
         <NavMenu dataProfile={dataProfile} />
         <Col md={9}>
-          <h2>User Profile</h2>
+          <h2>Change User Profile Data</h2>
           <Form onSubmit={submitHandler}>
             <Form.Group className="my-2" controlId="username">
               <Form.Label>Name</Form.Label>
@@ -113,7 +117,7 @@ export default function Profile() {
               ></Form.Control>
             </Form.Group>
 
-            <Button type="submit" variant="primary">
+            <Button type="submit" className="pt-2" variant="primary">
               Update
             </Button>
           </Form>
