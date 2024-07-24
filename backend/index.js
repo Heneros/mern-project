@@ -124,13 +124,20 @@ if (process.env.NODE_ENV === 'production') {
 app.use(notFound);
 app.use(errorHandler);
 
-const start = async () => {
+const startServer = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(port, console.log(`Working on port ${port}`));
-    // systemLogs.info(`Server running in ${process.env.NODE_ENV} on ${port}`)
+    app.listen(port, () => console.log(`Working on port ${port}`));
+    // return server;
   } catch (error) {
     console.error(error);
   }
 };
-start();
+if (require.main === module) {
+  startServer();
+} else {
+  module.exports = { app, startServer };
+}
+
+// startServer();
+// module.exports = app
