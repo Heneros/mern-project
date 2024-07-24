@@ -16,7 +16,7 @@ export default function FooterLinksPages() {
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         Homepage
       </Link>
-      <Link
+      {/* <Link
         className={
           isCurrentPath("/about") ? "active mb-2" : "text-secondary mb-2"
         }
@@ -24,7 +24,7 @@ export default function FooterLinksPages() {
       >
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         About
-      </Link>
+      </Link> */}
       <Link
         className={
           isCurrentPath("/news") ? "active mb-2" : "text-secondary mb-2"
@@ -34,7 +34,7 @@ export default function FooterLinksPages() {
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         News
       </Link>
-      <Link
+      {/* <Link
         className={
           isCurrentPath("/all-authors") ? "active mb-2" : "text-secondary mb-2"
         }
@@ -42,7 +42,7 @@ export default function FooterLinksPages() {
       >
         <FontAwesomeIcon icon={faAngleRight} className="text-dark mr-2" />
         All Authors
-      </Link>
+      </Link> */}
     </>
   );
 }

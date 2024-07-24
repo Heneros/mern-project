@@ -35,6 +35,7 @@ import PasswordResetPage from "./pages/PasswordResetPage";
 import AuthRequired from "./components/AuthRequired";
 
 import { ROLES } from "./utils/roles";
+import AuthCallback from "./pages/AuthCallback";
 
 const router = createBrowserRouter([{
   path: "/",
@@ -53,6 +54,9 @@ const router = createBrowserRouter([{
     path: "/login",
     element: <Login />,
   }, {
+    path: "/auth-callback",
+    element: <AuthCallback />,
+  },{
     path: "/news",
     element: <News />,
   }, {

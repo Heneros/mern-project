@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const {USER} = require("../constants/index.js")
+const { USER } = require("../constants/index.js")
 const userSchema = mongoose.Schema(
   {
     username: {
@@ -14,12 +14,12 @@ const userSchema = mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      // required: true,
     },
-    passwordConfirm:{
+    passwordConfirm: {
       type: String,
       validate: {
-        validator: function(value){
+        validator: function (value) {
           return value === this.password
         },
         message: "Passwords dont match"
@@ -40,9 +40,14 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
-    roles:{
+    roles: {
       type: [String],
       default: [USER]
+    },
+    provider: {
+      type: String,
+      required: true,
+      default: "email"
     },
     favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
     isLoggedIn: {
@@ -65,7 +70,7 @@ userSchema.pre("save", async function (next) {
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-    this.passwordConfirm = undefined;
+  this.passwordConfirm = undefined;
 
 });
 

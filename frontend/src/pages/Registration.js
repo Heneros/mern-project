@@ -36,8 +36,9 @@ export default function Registration() {
   const [registerUser, { data, isLoading, isSuccess }] = useRegisterMutation();
 
   const google = () => {
-    window.location.href = "http://localhost:3000/auth/google";
+    window.open("http://localhost:3000/api/v1/auth/google", "_self");
   };
+
 
   useEffect(() => {
     if (isSuccess) {
@@ -163,6 +164,7 @@ export default function Registration() {
             </Button>
           </form>
           <Row className="py-3">
+   
             <Col>
               <Button
                 className="loginButton google"

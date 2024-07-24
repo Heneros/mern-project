@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Row, Col, Spinner, InputGroup } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { Formik } from 'formik';
 import Google from '../styles/img/google.png';
 import FormContainer from '../components/FormContainer';
-import { useGetProfileQuery } from '../redux/slices/userApiSlice';
+// import { useGetProfileQuery } from '../redux/slices/userApiSlice';
 import { useLoginUserMutation } from '../redux/slices/authApiSlice';
 import { logIn } from '../redux/slices/auth';
 
@@ -15,12 +15,12 @@ export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { data: dataProfile, errorProfile } = useGetProfileQuery();
-    const [loginUser, { data, isLoading, isSuccess, errorLog }] =
+    // const { data: dataProfile, errorProfile } = useGetProfileQuery();
+    const [loginUser, { isLoading, isSuccess, errorLog }] =
         useLoginUserMutation();
 
     const google = () => {
-        window.location.href = 'http://localhost:3000/auth/google';
+        window.open("http://localhost:3000/api/v1/auth/google", "_self");
     };
 
     useEffect(() => {
