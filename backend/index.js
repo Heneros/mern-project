@@ -56,53 +56,14 @@ app.use(
   }),
 );
 
-
-
 app.use('/api/v1/posts', postsRoute);
 app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/auth', authRoute);
 app.use('/api/upload', uploadRoute);
 
-
 // app.use(passport.session());
 
-
 app.use(mongoSanitize())
-
-// app.get(
-//   '/auth/google',
-//   passport.authenticate('google', { scope: ['email', 'profile'] }),
-// );
-
-
-// app.get(
-//   '/auth/google/callback',
-//   passport.authenticate('google', { failureRedirect: '/login' }),
-//   (req, res) => {
-//     const { user } = req;
-//     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-//       expiresIn: '30d',
-//     });
-
-//     console.log(1234)
-//     res.cookie('blog_info', token, {
-//       httpOnly: true,
-//       secure: process.env.NODE_ENV !== 'development',
-//       sameSite: 'Lax',
-//       maxAge: 30 * 24 * 60 * 60 * 1000,
-//     });
-
-//     res.redirect('http://localhost:7200/profile');
-//   },
-// );
-
-// app.get('/auth/google/failure', (req, res) => {
-//   res.send('Failed to authenticate..');
-// });
-
-
-
-
 const port = process.env.PORT || 3005;
 
 if (process.env.NODE_ENV === 'production') {
@@ -133,11 +94,10 @@ const startServer = async () => {
     console.error(error);
   }
 };
+
+
 if (require.main === module) {
   startServer();
 } else {
   module.exports = { app, startServer };
 }
-
-// startServer();
-// module.exports = app

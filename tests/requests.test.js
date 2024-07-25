@@ -3,28 +3,71 @@
 const mongoose = require("mongoose");
 const request = require("supertest");
 const { app } = require("../backend/index");
-require("dotenv").config();
+const Post = require("../backend/models/Posts");
+const supertest = require("supertest");
 
-// let server;
+require("dotenv").config();
 
 
 if (process.env.NODE_ENV === 'test') {
-    describe("Test the root path", () => {
-        let server;
+    // let server;
 
-        // beforeAll(async () => {
-        //     await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-        //     server = await startServer();
-        // });
+    beforeAll(async () => {
+        const dbUri = process.env.MONGO_URI || 'mongodb://localhost:271017/mernBlog'
+        await mongoose.connect(dbUri, {
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true,
+        })
+    })
 
-        // afterAll(async () => {
-        //     await mongoose.connection.close();
-        //     server.close();
-        // });
+    afterAll(async () => {
+        await mongoose.connection.close()
+    })
 
-        test("It should respond to the GET method", async () => {
+    describe("Test root app", () => {
+        test("It should root test GET method", async () => {
             const response = await request(app).get("/");
             expect(response.statusCode).toBe(200);
+        })
+    })
+
+
+    describe("GET /api/v1/posts", () => {
+        test("It should root posts GET method", async () => {
+            const res = await request(app).get("/api/v1/posts")
+            expect(res.statusCode).toBe(200);
+            expect(Array.isArray(res.body.posts)).toBe(true);
+            // expect(res.body.posts.length).toBeGreaterThan(0);
+        })
+    })
+
+
+
+    test("GET /api/v1/posts/:id", async () => {
+        const post = await Post.create({
+            title: "Test Post 1",
+            category: "testCat",
+            imageUrl: "....",
+            user: process.env.USER_TEST_ID,
+            content: "Lorem ipsum"
         });
-    });
+
+        try {
+            const response = await supertest(app).get(`/api/v1/posts/${post.id}`)
+            expect(response.status).toBe(200);
+            expect(response.body._id).toBe(post.id);
+            expect(response.body.title).toBe(post.title);
+            expect(response.body.content).toBe(post.content);
+        } catch (error) {
+            console.log('Test failed', error);
+            throw error;
+        } finally {
+            await Post.findByIdAndDelete(post.id)
+        }
+    })
+
+
+
+
+
 }
