@@ -10,8 +10,6 @@ require("dotenv").config();
 
 
 if (process.env.NODE_ENV === 'test') {
-    // let server;
-
     beforeAll(async () => {
         const dbUri = process.env.MONGO_URI || 'mongodb://localhost:271017/mernBlog'
         await mongoose.connect(dbUri, {
@@ -22,6 +20,7 @@ if (process.env.NODE_ENV === 'test') {
         await mongoose.connection.close()
     })
 
+
     describe("Test root app", () => {
         test("It should root test GET method", async () => {
             const response = await request(app).get("/");
@@ -30,15 +29,16 @@ if (process.env.NODE_ENV === 'test') {
     })
 
 
+    /// GET POSTs 
     describe("GET /api/v1/posts", () => {
         test("It should root posts GET method", async () => {
             const res = await request(app).get("/api/v1/posts")
             expect(res.statusCode).toBe(200);
             expect(Array.isArray(res.body.posts)).toBe(true);
-            // expect(res.body.posts.length).toBeGreaterThan(0);
         })
     })
 
+    /// GET POST by id
     test("GET /api/v1/posts/:id", async () => {
         const post = await Post.create({
             title: "Test Post 1",
@@ -62,10 +62,9 @@ if (process.env.NODE_ENV === 'test') {
         }
     })
 
-
+    /// DELETE POST
     describe("DELETE /api/v1/posts/:id", () => {
         test("It should DELETE post", async () => {
-
             const testUser = {
                 id: process.env.USER_TEST_ID,
                 roles: ['Admin']
@@ -96,6 +95,7 @@ if (process.env.NODE_ENV === 'test') {
 
 
 
+    /// UPDATE POSTS
     describe("PUT /api/v1/posts/:id", () => {
         test("It should PUT post", async () => {
             const testUser = {
@@ -141,22 +141,23 @@ if (process.env.NODE_ENV === 'test') {
         })
     });
 
-
-
-
-    describe("POSTS /api/v1/posts/:id", () => {
+    /// CREATE COMMENT
+    describe("POST /api/v1/posts/:id/comments", () => {
         test("It should create comment with method POST", async () => {
             const testUser = {
                 id: process.env.USER_TEST_ID,
-                roles: ['Admin']
+                roles: ['Admin'],
+                username: "Meeh"
             };
-
             const token = jwt.sign(
                 testUser,
                 process.env.JWT_ACCESS_SECRET_KEY,
                 { expiresIn: '1h' }
             );
-
+            const comment = {
+                comment: "Comment",
+                user: process.env.USER_TEST_ID,
+            };
             const post = await Post.create({
                 title: "Test Post 1",
                 category: "testCat",
@@ -165,22 +166,31 @@ if (process.env.NODE_ENV === 'test') {
                 user: process.env.USER_TEST_ID,
                 content: "Lorem ipsum"
             });
-
-            await supertest(app)
-                .put(`/api/v1/posts/${post.id}`)
-                .set('Authorization', `Bearer ${token}`)
-                .send(updatedPostData)
-                .expect(201);
-
-            const updatedPost = await Post.findOne({ _id: post.id });
-            expect(updatedPost).toBeTruthy();
-            expect(updatedPost.title).toBe(updatedPostData.title);
-            expect(updatedPost.category).toBe(updatedPostData.category);
-            expect(updatedPost.tag).toEqual(updatedPostData.tag);
-            expect(updatedPost.imageUrl).toBe(updatedPostData.imageUrl);
-            expect(updatedPost.content).toBe(updatedPostData.content);
+            try {
+                await supertest(app)
+                    .post(`/api/v1/posts/${post.id}/comments`)
+                    .set('Authorization', `Bearer ${token}`)
+                    .send(comment)
+                    .expect(201)
+                    .expect((res) => {
+                        expect(res.body.message).toBe("Comment added successfully");
+                    });
+            } catch (error) {
+                console.log('Test failed', error);
+                throw error;
+            } finally {
+                await Post.findByIdAndDelete(post.id)
+            }
         })
     });
+
+    describe("GET /api/v1/posts", () => {
+        test("It should root posts GET method", async () => {
+            const res = await request(app).get("/api/v1/posts/getAll")
+            expect(res.statusCode).toBe(200);
+            expect(Array.isArray(res.body.posts)).toBe(true);
+        })
+    })
 
 
 

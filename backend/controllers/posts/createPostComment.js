@@ -25,4 +25,4 @@ const createPostComment = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports  = {createPostComment};
+module.exports = { createPostComment };
