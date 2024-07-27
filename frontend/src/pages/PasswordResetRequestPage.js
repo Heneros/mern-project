@@ -1,7 +1,7 @@
 import React from 'react'
 import { Formik } from "formik";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { Container, Form, Row, Button, Spinner } from 'react-bootstrap';
@@ -9,9 +9,10 @@ import { usePasswordResetRequestMutation } from '../redux/slices/authApiSlice';
 import FormContainer from '../components/FormContainer';
 
 const PasswordResetRequestPage = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const goBack = () => navigate('/login');
 
-  const goBack = () => navigate(-1);
 
   const [passwordResetRequest, { data, isLoading, isSuccess }] =
     usePasswordResetRequestMutation();
@@ -24,7 +25,7 @@ const PasswordResetRequestPage = () => {
     }
   }, [data, isSuccess, navigate]);
 
-  
+
 
   return (
     <Formik
@@ -57,48 +58,51 @@ const PasswordResetRequestPage = () => {
         values,
       }) => (
         <>
-            <FormContainer>
-                 <Form noValidate onSubmit={handleSubmit}>
-          <div className="text-center mb-4">
-            <h1>Password Reset Request </h1>
-            <hr />
-          </div>
-          {isLoading ? (
-            <Spinner animation="border" />
-          ) : (
-            <>
-              <Form.Group className="my-2" controlId="email">
- <Form.Label>Email</Form.Label>
- <Form.Control
-            type="email"
-            placeholder="Enter email. Example bond@gmail.cpm"
-            value={values.email}
-            name="email"
-    onChange={handleChange}
-                isInvalid={touched.email && errors.email}
-          />
- <Form.Control.Feedback type="invalid">
-            {errors.email}
-          </Form.Control.Feedback>
-              </Form.Group>
-              <Row className="d-flex justify-content-between">
-            <Button type="submit" variant="primary"  disabled={!values.email}>
-          Submit
-          </Button>
-            <Button
-                variant="warning"
-              
-                onClick={goBack}
+          <FormContainer>
+            <Form noValidate onSubmit={handleSubmit}>
+              <div className="text-center mb-4">
+                <h1>Password Reset Request </h1>
+                <hr />
+              </div>
+              {isLoading ? (
+                <Spinner animation="border" />
+              ) : (
+                <>
+                  <Form.Group className="my-2" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter email. Example bond@gmail.cpm"
+                      value={values.email}
+                      name="email"
+                      onChange={handleChange}
+                      isInvalid={touched.email && errors.email}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.email}
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-              >
-                Go Back
-              </Button>
-
-              </Row>
-            </>
-          )}
-        </Form>
-              </FormContainer>
+                  <Button
+                    type="submit"
+                    variant="success"
+                    size="lg"
+                    className="w-100 mt-3 mb-2"
+                    disabled={!values.email}>
+                    Submit
+                  </Button>
+                  <Button
+                    variant="warning"
+                    className="w-100"
+                    size="md"
+                    onClick={goBack}
+                  >
+                    Go Back
+                  </Button>
+                </>
+              )}
+            </Form>
+          </FormContainer>
         </>
       )}
     </Formik>

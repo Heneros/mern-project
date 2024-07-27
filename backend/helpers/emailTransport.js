@@ -11,17 +11,10 @@ if (process.env.NODE_ENV === "development") {
     secure: false,
   });
 } else if (process.env.NODE_ENV === "production") {
-  // const mailgunAuth = {
-  //   auth: {
-  //     api_key: process.env.MAILGUN_API_KEY,
-  //     domain: process.env.MAILGUN_DOMAIN,
-  //   },
-  // };
-  // transporter = nodemailer.createTransport(mg(mailgunAuth));
   transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: 587,
-    secure: true,
+    secure: false,
     auth: {
       user: process.env.SMTP_NAME,
       pass: process.env.SMTP_PASS,

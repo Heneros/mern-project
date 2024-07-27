@@ -15,6 +15,7 @@ export default function News() {
   const { pageNumber } = useParams();
   const { data, isLoading, error } = useGetPostsQuery({ pageNumber });
   // console.log(data);
+  const currentPage = 1;
   return (
     <Container>
       <Row>
@@ -26,7 +27,7 @@ export default function News() {
           <Newsletter />
           <Trending data={data} error={error} isLoading={isLoading} />
         </Col>
-        <Paginate pages={data?.pages} page={data?.page} isAdmin={true} />
+        <Paginate pages={data?.pages} page={currentPage} isAdmin={true} />
       </Row>
     </Container>
   );

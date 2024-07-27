@@ -21,8 +21,7 @@ const USERNAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 export default function Registration() {
 
   const navigate = useNavigate();
-
-
+  const goBack = () => navigate('/login');
   // useEffect(() => {
   //   if (dataProfile) {
   //     navigate("/");
@@ -164,7 +163,7 @@ export default function Registration() {
             </Button>
           </form>
           <Row className="py-3">
-   
+
             <Col>
               <Button
                 className="loginButton google"
@@ -182,6 +181,15 @@ export default function Registration() {
             <Col>
               Have an account?
               <Link to={'/login'}>Login</Link>
+            </Col>
+          </Row>
+          <Row className="py-1">
+            <Col>
+              <Link
+                onClick={goBack}
+              >
+                Go Back to login
+              </Link>
             </Col>
           </Row>
         </FormContainer>)}

@@ -13,10 +13,10 @@ After registration you should activate your email during 15 minutes. Mail could 
 - Node.js
 - Passport.js
 - Nodemailer+handlebars
-- Cloudflare
-- Multer
+- Cloudflare with multer
 - Redux
 - Bootstrap
+- Jest
 
 ## Deploy
 
