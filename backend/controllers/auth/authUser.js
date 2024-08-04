@@ -33,18 +33,18 @@ const authUser = asyncHandler(async (req, res) => {
 
     const cookies = req.cookies;
 
-    let newRefreshTokenArray = !cookies?.blog_info ? user.refreshToken : user.refreshToken.filter((refT) => refT !== cookies.blog_info)
+    let newRefreshTokenArray = !cookies?.blog_info ? user.refreshToken :  user.refreshToken.filter((refT) => refT !== cookies.blog_info )
 
-    if (cookies?.blog_info) {
+    if(cookies?.blog_info){
       const refreshToken = cookies.blog_info;
       const existingRefreshToken = await User.findOne({
-        refreshToken
+refreshToken
       }).exec();
 
-      if (!existingRefreshToken) {
+      if(!existingRefreshToken){
         newRefreshToken = []
       }
-      const options = {
+            const options = {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,

@@ -73,7 +73,7 @@ export default function Profile() {
     <>
       <Breadcrumbs />
       <Row className="my-5">
-        <NavMenu dataProfile={dataProfile} />
+        <NavMenu />
         <Col md={9}>
           <h2>Change User Profile Data</h2>
           <Form onSubmit={submitHandler}>

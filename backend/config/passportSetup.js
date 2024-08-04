@@ -14,7 +14,7 @@ const googleAuth = () => {
         new GoogleStrategy.Strategy({
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: `${domainURL}/api/v1/${googleCallbackURL}`,
+            callbackURL: `https://backend-rest-six.vercel.app/api/v1/auth/google/redirect`,
         }, (accessToken, refreshToken, profile, done) => {
 
 

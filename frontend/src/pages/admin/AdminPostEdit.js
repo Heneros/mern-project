@@ -39,7 +39,7 @@ export default function AdminPostEdit() {
   // const navigate = useNavigate();
 
   if (loadingPost && loadingImgUpload) {
-    console.log("Loading");
+    // console.log("Loading");
   }
   // console.log(post);
 

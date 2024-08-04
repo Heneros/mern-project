@@ -9,7 +9,7 @@ const supertest = require("supertest");
 require("dotenv").config();
 
 
-if (process.env.NODE_ENV === 'test') {
+// if (process.env.NODE_ENV === 'test') {
     beforeAll(async () => {
         const dbUri = process.env.MONGO_URI || 'mongodb://localhost:271017/mernBlog'
         await mongoose.connect(dbUri, {
@@ -125,19 +125,28 @@ if (process.env.NODE_ENV === 'test') {
                 imageUrl: "updatedImageUrl",
                 content: "Updated content"
             };
-            await supertest(app)
-                .put(`/api/v1/posts/${post.id}`)
-                .set('Authorization', `Bearer ${token}`)
-                .send(updatedPostData)
-                .expect(200);
 
-            const updatedPost = await Post.findOne({ _id: post.id });
-            expect(updatedPost).toBeTruthy();
-            expect(updatedPost.title).toBe(updatedPostData.title);
-            expect(updatedPost.category).toBe(updatedPostData.category);
-            expect(updatedPost.tag).toEqual(updatedPostData.tag);
-            expect(updatedPost.imageUrl).toBe(updatedPostData.imageUrl);
-            expect(updatedPost.content).toBe(updatedPostData.content);
+            try {
+                await supertest(app)
+                    .put(`/api/v1/posts/${post.id}`)
+                    .set('Authorization', `Bearer ${token}`)
+                    .send(updatedPostData)
+                    .expect(200);
+
+                const updatedPost = await Post.findOne({ _id: post.id });
+                expect(updatedPost).toBeTruthy();
+                expect(updatedPost.title).toBe(updatedPostData.title);
+                expect(updatedPost.category).toBe(updatedPostData.category);
+                expect(updatedPost.tag).toEqual(updatedPostData.tag);
+                expect(updatedPost.imageUrl).toBe(updatedPostData.imageUrl);
+                expect(updatedPost.content).toBe(updatedPostData.content);
+            } catch (error) {
+                console.log('Test failed PUT post', error);
+                throw error;
+            } finally {
+                await Post.findByIdAndDelete(post.id)
+            }
+
         })
     });
 
@@ -196,4 +205,4 @@ if (process.env.NODE_ENV === 'test') {
 
 
 
-}
+// }

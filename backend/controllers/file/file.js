@@ -1,7 +1,7 @@
 const multer = require('multer');
 const path = require('path');
 
-// const storage = multer({ storage: multer.memoryStorage() });
+const storage = multer({ storage: multer.memoryStorage() });
 
 function checkImageType(file, cb) {
   // console.log('Checking file:', file.originalname, 'MIME type:', file.mimetype);

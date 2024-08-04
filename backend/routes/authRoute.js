@@ -72,12 +72,12 @@ router.route("/google/redirect").get(
                         <html>
                           <script>
                             window.localStorage.setItem("googleToken", '${jwt}');
-                            window.location.href = 'http://localhost:3000/profile';
+                            window.location.href = 'https://backend-rest-six.vercel.app/profile';
                           </script>
                         </html>
                       `;
                     res.send(embedJWT);
-                    // res.redirect(`http://localhost:3000/auth-callback?token=${token}`);
+                    // res.redirect(`https://backend-rest-six.vercel.app/auth-callback?token=${token}`);
 
                 }
             );

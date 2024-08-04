@@ -5,44 +5,51 @@ import { selectCurrentUserGoogleToken, selectCurrentUserToken } from './../../re
 import { useSelector } from 'react-redux';
 import { decodeToken } from 'react-jwt';
 
-
 export default function NavMenu() {
   const token = useSelector(selectCurrentUserToken);
   const googleToken = useSelector(selectCurrentUserGoogleToken);
 
-  // console.log(token)
-
-  let isAdmin = false;
-  let isEditor = false;
-  let accessRight = 'User';
-
-
   const location = useLocation();
   const isCurrentPath = (path) => location.pathname === path;
 
+  // // Отладочные выводы
+  // console.log('Token:', token);
+  // console.log('Google Token:', googleToken);
+
+  let isAdmin = false;
+  let isEditor = false;
+
   if (token) {
     const decodedToken = decodeToken(token);
+    console.log('Decoded Token:', decodedToken);
     const { roles } = decodedToken;
-
     isAdmin = roles.includes('Admin');
     isEditor = roles.includes('Editor');
+  } else if (googleToken) {
+    const gDecodedToken = decodeToken(googleToken);
+    console.log('Decoded Google Token:', gDecodedToken);
+    const { roles } = gDecodedToken;
+    isAdmin = roles.includes('Admin');
+    isEditor = roles.includes('Editor');
+  }
 
-    if (isAdmin) {
-      return (<>
-        <Col md={3}>
-          <Nav className="flex-column profile-menu">
-            <Nav.Link
-              className={isCurrentPath("/profile") ? "active" : ""}
-              href="/profile"
-            >
-              My profile
-            </Nav.Link>
-            <Nav.Link
-              className={isCurrentPath("/profile/favorites") ? "active" : ""}
-              href="/profile/favorites"
-            >
-              Favorites
-            </Nav.Link>
+  return (
+    <Col md={3}>
+      <Nav className="flex-column profile-menu">
+        <Nav.Link
+          className={isCurrentPath("/profile") ? "active" : ""}
+          href="/profile"
+        >
+          My profile
+        </Nav.Link>
+        <Nav.Link
+          className={isCurrentPath("/profile/favorites") ? "active" : ""}
+          href="/profile/favorites"
+        >
+          Favorites
+        </Nav.Link>
+        {isAdmin && (
+          <>
             <Nav.Link
               className={isCurrentPath("/admin/users-list") ? "active" : ""}
               href="/admin/users-list"
@@ -61,63 +68,25 @@ export default function NavMenu() {
             >
               Create Post
             </Nav.Link>
-          </Nav>
-        </Col>
-      </>)
-    } else if (isEditor) {
-      return (
-        <>
-          <Col md={3}>
-            <Nav className="flex-column profile-menu">
-              <Nav.Link
-                className={isCurrentPath("/profile") ? "active" : ""}
-                href="/profile"
-              >
-                My profile
-              </Nav.Link>
-              <Nav.Link
-                className={isCurrentPath("/profile/favorites") ? "active" : ""}
-                href="/profile/favorites"
-              >
-                Favorites
-              </Nav.Link>
-              <Nav.Link
-                className={isCurrentPath("/admin/posts-list") ? "active" : ""}
-                href="/admin/posts-list"
-              >
-                Posts List
-              </Nav.Link>
-              <Nav.Link
-                className={isCurrentPath("/admin/create-post") ? "active" : ""}
-                href="/admin/create-post"
-              >
-                Create Post
-              </Nav.Link>
-            </Nav>
-          </Col>
-        </>)
-    }
-    return (
-      <>
-        <Col md={3}>
-          <Nav className="flex-column profile-menu">
+          </>
+        )}
+        {isEditor && !isAdmin && (
+          <>
             <Nav.Link
-              className={isCurrentPath("/profile") ? "active" : ""}
-              href="/profile"
+              className={isCurrentPath("/admin/posts-list") ? "active" : ""}
+              href="/admin/posts-list"
             >
-              My profile
+              Posts List
             </Nav.Link>
             <Nav.Link
-              className={isCurrentPath("/favorites") ? "active" : ""}
-              href="/profile/favorites"
+              className={isCurrentPath("/admin/create-post") ? "active" : ""}
+              href="/admin/create-post"
             >
-              Favorites
+              Create Post
             </Nav.Link>
-          </Nav>
-        </Col>
-      </>)
-
-
-  }
-
+          </>
+        )}
+      </Nav>
+    </Col>
+  );
 }

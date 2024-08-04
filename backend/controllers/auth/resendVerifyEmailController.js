@@ -51,6 +51,7 @@ const resendEmailVerificationToken = asyncHandler(async (req, res) => {
     link: emailLink
   }
 
+
   await sendEmail(
     user.email,
     "Account Verification",
