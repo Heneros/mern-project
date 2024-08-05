@@ -9,6 +9,10 @@ const commentSchema = mongoose.Schema(
       required: true,
       ref: "User",
     },
+    createdAt: {
+      type: Date,
+      default: Date.now(),
+    },
   },
   {
     timestamps: true,

@@ -73,7 +73,7 @@ export default function SinglePost() {
       console.log("err favorite", error);
     }
   };
-  // console.log(newCurrentFav);
+  console.log(post);
 
   return (
     <>
@@ -145,7 +145,7 @@ export default function SinglePost() {
                           <small>
                             <i>
                               {format(
-                                new Date(post?.createdAt),
+                                new Date(item?.createdAt),
                                 "MMMM dd, yyyy, h:mm "
                               )}
                             </i>

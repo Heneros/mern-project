@@ -15,6 +15,7 @@ const createPostComment = asyncHandler(async (req, res) => {
       username: req.user.username,
       comment,
       user: req.user._id,
+      
     };
     // console.log({ commentSingle });
     post.comments.push(commentSingle);

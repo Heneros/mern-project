@@ -5,9 +5,6 @@ const path = require("path");
 const transporter = require("../helpers/emailTransport");
 
 
-
-
-
  const receiverEmailFunction = async (from, to, subject, payload, template) => {
   try {
      const sourceDirectory = fs.readFileSync(path.join(__dirname, template), 'utf8');

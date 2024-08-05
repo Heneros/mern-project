@@ -25,6 +25,7 @@ router.route("/resend_email_token").post(resendEmailVerificationToken);
 router.route("/reset_password_request").post(resetPasswordRequest);
 router.route("/reset_password").post(resetPassword);
 router.route("/logout").get(logoutUser);
+ 
 
 router.route("/google").get(passport.authenticate("google", {
     session: false,

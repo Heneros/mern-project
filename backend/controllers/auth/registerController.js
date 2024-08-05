@@ -11,7 +11,6 @@ const { randomBytes } = require("crypto")
 /// $-path POST /api/v1/auth/register
 /// $-auth Public
 
-
 const registerUser = asyncHandler(async (req, res) => {
   const { email, username, password, passwordConfirm } = req.body;
 

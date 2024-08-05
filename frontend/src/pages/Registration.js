@@ -86,6 +86,7 @@ export default function Registration() {
             setSubmitting(false);
           } catch (err) {
             const message = err.data.message;
+            console.log(message)
             toast.error(message);
             setStatus({ success: false });
             setSubmitting(false);
