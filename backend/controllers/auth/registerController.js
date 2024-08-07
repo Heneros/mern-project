@@ -77,7 +77,7 @@ const registerUser = asyncHandler(async (req, res) => {
       registeredUser.email,
       "Account Verification",
       payload,
-      "./email/template/accountVerification.handlebars"
+      "./accountVerification.handlebars"
     );
 
     res.json({

@@ -11,7 +11,7 @@ require("dotenv").config();
 
 // if (process.env.NODE_ENV === 'test') {
     beforeAll(async () => {
-        const dbUri = process.env.MONGO_URI || 'mongodb://localhost:271017/mernBlog'
+        const dbUri = process.env.MONGO_URI_LOCAL
         await mongoose.connect(dbUri, {
         })
     })
@@ -39,7 +39,7 @@ require("dotenv").config();
     })
 
     /// GET POST by id
-    test("GET /api/v1/posts/:id", async () => {
+    test("GET /api/v1/posts/wt.sign:id", async () => {
         const post = await Post.create({
             title: "Test Post 1",
             category: "testCat",

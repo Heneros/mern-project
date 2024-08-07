@@ -88,7 +88,7 @@ app.use(errorHandler);
 
 const startServer = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(process.env.MONGO_URI_LOCAL);
     app.listen(port, () => console.log(`Working on port ${port}`));
     // return server;
   } catch (error) {
@@ -96,9 +96,15 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// startServer();
+if(process.env.NODE_ENV === 'test'){
+  module.exports = { app, startServer };
+}else{
+  startServer();
+}
+
 // if (require.main === module) {
-//   startServer();
+
 // } else {
-//   module.exports = { app, startServer };
+
 // }

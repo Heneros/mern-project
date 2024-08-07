@@ -45,7 +45,7 @@ export default function Registration() {
         navigate("/");
         const message = data?.message;
         toast.success(message);
-      }, 5000)
+      }, 2500)
 
     }
   }, [data, isSuccess, navigate]);

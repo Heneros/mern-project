@@ -22,6 +22,7 @@ const router = express.Router();
 router
     .route('/')
     .get(checkAuth, checkRole('Admin'), getAllUsers);
+    
 router.route('/allusers').get(getAllPublicUsers);
 
 router

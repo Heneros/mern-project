@@ -18,7 +18,7 @@ const feedbackForm = asyncHandler(async (req, res) => {
         receiverEmail,
         'Email from user',
         payload,
-        './email/template/feedbackFormMessage.handlebars',
+        './feedbackFormMessage.handlebars',
     );
 
     res.status(200).json({

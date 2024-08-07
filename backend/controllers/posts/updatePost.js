@@ -19,7 +19,7 @@ const updatePost = asyncHandler(async (req, res) => {
     post.tag = tag;
 
     const updatedPost = await post.save();
-    return res.status(202).json(updatedPost);
+    return res.status(200).json(updatedPost);
   } else {
     return res.status(404).json({ message: "Resource not found" });
   }

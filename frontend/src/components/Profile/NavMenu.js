@@ -12,7 +12,7 @@ export default function NavMenu() {
   const location = useLocation();
   const isCurrentPath = (path) => location.pathname === path;
 
-  // // Отладочные выводы
+  //
   // console.log('Token:', token);
   // console.log('Google Token:', googleToken);
 
@@ -66,11 +66,11 @@ export default function NavMenu() {
               className={isCurrentPath("/admin/create-post") ? "active" : ""}
               href="/admin/create-post"
             >
-              Create Post
+              Create Post 
             </Nav.Link>
           </>
         )}
-        {isEditor && !isAdmin && (
+        {isEditor &&  (
           <>
             <Nav.Link
               className={isCurrentPath("/admin/posts-list") ? "active" : ""}
@@ -82,7 +82,7 @@ export default function NavMenu() {
               className={isCurrentPath("/admin/create-post") ? "active" : ""}
               href="/admin/create-post"
             >
-              Create Post
+              Create Post 
             </Nav.Link>
           </>
         )}

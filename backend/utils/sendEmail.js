@@ -8,27 +8,28 @@ const { systemLogs } = require("./Logger");
 const sendEmail = async (email, subject, payload, template) => {
   // console.log('sendEmail function called'); 
   try {
-    // const templatePath = path.join(process.cwd(), 'backend', 'utils', 'email', 'template', template);
-      const sourceDirectory = fs.readFileSync(path.join(__dirname, template), 'utf8');
-      const compliedTemplate = handlebars.compile(sourceDirectory)
+
+      // const sourceDirectory = fs.readFileSync(path.join(__dirname, template), 'utf8');
+      // const compliedTemplate = handlebars.compile(sourceDirectory)
 
  //   console.log(`Attempting to use template path: ${compliedTemplate}`);
 
-    // if (!fs.existsSync(templatePath)) {
-    //   throw new Error(`Template file not found: ${templatePath}`);
-    // }
+     const templatePath = path.join(process.cwd(), 'backend', 'utils', 'email', 'template', template);
+    if (!fs.existsSync(templatePath)) {
+      throw new Error(`Template file not found: ${templatePath}`);
+    }
 
-    // const sourceDirectory = fs.readFileSync(templatePath, 'utf8');
-    // console.log('Template file read successfully');
+    const sourceDirectory = fs.readFileSync(templatePath, 'utf8');
+    console.log('Template file read successfully');
 
-    // const compiledTemplate = handlebars.compile(sourceDirectory);
-    // console.log('Template compiled successfully');
+    const compiledTemplate = handlebars.compile(sourceDirectory);
+    console.log('Template compiled successfully');
 
     const emailOptions = {
       from: process.env.SENDER_EMAIL,
       to: email,
       subject: subject,
-      html: compliedTemplate(payload)
+      html: compiledTemplate(payload)
     };
   //  console.log('Email options prepared:', JSON.stringify(emailOptions, null, 2));
 

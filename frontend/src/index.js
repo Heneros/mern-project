@@ -36,6 +36,7 @@ import AuthRequired from "./components/AuthRequired";
 
 import { ROLES } from "./utils/roles";
 import AuthCallback from "./pages/AuthCallback";
+import { AuthVerify } from "./pages/AuthVerify";
 
 const router = createBrowserRouter([{
   path: "/",
@@ -71,6 +72,9 @@ const router = createBrowserRouter([{
   }, {
     path: "/tag/:id",
     element: <Tag />,
+  },{
+    path: "/auth/verify",
+    element: <AuthVerify />,
   }, {
     path: "/reset_password_request",
     element: <PasswordResetRequestPage />,
@@ -93,13 +97,28 @@ const router = createBrowserRouter([{
     ]
   }, {
     element: <AuthRequired allowedRoles={[ROLES.Admin]} />,
-    children: [{
+    children: [
+      {
       path: "/admin/users-list",
       element: <UsersList />,
     }, {
       path: "/admin/user/:id/edit",
       element: <UserEdit />,
-    }],
+    },
+         {
+        path: "/admin/posts-list",
+        element: <AdminPostsList />,
+      }, {
+        path: "/admin/posts-list/:pageNumber",
+        element: <AdminPostsList />,
+      }, {
+        path: "/admin/create-post",
+        element: <CreatePost />,
+      }, {
+        path: "/admin/post/:id/edit",
+        element: <AdminPostEdit />,
+      },
+  ],
   }, {
     element: <AuthRequired allowedRoles={[ROLES.Editor]} />,
     children: [

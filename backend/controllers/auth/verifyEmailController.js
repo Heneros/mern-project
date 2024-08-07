@@ -48,7 +48,7 @@ const verifyUserEmail = asyncHandler(async (req, res) => {
       user.email,
       'Welcome, Account Verified',
       payload,
-      "./email/template/welcome.handlebars"
+      "./welcome.handlebars"
     );
     res.redirect("/auth/verify")
   }

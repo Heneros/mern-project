@@ -58,7 +58,7 @@ const resetPasswordRequest = asyncHandler(async (req, res) => {
     await sendEmail( existingUser.email,
       "Password Reset Request",
       payload,
-      "./email/template/requestResetPassword.handlebars");
+      "./requestResetPassword.handlebars");
 
           res.status(200).json({
       success: true,
@@ -114,7 +114,7 @@ const resetPassword = asyncHandler(async(req, res) =>{
       user.email,
       "Password Reset Success",
       payload,
-      "./email/template/resetPassword.handlebars"
+      "./resetPassword.handlebars"
     );
  res.json({
       success: true,
