@@ -25,8 +25,7 @@ router
     
 router.route('/allusers').get(getAllPublicUsers);
 
-router
-    .route('/profile')
+router.route('/profile')
     .get(checkAuth, getUserProfile)
     .put(checkAuth, updateUserProfile)
     .delete(checkAuth, deleteMyAccount);

@@ -31,16 +31,16 @@ const userSchema = mongoose.Schema(
       unique: true,
       sparse: true, 
     },
-    isAdmin: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
-    isEditor: {
-      type: Boolean,
-      required: true,
-      default: false,
-    },
+    // isAdmin: {
+    //   type: Boolean,
+    //   required: true,
+    //   default: false,
+    // },
+    // isEditor: {
+    //   type: Boolean,
+    //   required: true,
+    //   default: false,
+    // },
     roles: {
       type: [String],
       default: [USER]
