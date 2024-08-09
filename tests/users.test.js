@@ -10,84 +10,85 @@ const VerificationToken = require('../backend/models/verifyResetTokenModel');
 
 require("dotenv").config();
 
+let token;
+
+
+
+const createUserAndGenerateToken = async(roles = ['User']) =>{
+    const testUser = new User({
+    username: "testUser",
+    email: `useremail${Date.now()}@test.com`,
+    password: "password1234",
+    passwordConfirm: "password1234",
+    provider: 'email',
+    isEmailVerified: true,
+    roles
+  });
+await testUser.save();
+
+  const token = jwt.sign(
+    { id: testUser._id, roles },
+    process.env.JWT_ACCESS_SECRET_KEY,
+    { expiresIn: '1d' }
+  );
+
+  return { testUser, token };
+
+}
+
+
+     beforeAll(async() =>{
+    const dbUri = process.env.MONGO_URI_LOCAL
+        await mongoose.connect(dbUri, {})
+  });
+
+
+  afterAll(async () =>{
+      await mongoose.connection.close();
+  })
+
+
+
 
 describe("GET all users", () =>{
 let testUser;
 
-     beforeAll(async() =>{
-    const dbUri = process.env.MONGO_URI_LOCAL
-        await mongoose.connect(dbUri, {
-    })
+
+beforeAll(async () =>{
+  ({testUser, token} = await createUserAndGenerateToken(['Admin']))
+})
 
 
-   testUser = new User({
-      username: "adminUser",
-      email: `adminemail${Date.now()}@test.com`,
-      password: "password1234",
-      passwordConfirm: "password1234",
-      provider: 'email',
-      isEmailVerified: true,
-      roles: ['Admin']
-    });
-    await testUser.save();
-// console.log(testUser._id)
-
-    token = jwt.sign(
-      { id: testUser._id, roles: ['Admin'] },
-      process.env.JWT_ACCESS_SECRET_KEY,
-      { expiresIn: '1d' }
-    );
-  });
-
-
-     afterAll(async() =>{
+    afterAll(async() =>{
       await User.deleteOne({_id : testUser._id})
-      await mongoose.connection.close();
   })
   
   test("Method GET", async() =>{
       const response = await request(app).get("/api/v1/users")
     .set("Authorization", `Bearer ${token}`)
     .expect(200)
+    // console.log('response.body', response.body)
 
     expect(response.body).toBeInstanceOf(Array); 
-    
+    expect(response.status).toBe(200);
     }, 30000)
 });
 
 
 
 describe("GET user Profile", () =>{
-  let token;
   let testUser;
 
   beforeAll(async() =>{
-    // await mongoose.connect(process.env.MONGO_URI_LOCAL, { useNewUrlParser: true, useUnifiedTopology: true });
-    const dbUri = process.env.MONGO_URI_LOCAL
-        await mongoose.connect(dbUri, {
-    })
-
-
-      testUser = new User({
-        username: "testUser",
-        email: `useremail${Date.now()}@test.com`,
-        password: "password1234",
-           passwordConfirm: "password1234", 
-        provider: 'email',
-        isEmailVerified: true,
-    });
-    await testUser.save();
+({testUser, token} = await createUserAndGenerateToken(['User']))
+  });
+  
     ///  console.log('User created successfully:', testUser);
 
 
-    token = jwt.sign( {
-        id: testUser._id,
-      }, process.env.JWT_ACCESS_SECRET_KEY, { expiresIn: '1d' });
-  });
 
-      afterAll(async() =>{
+    afterAll(async() =>{
     await User.deleteOne({_id: testUser._id});
-    await mongoose.connection.close();
   })
   
     test("Method GET", async() =>{
@@ -95,9 +96,6 @@ describe("GET user Profile", () =>{
         const response = await request(app)
         .get('/api/v1/users/profile')
         .set('Authorization', `Bearer ${token}`)
-        // .expect(200);
-        // console.log('Response body:', response.body);
-        // console.log('Response status:', response.status);
         expect(response.status).toBe(200);
 
         expect(response.body).toHaveProperty("_id", testUser._id.toString());
