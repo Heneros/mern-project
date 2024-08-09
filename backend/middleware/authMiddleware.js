@@ -1,35 +1,33 @@
-const User = require('../models/Users');
-// import { asyncHandler } from 'express-async-handler';
-// const asyncHandler = require('./asyncHandler');
-const asyncHandler = require("express-async-handler");
-
 const jwt = require('jsonwebtoken');
+const asyncHandler = require("express-async-handler");
+const User = require('../models/Users');
 
+ 
 const checkAuth = asyncHandler(async (req, res, next) => {
-    let jwt_token;
-
     const authHeader = req.headers.authorization || req.headers.Authorization;
 
-    // const authHeader = req.cookies.jwt;
-    // console.log(authHeader);
-    if (!authHeader?.startsWith('Bearer')) return res.sendStatus(401);
+    if (!authHeader?.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
 
-    if (authHeader && authHeader.startsWith('Bearer')) {
-        jwt_token = authHeader.split(' ')[1];
-        jwt.verify(
-            jwt_token,
-            process.env.JWT_ACCESS_SECRET_KEY,
-            async (err, decoded) => {
-                if (err) return res.sendStatus(403);
+    const jwtToken = authHeader.split(' ')[1];
 
-                const userId = decoded.id;
-                req.user = await User.findById(userId).select('-password');
-                req.roles = decoded.roles;
-                next();
-            },
-        );
+    try {
+        const decoded = jwt.verify(jwtToken, process.env.JWT_ACCESS_SECRET_KEY);
+
+        req.user = await User.findById(decoded.id).select('-password');
+// console.log('decoded', decoded)
+        req.roles = decoded.roles;
+        if (!req.user) {
+            return res.status(404).json({ message: 'User not found 3' });
+        }
+        next();
+    } catch (error) {
+        console.error("Error verifying token:", error);
+        res.status(403).json({ message: 'Forbidden' });
     }
 });
+
 
 const admin = (req, res, next) => {
     if (req.user && req.user.isAdmin) {
