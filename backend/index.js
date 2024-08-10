@@ -4,11 +4,10 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
-const mongoSanitize = require("express-mongo-sanitize")
-const morgan = require("morgan")
+const mongoSanitize = require('express-mongo-sanitize');
+const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
 
 const connectDB = require('./config/db.js');
 
@@ -17,7 +16,7 @@ const usersRoute = require('./routes/usersRoute');
 const uploadRoute = require('./routes/uploadRoute');
 const authRoute = require('./routes/authRoute');
 
-const { systemLogs, morganMiddleware } = require("./utils/Logger")
+const { systemLogs, morganMiddleware } = require('./utils/Logger');
 
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 const googleAuth = require('./config/passportSetup');
@@ -27,15 +26,13 @@ const googleAuth = require('./config/passportSetup');
 const app = express();
 
 app.use(
-  cors({
-    origin: 'http://localhost:7200',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  }),
+    cors({
+        origin: 'http://localhost:7200',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+        credentials: true,
+        allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    }),
 );
-
-  
 
 app.use(express.json());
 app.use(passport.initialize());
@@ -43,18 +40,18 @@ googleAuth();
 
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use(mongoSanitize())
+app.use(mongoSanitize());
 // app.use(morganMiddleware())
 
 app.use(
-  session({
+    session({
     // name: "blog_info",
     // secret: process.env.PASSPORT_SESSION_SECRET,
-    secret: process.env.JWT_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: process.env.NODE_ENV !== 'development' },
-  }),
+        secret: process.env.JWT_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: { secure: process.env.NODE_ENV !== 'development' },
+    }),
 );
 
 app.use('/api/v1/posts', postsRoute);
@@ -64,43 +61,43 @@ app.use('/api/upload', uploadRoute);
 
 // app.use(passport.session());
 
-app.use(mongoSanitize())
+app.use(mongoSanitize());
 const port = process.env.PORT || 3005;
 
 if (process.env.NODE_ENV === 'production') {
-  const __dirname = path.resolve();
-  app.use('/uploads', express.static('/var/data/uploads'));
-  app.use(express.static(path.join(__dirname, '/frontend/build')));
+    const __dirname = path.resolve();
+    app.use('/uploads', express.static('/var/data/uploads'));
+    app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  });
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    });
 } else {
-  const __dirname = path.resolve();
-  app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
-  app.get('/', (req, res) => {
-    res.send('<h1>Hello World</h1>');
-  });
+    const __dirname = path.resolve();
+    app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+    app.get('/', (req, res) => {
+        res.send('<h1>Hello World</h1>');
+    });
 }
 
 app.use(notFound);
 app.use(errorHandler);
 
 const startServer = async () => {
-  try {
-    await connectDB(process.env.MONGO_URI_LOCAL);
-    app.listen(port, () => console.log(`Working on port ${port}`));
+    try {
+        await connectDB(process.env.MONGO_URI_LOCAL);
+        app.listen(port, () => console.log(`Working on port ${port}`));
     // return server;
-  } catch (error) {
-    console.error(error);
-  }
+    } catch (error) {
+        console.error(error);
+    }
 };
 
 // startServer();
-if(process.env.NODE_ENV === 'test'){
-  module.exports = { app, startServer };
-}else{
-  startServer();
+if (process.env.NODE_ENV === 'test') {
+    module.exports = { app, startServer };
+} else {
+    startServer();
 }
 
 // if (require.main === module) {
