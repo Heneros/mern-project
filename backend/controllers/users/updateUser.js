@@ -10,16 +10,13 @@ const updateUser = asyncHandler(async (req, res) => {
     if (user) {
         user.username = req.body.username || user.username;
         user.email = req.body.email || user.email;
-        // user.isAdmin = Boolean(req.body.isAdmin);
-        // user.isEditor = Boolean(req.body.isEditor);
-
 
         const fieldsToUpdate = req.body;
         const updatedProfile = await User.findByIdAndUpdate(user._id, {...fieldsToUpdate},     { new: true, runValidators: true });
 
         const updatedUser = await user.save();
 
-        res.json({
+        res.status(200).json({
               success: true,
               message: `${user.username} , your profile was successfully updated`,
               updatedProfile

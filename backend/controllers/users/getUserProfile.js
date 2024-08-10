@@ -13,7 +13,6 @@ const getUserProfile = asyncHandler(async (req, res) => {
     } else {
       res.status(404).json({ message: "User not found" });
     }
-    // console.log("Fetching user with ID:", req.user._id);
 
   } catch (error) {
     console.error("Error fetching user profile:", error);

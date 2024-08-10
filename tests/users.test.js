@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const request = require('supertest');
 const jwt = require('jsonwebtoken');
+
+const bcrypt = require('bcryptjs');
 const supertest = require('supertest');
 
 const { app } = require('../backend/index');
@@ -40,7 +42,7 @@ beforeAll(async () => {
 afterAll(async () => {
     await mongoose.connection.close();
 });
-
+///, admin role
 describe('GET all users', () => {
     let testUser;
 
@@ -64,19 +66,20 @@ describe('GET all users', () => {
     }, 30000);
 });
 
+//get by id. , admin role
 describe('GET user Profile', () => {
     let testUser;
 
     beforeAll(async () => {
-        ({ testUser, token } = await createUserAndGenerateToken(['User']));
+        ({ testUser, token } = await createUserAndGenerateToken(['Admin']));
     });
     afterAll(async () => {
         await User.deleteOne({ _id: testUser._id });
     });
 
-    test('Method GET', async () => {
+    test('Method GET get by id', async () => {
         const response = await request(app)
-            .get('/api/v1/users/profile')
+            .get(`/api/v1/users/${testUser._id}`)
             .set('Authorization', `Bearer ${token}`);
         expect(response.status).toBe(200);
 
@@ -86,24 +89,153 @@ describe('GET user Profile', () => {
     }, 35000);
 });
 
+///Delete, admin role
+describe('Delete user profile', () => {
+    let testUser;
 
-describe("Delete user profile", () =>{
- let testUser;
- 
-beforeAll(async () =>{
-    ({testUser, token} = await createUserAndGenerateToken(['Admin']))
- })
+    beforeAll(async () => {
+        ({ testUser, token } = await createUserAndGenerateToken(['Admin']));
+    });
 
-  afterAll(async () =>{
-    await User.deleteOne({_id: testUser._id})
- })
-    test('Method DELETE', async() =>{
-        const response  = await request(app)
-        .delete(`/api/v1/users/${testUser._id}`)
-        .set('Authorization', `Bearer ${token}`)
-        .expect(200);
-      
-        expect(response.status).toBe(200)
-        expect(response.body.message).toBe("User removed")
-    })
-})
+    afterAll(async () => {
+        await User.deleteOne({ _id: testUser._id });
+    });
+    test('Method DELETE', async () => {
+        const response = await request(app)
+            .delete(`/api/v1/users/${testUser._id}`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200);
+        const deletedUser = await User.findById(testUser._id);
+
+        expect(response.status).toBe(200);
+        expect(response.body.message).toBe('User removed');
+        expect(deletedUser).toBeNull();
+    });
+});
+
+///update user, admin role
+describe('Update user', () => {
+    let testUser;
+
+    beforeAll(async () => {
+        ({ testUser, token } = await createUserAndGenerateToken(['Admin']));
+    });
+
+    afterAll(async () => {
+        await User.deleteOne({ _id: testUser._id });
+    });
+
+    test('PUT user data', async () => {
+        const userUpdate = {
+            username: 'JamesTest',
+            email: 'jamezzzz@sleeponelove.com',
+            password: 'password1234567',
+        };
+        const res = await request(app)
+            .put(`/api/v1/users/${testUser._id}`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200)
+            .send(userUpdate);
+
+        const updatedUser = await User.findById(testUser._id);
+        expect(updatedUser.username).toBe(userUpdate.username);
+        expect(updatedUser.password).toBe(userUpdate.password);
+        expect(updatedUser.email).toBe(userUpdate.email);
+        expect(res.status).toBe(200);
+    });
+});
+
+///get user, user role
+describe('Get profile user', () => {
+    let testUser;
+
+    beforeAll(async () => {
+        ({ testUser, token } = await createUserAndGenerateToken(['User']));
+    });
+
+    afterAll(async () => {
+        await User.deleteOne({ _id: testUser._id });
+    });
+
+    test('GET user data profile', async () => {
+        const res = await request(app)
+            .get(`/api/v1/users/profile`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200);
+
+        expect(res.status).toBe(200);
+        expect(res.body).toHaveProperty('_id', testUser._id.toString());
+        expect(res.body).toHaveProperty('username', testUser.username);
+        expect(res.body).toHaveProperty('email', testUser.email);
+        expect(res.body).not.toHaveProperty('password');
+    });
+});
+
+///put user, user role
+describe('update profile user', () => {
+    let testUser;
+
+    beforeAll(async () => {
+        ({ testUser, token } = await createUserAndGenerateToken(['User']));
+    });
+
+    afterAll(async () => {
+        await User.deleteOne({ _id: testUser._id });
+    });
+
+    test('update user data profile', async () => {
+        const userUpdate = {
+            username: 'JamesTest',
+            email: 'jamezzzz@sleeponelove.com',
+            password: 'password1234567',
+        };
+
+        const res = await request(app)
+            .put(`/api/v1/users/profile`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200)
+            .send(userUpdate);
+
+        expect(res.status).toBe(200);
+
+        const updatedUser = await User.findById(testUser._id);
+        expect(updatedUser.username).toBe(userUpdate.username);
+        /// expect(updatedUser.password).toBe(userUpdate.password);
+
+        const isPasswordMatch = await bcrypt.compare(
+            userUpdate.password,
+            updatedUser.password,
+        );
+        expect(isPasswordMatch).toBe(true);
+        expect(updatedUser.email).toBe(userUpdate.email);
+        expect(res.status).toBe(200);
+    });
+});
+
+///delete my account user, user role
+describe('delete profile user', () => {
+    let testUser;
+
+    beforeAll(async () => {
+        ({ testUser, token } = await createUserAndGenerateToken(['User']));
+    });
+
+    afterAll(async () => {
+        await User.deleteOne({ _id: testUser._id });
+    });
+
+    test('update user data profile', async () => {
+        const res = await request(app)
+            .delete(`/api/v1/users/profile`)
+            .set('Authorization', `Bearer ${token}`)
+            .expect(200);
+
+        expect(res.status).toBe(200);
+        const deletedUser = await User.findById(testUser._id);
+
+        expect(res.body.message).toBe('Your user account has been deleted');
+        expect(deletedUser).toBeNull();
+
+        /// expect(updatedUser.password).toBe(userUpdate.password);
+    });
+});
