@@ -1,7 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const express = require('express');
+const {express, Express, Request, Response} = require('express');
 const cors = require('cors');
 const passport = require('passport');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -69,13 +69,13 @@ if (process.env.NODE_ENV === 'production') {
     app.use('/uploads', express.static('/var/data/uploads'));
     app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-    app.get('*', (req, res) => {
+    app.get('*', (req: Request, res: Response) => {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     });
 } else {
     const __dirname = path.resolve();
     app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
-    app.get('/', (req, res) => {
+    app.get('/', (req: Request, res: Response) => {
         res.send('<h1>Hello World</h1>');
     });
 }
