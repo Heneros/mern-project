@@ -11,15 +11,15 @@ const session = require('express-session');
 
 const connectDB = require('./config/db.js');
 
-const postsRoute = require('./routes/postsRoute');
-const usersRoute = require('./routes/usersRoute');
-const uploadRoute = require('./routes/uploadRoute');
-const authRoute = require('./routes/authRoute');
+const postsRoute = require('./routes/postsRoute.js');
+const usersRoute = require('./routes/usersRoute.js');
+const uploadRoute = require('./routes/uploadRoute.js');
+const authRoute = require('./routes/authRoute.js');
 
-const { systemLogs, morganMiddleware } = require('./utils/Logger');
+const { systemLogs, morganMiddleware } = require('./utils/Logger.js');
 
-const { notFound, errorHandler } = require('./middleware/errorMiddleware');
-const googleAuth = require('./config/passportSetup');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware.js');
+const googleAuth = require('./config/passportSetup.js');
 
 // require('./utils/oauth.js');
 
