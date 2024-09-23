@@ -1,7 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-const {express, Express, Request, Response} = require('express');
+const { express, Express, Request, Response } = require('express');
 const cors = require('cors');
 const passport = require('passport');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -45,8 +45,8 @@ app.use(mongoSanitize());
 
 app.use(
     session({
-    // name: "blog_info",
-    // secret: process.env.PASSPORT_SESSION_SECRET,
+        // name: "blog_info",
+        // secret: process.env.PASSPORT_SESSION_SECRET,
         secret: process.env.JWT_SECRET,
         resave: false,
         saveUninitialized: false,
@@ -69,13 +69,15 @@ if (process.env.NODE_ENV === 'production') {
     app.use('/uploads', express.static('/var/data/uploads'));
     app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-    app.get('*', (req: Request, res: Response) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    app.get('*', (req, res) => {
+        res.sendFile(
+            path.resolve(__dirname, 'frontend', 'build', 'index.html'),
+        );
     });
 } else {
     const __dirname = path.resolve();
     app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
-    app.get('/', (req: Request, res: Response) => {
+    app.get('/', (req, res) => {
         res.send('<h1>Hello World</h1>');
     });
 }
@@ -87,7 +89,7 @@ const startServer = async () => {
     try {
         await connectDB(process.env.MONGO_URI_LOCAL);
         app.listen(port, () => console.log(`Working on port ${port}`));
-    // return server;
+        // return server;
     } catch (error) {
         console.error(error);
     }
